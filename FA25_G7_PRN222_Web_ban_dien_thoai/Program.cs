@@ -1,15 +1,48 @@
+﻿using BLL;
+using BLL.Services;
+using DAL.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// 🔌 Kết nối database
+builder.Services.AddDbContext<PhoneContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
+
+// 🧠 Inject tầng BLL
+builder.Services.AddScoped<DAL.ICustomerRepository, DAL.Repositories.CustomerRepository>(); // ✅ THÊM DÒNG NÀY
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<CustomerService>();
 var app = builder.Build();
+
+// ✅ Test kết nối DB ở đây
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<PhoneContext>();
+    try
+    {
+        if (dbContext.Database.CanConnect())
+        {
+            Console.WriteLine("✅ Kết nối Database thành công!");
+        }
+        else
+        {
+            Console.WriteLine("❌ Không thể kết nối tới Database!");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"⚠️ Lỗi khi kết nối Database: {ex.Message}");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -17,7 +50,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
