@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FA25_G7_PRN222_Web_ban_dien_thoai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b5a8445360b5faffd1c4879febad64c600a4aef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a85b39f18a98310c360cb4cd338e68fb8b31db2")]
 [assembly: System.Reflection.AssemblyProductAttribute("FA25_G7_PRN222_Web_ban_dien_thoai")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FA25_G7_PRN222_Web_ban_dien_thoai")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
