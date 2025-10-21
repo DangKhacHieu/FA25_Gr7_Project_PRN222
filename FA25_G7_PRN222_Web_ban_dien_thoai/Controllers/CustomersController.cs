@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
     public class CustomersController : Controller
@@ -137,7 +138,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
             return View(customer);
         }
 
-        // GET: Customers/Delete/5
+        /*// GET: Customers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -153,24 +154,49 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
             }
 
             return View(customer);
-        }
+        }*/
 
         // POST: Customers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        /* [HttpPost, ActionName("Delete")]
+         [ValidateAntiForgeryToken]*/
+
+        /* public async Task<IActionResult> DeleteConfirmed(int id)
+         {
+             var customer = await _context.Customers.FindAsync(id);
+             if (customer != null)
+             {
+                 customer.Status = -1;
+                 _context.Customers.Update(customer);
+                 await _context.SaveChangesAsync();
+             }
+
+
+             return RedirectToAction(nameof(Index));
+         }*/
+
+        public IActionResult Delete(int id)
         {
-            var customer = await _context.Customers.FindAsync(id);
-            if (customer != null)
+            var customer = _context.Customers.FirstOrDefault(c => c.CustomerId == id);
+            if (customer == null)
             {
-                customer.Status = -1;
-                _context.Customers.Update(customer);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
 
+            // Nếu tài khoản đã bị xóa mềm (-1), không cho xóa lại
+            if (customer.Status == -1)
+            {
+                TempData["Error"] = "Khách hàng này đã bị xóa mềm, không thể xóa lại.";
+                return RedirectToAction(nameof(Index));
+            }
 
+            // Soft delete
+            customer.Status = -1;
+            _context.SaveChanges();
+
+            TempData["Success"] = "Xóa khách hàng thành công.";
             return RedirectToAction(nameof(Index));
         }
+
 
         private bool CustomerExists(int id)
         {
@@ -224,7 +250,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
          }*/
 
         // CustomersController.cs
-        public async Task<IActionResult> Index(string searchString)
+       /* public async Task<IActionResult> Index(string searchString)
         {
             List<Customer> customers;
 
@@ -244,15 +270,39 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 
             ViewData["CurrentFilter"] = searchString; // để giữ giá trị search trong textbox
             return View(customers);
-        }
+        }*/
 
-
+        
         [HttpGet]
         public JsonResult SuggestCustomer(string term)
         {
             var suggestions = _service.Suggest(term);
             return Json(suggestions);
         }
+
+        public async Task<IActionResult> Index(string searchString, int page = 1, int pageSize = 10)
+        {
+            IQueryable<Customer> customersQuery = _context.Customers.Where(c => c.Status >= 0);
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                customersQuery = customersQuery.Where(c => c.FullName.Contains(searchString));
+            }
+
+            int totalCustomers = await customersQuery.CountAsync();
+            var customers = await customersQuery
+                                .OrderBy(c => c.FullName)
+                                .Skip((page - 1) * pageSize)
+                                .Take(pageSize)
+                                .ToListAsync();
+
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["CurrentPage"] = page;
+            ViewData["TotalPages"] = (int)Math.Ceiling((double)totalCustomers / pageSize);
+
+            return View(customers);
+        }
+
 
 
     }

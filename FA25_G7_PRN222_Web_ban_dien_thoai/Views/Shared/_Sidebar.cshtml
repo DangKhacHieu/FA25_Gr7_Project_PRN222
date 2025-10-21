@@ -1,0 +1,81 @@
+﻿@{
+    // TODO: Kiểm tra session quyền truy cập sau này
+    // var username = Context.Session.GetString("Username");
+    // bool isAdmin = username == "admin";
+    // string dashboardUrl = isAdmin ? "/HomeDashBoard_Admin" : "/Top_selling";
+}
+
+<!-- Bootstrap & Fonts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
+
+<!-- Custom Sidebar CSS -->
+<link rel="stylesheet" href="~/css/Sidebar.css" />
+<!-- Toggle Button -->
+<button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Admin Portal</span>
+        </div>
+    </div>
+
+  @*
+       <div class="menu-category">Main Navigation</div>
+    <a href="@dashboardUrl" class="active">
+        <i class="fas fa-home"></i> Dashboard
+    </a>
+
+  *@ 
+    <div class="menu-category">User Management</div>
+    <a href="/ListAccountStaff"
+       @* class="@(isAdmin ? "" : "disabled")" *@>
+        <i class="fas fa-user-tie"></i> Manage Staff
+    </a>
+    <a href="/listAccountCustomer"
+       @* class="@(isAdmin ? "" : "disabled")" *@>
+        <i class="fas fa-users"></i> Manage Customers
+    </a>
+
+    <div class="menu-category">Shop Management</div>
+    <a href="/listProductsForAdmin"
+       @* class="@(isAdmin ? "" : "disabled")" *@>
+        <i class="fas fa-box"></i> Manage Products
+    </a>
+    <a href="/listOrderAdmin">
+        <i class="fas fa-shopping-cart"></i> Manage Orders
+    </a>
+    <a href="/ListInventory"
+       @* class="@(isAdmin ? "" : "disabled")" *@>
+        <i class="fas fa-warehouse"></i> Manage Inventory
+    </a>
+
+    <div class="menu-category">Business Insights</div>
+    <a href="/feedback">
+        <i class="fas fa-comment-dots"></i> Customer Feedback
+    </a>
+    <a href="/Revenue"
+       @* class="@(isAdmin ? "" : "disabled")" *@>
+        <i class="fas fa-chart-line"></i> Revenue Analytics
+    </a>
+
+    <div class="menu-category">Account</div>
+    <a href="/viewProfileStaff"
+       @* class="@(isAdmin ? "disabled" : "")" *@>
+        <i class="fas fa-user-circle"></i> My Profile
+    </a>
+    <a href="javascript:void(0);" class="fw-bold" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+    </a>
+</div>
+
+</div>
+
+<!-- Custom Sidebar JS -->
+<script src="~/js/Sidebar.js"></script>

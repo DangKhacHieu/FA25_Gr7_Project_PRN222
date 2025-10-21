@@ -13,3 +13,18 @@ D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\refint\DAL.d
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.pdb
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\HocKi7\PRN222\Project PRN\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\HocKi7\PRN222\Project PRN\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\HocKi7\PRN222\Project PRN\DAL\bin\Debug\net8.0\DAL.dll
+D:\HocKi7\PRN222\Project PRN\DAL\bin\Debug\net8.0\DAL.pdb
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.dll
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.pdb
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\HocKi7\PRN222\Project PRN\DAL\obj\Debug\net8.0\ref\DAL.dll

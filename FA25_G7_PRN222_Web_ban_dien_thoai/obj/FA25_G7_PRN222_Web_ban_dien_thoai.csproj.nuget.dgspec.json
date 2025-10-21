@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj": {}
+    "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj": {}
   },
   "projects": {
-    "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj": {
+    "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj",
+        "projectUniqueName": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\obj\\",
+        "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\VivoBook\\.nuget\\packages\\",
+        "outputPath": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj"
+              "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj"
               }
             }
           }
@@ -104,24 +103,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj": {
+    "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\obj\\",
+        "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\VivoBook\\.nuget\\packages\\",
+        "outputPath": "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -130,7 +129,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -204,24 +202,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj": {
+    "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
+        "projectUniqueName": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
         "projectName": "FA25_G7_PRN222_Web_ban_dien_thoai",
-        "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\obj\\",
+        "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
+        "packagesPath": "C:\\Users\\VivoBook\\.nuget\\packages\\",
+        "outputPath": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -230,18 +228,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj": {
-                "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj"
+              "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj": {
+                "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj"
               },
-              "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj"
+              "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj"
               }
             }
           }
@@ -318,7 +315,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

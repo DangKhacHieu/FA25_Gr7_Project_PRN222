@@ -5084,23 +5084,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {},
+    "C:\\Users\\VivoBook\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj",
+      "projectUniqueName": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\obj\\",
+      "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\BLL.csproj",
+      "packagesPath": "C:\\Users\\VivoBook\\.nuget\\packages\\",
+      "outputPath": "D:\\HocKi7\\PRN222\\Project PRN\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VivoBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5109,15 +5109,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj"
+            "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\HocKi7\\PRN222\\Project PRN\\DAL\\DAL.csproj"
             }
           }
         }
@@ -5187,8 +5186,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

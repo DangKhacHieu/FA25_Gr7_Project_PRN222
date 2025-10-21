@@ -1,0 +1,231 @@
+﻿/* ===== GENERAL ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    position: relative;
+    margin-left: 280px; /*khớp với sidebar */
+   padding: 40px 50px;
+  min-height: 100vh;
+    transition: margin-left 0.3s ease;
+    background-color: #f8f9fb;
+    box-sizing: border-box;
+}
+
+    .main-content h2 {
+        font-weight: 600;
+        color: #1e2a3a;
+        display: flex;
+        align-items: center;
+        margin-top: 0; /* tránh bị đẩy xuống */
+    }
+
+        .main-content h2 i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+/* ===== SEARCH BOX ===== */
+.input-group {
+    max-width: 500px;
+}
+
+#searchBox {
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+    #searchBox:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    }
+
+/* ===== CREATE BUTTON ===== */
+.btn-primary {
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+        transform: translateY(-2px);
+    }
+
+/* ===== TABLE ===== */
+table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+thead th {
+    background-color: #f1f3f5;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
+}
+
+tbody td {
+    vertical-align: middle;
+    font-size: 15px;
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #f9fafc;
+    transition: 0.2s;
+}
+
+/* ===== AVATAR ===== */
+td img {
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+
+/* ===== BADGES ===== */
+.badge {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+    .badge.bg-success {
+        background-color: #28a745 !important;
+    }
+
+    .badge.bg-danger {
+        background-color: #dc3545 !important;
+    }
+
+    .badge.bg-secondary {
+        background-color: #6c757d !important;
+    }
+
+/* ===== ACTION BUTTONS ===== */
+.btn-group .btn {
+    border: none;
+    margin: 0 3px;
+    border-radius: 6px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+    footer a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+/* ===== AUTOCOMPLETE DROPDOWN (jQuery UI) ===== */
+.ui-autocomplete {
+    position: absolute !important;
+    z-index: 2000 !important;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 5px 0;
+    list-style: none;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-left: 3rem; /* để tránh đè nút search bên trái */
+}
+
+    .ui-autocomplete li {
+        padding: 8px 12px;
+        font-size: 15px;
+        cursor: pointer;
+        color: #333;
+        transition: background 0.2s;
+    }
+
+        .ui-autocomplete li:hover {
+            background-color: #f1f3f5;
+        }
+
+/* Khi ô search được focus */
+#searchBox:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== PAGINATION FIXED ===== */
+.pagination-wrapper {
+    position: fixed; /* Cố định ở màn hình */
+    bottom: 0; /* Cạnh dưới */
+    left: 280px; /* Khớp với sidebar */
+    right: 0;
+    background-color: #f8f9fb; /* Giống màu main-content */
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000; /* Luôn trên các thành phần khác */
+}
+
+    .pagination-wrapper .pagination {
+        margin-bottom: 0; /* Loại bỏ margin mặc định */
+    }
+
