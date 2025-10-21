@@ -1,11 +1,13 @@
 ﻿
-using DAL.Data;
-using DAL.Repositories;
-using DAL.Models;
-using BLL.Services;
-using Microsoft.EntityFrameworkCore;
-using DAL.IRepositories;
+using BLL.Interfaces;
 using BLL.IServices;
+using BLL.Services;
+using DAL.Data;
+using DAL.Interfaces;
+using DAL.IRepositories;
+using DAL.Models;
+using DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +23,12 @@ builder.Services.AddDbContext<PhoneContext>(options =>
 builder.Services.AddScoped<ICustomerRepository, DAL.Repositories.CustomerRepository>(); // ✅ THÊM DÒNG NÀY
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<CustomerService>();
+
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<ICartService, CartService>();
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 

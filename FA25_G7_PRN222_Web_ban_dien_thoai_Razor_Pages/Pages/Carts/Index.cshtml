@@ -1,0 +1,49 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts.IndexModel
+@{
+    ViewData["Title"] = "Giỏ hàng của bạn";
+}
+
+<h2>🛒 Giỏ hàng của bạn</h2>
+
+@if (Model.UserCart == null || Model.UserCart.CartItems.Count == 0)
+{
+    <p>Giỏ hàng của bạn hiện đang trống.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.UserCart.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.ProductName</td>
+                    <td>
+                        <form method="post" asp-page="Update">
+                            <input type="hidden" name="CartItemId" value="@item.CartItemId" />
+                            <input type="number" name="Quantity" value="@item.Quantity" min="1" class="form-control-sm" style="width:80px" />
+                            <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                        </form>
+                    </td>
+                    <td>@item.SubTotal.ToString("N0") đ</td>
+                    <td>
+                        <form method="post" asp-page="Remove">
+                            <input type="hidden" name="CartItemId" value="@item.CartItemId" />
+                            <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4 class="mt-3">Tổng tiền: <b>@Model.UserCart.TotalPrice.ToString("N0") đ</b></h4>
+}
