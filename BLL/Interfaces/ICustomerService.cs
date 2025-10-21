@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Models;
 
-namespace BLL
+namespace BLL.IServices
 {
     public interface ICustomerService
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL.Data;
+using DAL.IRepositories;
 using DAL.Models;
 
 namespace DAL.Repositories

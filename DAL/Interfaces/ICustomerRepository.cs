@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Models;
 
-namespace DAL
+namespace DAL.IRepositories
 {
     public interface ICustomerRepository
     {
