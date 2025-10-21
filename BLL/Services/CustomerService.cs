@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.IServices;
 using DAL.Data;
-using DAL.IRepositories;
+using DAL.Interfaces;
 using DAL.Models;
 using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;

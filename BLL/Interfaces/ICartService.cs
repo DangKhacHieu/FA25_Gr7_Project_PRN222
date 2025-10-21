@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BLL.Common;
 using DAL.Models;
 
 namespace BLL.Interfaces
@@ -10,8 +6,8 @@ namespace BLL.Interfaces
     public interface ICartService
     {
         Task<Cart?> GetCartAsync(int customerId);
-        Task AddToCartAsync(int customerId, int productId, int quantity);
-        Task UpdateCartItemAsync(int cartItemId, int quantity);
+        Task<OperationResult> AddToCartWithCheckAsync(int customerId, int productId, int quantity);
+        Task<OperationResult> UpdateCartItemWithCheckAsync(int cartItemId, int quantity);
         Task RemoveCartItemAsync(int cartItemId);
     }
 }

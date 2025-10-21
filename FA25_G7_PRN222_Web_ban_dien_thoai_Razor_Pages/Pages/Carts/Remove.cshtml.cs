@@ -1,4 +1,4 @@
-using BLL.Interfaces;
+﻿using BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,7 +17,8 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
         public async Task<IActionResult> OnPostAsync()
         {
             await _cartService.RemoveCartItemAsync(CartItemId);
-            return RedirectToPage("Index");
+            TempData["Message"] = "✅ Đã xóa sản phẩm khỏi giỏ hàng!";
+            return RedirectToPage("/Carts/Index");
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL.Data;
+﻿using DAL.Data;
 using DAL.Interfaces;
 using DAL.Models;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +19,14 @@ namespace DAL.Repositories
                 .Include(c => c.CartItems)
                 .ThenInclude(i => i.Product)
                 .FirstOrDefaultAsync(c => c.CustomerId == customerId);
+        }
+
+        public async Task<CartItem?> GetCartItemByIdAsync(int cartItemId)
+        {
+            return await _context.CartItems
+                .Include(ci => ci.Product)
+                .Include(ci => ci.Cart)
+                .FirstOrDefaultAsync(ci => ci.CartItemId == cartItemId);
         }
 
         public async Task AddToCartAsync(int customerId, int productId, int quantity)
@@ -65,18 +68,17 @@ namespace DAL.Repositories
             var item = await _context.CartItems
                 .Include(i => i.Product)
                 .Include(i => i.Cart)
-                .ThenInclude(c => c.CartItems)
                 .FirstOrDefaultAsync(i => i.CartItemId == cartItemId);
 
             if (item != null && item.Product != null && item.Cart != null)
             {
-                // Cập nhật lại số lượng và SubTotal của sản phẩm trong giỏ
                 item.Quantity = quantity;
                 item.SubTotal = quantity * (item.Product.Price ?? 0);
 
-                // ✅ Cập nhật lại tổng tiền của giỏ hàng
-                item.Cart.TotalPrice = item.Cart.CartItems.Sum(ci =>
-                    (ci.CartItemId == item.CartItemId ? item.SubTotal : ci.SubTotal));
+                // ✅ Cập nhật lại tổng tiền giỏ hàng
+                item.Cart.TotalPrice = await _context.CartItems
+                    .Where(ci => ci.CartId == item.CartId)
+                    .SumAsync(ci => ci.SubTotal);
 
                 await _context.SaveChangesAsync();
             }

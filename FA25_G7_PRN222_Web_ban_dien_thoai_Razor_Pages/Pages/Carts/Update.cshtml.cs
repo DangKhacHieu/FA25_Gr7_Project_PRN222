@@ -1,4 +1,4 @@
-using BLL.Interfaces;
+﻿using BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,7 +17,14 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 
         public async Task<IActionResult> OnPostAsync()
         {
-            await _cartService.UpdateCartItemAsync(CartItemId, Quantity);
+            var result = await _cartService.UpdateCartItemWithCheckAsync(CartItemId, Quantity);
+
+            TempData["Message"] = result.Message;
+            if (result.Success)
+                TempData["Message_success"] = true;
+            else
+                TempData["Message_alert"] = true;
+
             return RedirectToPage("Index");
         }
     }

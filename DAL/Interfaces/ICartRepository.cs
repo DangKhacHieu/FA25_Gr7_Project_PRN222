@@ -13,5 +13,7 @@ namespace DAL.Interfaces
         Task AddToCartAsync(int customerId, int productId, int quantity);
         Task UpdateCartItemAsync(int cartItemId, int quantity);
         Task RemoveCartItemAsync(int cartItemId);
+
+        Task<CartItem?> GetCartItemByIdAsync(int cartItemId);
     }
 }

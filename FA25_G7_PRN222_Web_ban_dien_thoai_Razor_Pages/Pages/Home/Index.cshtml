@@ -1,0 +1,39 @@
+﻿@page
+@using DAL.Models
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Home.IndexModel
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<h2 class="text-center my-4">📱 Danh sách sản phẩm</h2>
+
+@if (Model.Products == null || !Model.Products.Any())
+{
+    <p class="text-center">Không có sản phẩm nào.</p>
+}
+else
+{
+    <div class="row">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success">@TempData["Message"]</div>
+        }
+        @foreach (var p in Model.Products)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm">
+                    <img src="@p.ImageURL" class="card-img-top" alt="@p.ProductName" style="height:200px;object-fit:cover;">
+                    <div class="card-body">
+                        <h6 class="card-title text-truncate">@p.ProductName</h6>
+                        <p class="card-text text-danger fw-bold">@p.Price?.ToString("N0") đ</p>
+
+                        <form method="post" asp-page="/Carts/Add">
+                            <input type="hidden" name="ProductID" value="@p.ProductID" />
+                            <button type="submit" class="btn btn-sm btn-success w-100">🛒 Thêm vào giỏ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

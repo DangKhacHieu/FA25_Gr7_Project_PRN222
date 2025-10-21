@@ -4,7 +4,6 @@ using BLL.IServices;
 using BLL.Services;
 using DAL.Data;
 using DAL.Interfaces;
-using DAL.IRepositories;
 using DAL.Models;
 using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +19,7 @@ builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
 
 // 🧠 Inject tầng BLL
-builder.Services.AddScoped<ICustomerRepository, DAL.Repositories.CustomerRepository>(); // ✅ THÊM DÒNG NÀY
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>(); // ✅ THÊM DÒNG NÀY
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<CustomerService>();
 
@@ -49,5 +48,9 @@ app.UseAuthorization();
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
-
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Home");
+    return Task.CompletedTask;
+});
 app.Run();
