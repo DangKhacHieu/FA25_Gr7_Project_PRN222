@@ -276,7 +276,11 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
         [HttpGet]
         public JsonResult SuggestCustomer(string term)
         {
-            var suggestions = _service.Suggest(term);
+            var suggestions = _context.Customers
+          .Where(c => c.Status >= 0 && c.FullName.Contains(term))
+          .Select(c => c.FullName)
+          .Take(10)
+          .ToList();
             return Json(suggestions);
         }
 
@@ -290,18 +294,35 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
             }
 
             int totalCustomers = await customersQuery.CountAsync();
+
+            // Tính số trang
+            int totalPages = totalCustomers > 0
+                ? (int)Math.Ceiling((double)totalCustomers / pageSize)
+                : 0;
+
+            // Nếu page hiện tại > totalPages, reset về trang cuối
+            if (page > totalPages) page = totalPages == 0 ? 1 : totalPages;
+
             var customers = await customersQuery
-                                .OrderBy(c => c.FullName)
-                                .Skip((page - 1) * pageSize)
-                                .Take(pageSize)
-                                .ToListAsync();
+                .OrderBy(c => c.FullName)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
 
             ViewData["CurrentFilter"] = searchString;
             ViewData["CurrentPage"] = page;
-            ViewData["TotalPages"] = (int)Math.Ceiling((double)totalCustomers / pageSize);
+            ViewData["TotalPages"] = totalPages;
+
+            if (!string.IsNullOrEmpty(searchString) && totalCustomers == 0)
+            {
+                ViewData["NoResultsMessage"] = $"Không tìm thấy kết quả cho '{searchString}'.";
+            }
 
             return View(customers);
         }
+
+
+
 
 
 
