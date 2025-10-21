@@ -14,9 +14,17 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 
         public async Task<IActionResult> OnPostAsync()
         {
-            int customerId = 1;
-            var result = await _cartService.AddToCartWithCheckAsync(customerId, ProductID, Quantity);
+            int? customerId = 1;
+            // ✅ Check session
+            //int? customerId = HttpContext.Session.GetInt32("CustomerId");
+            //if (customerId == null)
+            //{
+            //    TempData["Message_alert"] = true;
+            //    TempData["Message"] = "⚠️ Vui lòng đăng nhập để thêm sản phẩm vào giỏ hàng.";
+            //    return RedirectToPage("/Account/Login");
+            //}
 
+            var result = await _cartService.AddToCartWithCheckAsync(customerId.Value, ProductID, Quantity);
             TempData["Message"] = result.Message;
             if (result.Success)
                 TempData["Message_success"] = true;

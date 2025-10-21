@@ -44,13 +44,13 @@ else
             }
         </tbody>
     </table>
-    @if (TempData["Message_success"] != null)
-    {
-        <div class="alert alert-success">@TempData["Message"]</div>
-    }
-    @if (TempData["Message_alert"] != null)
-    {
-        <div class="alert alert-warning">@TempData["Message"]</div>
-    }
     <h4 class="mt-3">Tổng tiền: <b>@Model.UserCart.TotalPrice.ToString("N0") đ</b></h4>
+}
+@if (TempData["Message_success"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+@if (TempData["Message_alert"] != null)
+{
+    <div class="alert alert-warning">@TempData["Message"]</div>
 }

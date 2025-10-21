@@ -16,9 +16,20 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 
         public async Task<IActionResult> OnPostAsync()
         {
+            // ✅ Check session
+            //int? customerId = HttpContext.Session.GetInt32("CustomerId");
+            //if (customerId == null)
+            //{
+            //    TempData["Message_alert"] = true;
+            //    TempData["Message"] = "⚠️ Bạn cần đăng nhập để thao tác với giỏ hàng.";
+            //    return RedirectToPage("/Account/Login");
+            //}
+
             await _cartService.RemoveCartItemAsync(CartItemId);
-            TempData["Message"] = "✅ Đã xóa sản phẩm khỏi giỏ hàng!";
-            return RedirectToPage("/Carts/Index");
+            TempData["Message"] = "🗑️ Đã xóa sản phẩm khỏi giỏ hàng.";
+            TempData["Message_success"] = true;
+
+            return RedirectToPage("Index");
         }
     }
 }
