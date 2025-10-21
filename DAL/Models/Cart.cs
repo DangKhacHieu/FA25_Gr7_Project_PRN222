@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Cart
+    public partial class Cart
     {
-        public int CartID { get; set; }
-        public int? CustomerID { get; set; }
-        public int? ProductID { get; set; }
-        public decimal? TotalPrice { get; set; }
+        public int CartId { get; set; }
+        public int CustomerId { get; set; }
+        public decimal TotalPrice { get; set; }
 
-        // Navigation properties (nếu bạn dùng Entity Framework)
-        public Customer? Customer { get; set; }
-        public Product? Product { get; set; }
+        public virtual Customer Customer { get; set; } = null!;
+        public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
     }
 }
