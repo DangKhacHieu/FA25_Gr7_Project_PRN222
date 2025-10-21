@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Project_PRN222\BLL\BLL.csproj" />
-    <ProjectReference Include="..\..\Project_PRN222\DAL\DAL.csproj" />
+    <ProjectReference Include="..\..\FA25_Gr7_Project_PRN222\BLL\BLL.csproj" />
+    <ProjectReference Include="..\..\FA25_Gr7_Project_PRN222\DAL\DAL.csproj" />
   </ItemGroup>
 
 </Project>

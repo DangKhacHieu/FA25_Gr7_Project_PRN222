@@ -13,3 +13,33 @@ D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\refint\DAL.d
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.pdb
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.pdb
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.pdb
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\FPT FALL25\PRN_222_Nhonss\Project_PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\bin\Debug\net8.0\DAL.pdb
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.pdb
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\FPT FALL25\PRN_222_Nhonss\Razor\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\ref\DAL.dll
