@@ -19,7 +19,7 @@ namespace DAL.Data
         //public DbSet<Order_List> Order_Lists { get; set; } = default!;
         public DbSet<Product> Products { get; set; } = default!;
         //public DbSet<Reply_Feedback> Reply_Feedbacks { get; set; } = default!;
-        //public DbSet<Staff> Staffs { get; set; } = default!;
+        public DbSet<Staff> Staffs { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,7 +35,7 @@ namespace DAL.Data
             //modelBuilder.Entity<Order_List>().ToTable("Order_List");
             modelBuilder.Entity<Product>().ToTable("Product");
             //modelBuilder.Entity<Reply_Feedback>().ToTable("Reply_Feedback");
-            //modelBuilder.Entity<Staff>().ToTable("Staff");
+            modelBuilder.Entity<Staff>().ToTable("Staff");
         }
     }
 }
