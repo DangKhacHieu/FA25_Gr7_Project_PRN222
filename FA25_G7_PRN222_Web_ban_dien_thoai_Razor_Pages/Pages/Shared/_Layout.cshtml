@@ -12,27 +12,38 @@
 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" src"Home" asp-page="/Home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <header class="shadow-sm" style="background-color: #FFD400;">
+        <div class="container py-2 d-flex justify-content-between align-items-center">
+            <a class="fw-bold text-dark fs-5 text-decoration-none" asp-page="/Home/Index">📱 PhoneStore</a>
+
+            <form class="d-flex w-50" method="get" asp-page="/Products/Search">
+                <input class="form-control" name="q" placeholder="Tìm kiếm sản phẩm..." />
+                <button class="btn btn-dark ms-2">🔍</button>
+            </form>
+
+            <div class="d-flex align-items-center">
+                @if (User?.Identity?.IsAuthenticated ?? false)
+                {
+                    <a asp-page="/Account/Profile" class="text-dark text-decoration-none me-3">👤 @User.Identity.Name</a>
+                }
+                else
+                {
+                    <a asp-page="/Account/Login" class="btn btn-outline-dark btn-sm me-2">Đăng nhập</a>
+                }
+                <a asp-page="/Carts/Index" class="position-relative text-dark text-decoration-none fs-5">
+                    🛒
+                    @if (TempData["CartCount"] != null)
+                    {
+                        <span class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill">
+                            @TempData["CartCount"]
+                        </span>
+                    }
+                </a>
             </div>
-        </nav>
+        </div>
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

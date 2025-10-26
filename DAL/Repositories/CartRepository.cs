@@ -16,6 +16,7 @@ namespace DAL.Repositories
         public async Task<Cart?> GetCartByCustomerAsync(int customerId)
         {
             return await _context.Carts
+                .AsNoTracking()
                 .Include(c => c.CartItems)
                 .ThenInclude(i => i.Product)
                 .FirstOrDefaultAsync(c => c.CustomerId == customerId);
@@ -24,6 +25,7 @@ namespace DAL.Repositories
         public async Task<CartItem?> GetCartItemByIdAsync(int cartItemId)
         {
             return await _context.CartItems
+                .AsNoTracking()
                 .Include(ci => ci.Product)
                 .Include(ci => ci.Cart)
                 .FirstOrDefaultAsync(ci => ci.CartItemId == cartItemId);
@@ -37,8 +39,24 @@ namespace DAL.Repositories
             {
                 cart = new Cart { CustomerId = customerId, TotalPrice = 0, CartItems = new List<CartItem>() };
                 _context.Carts.Add(cart);
-                await _context.SaveChangesAsync();
+                var trackedCart = await _context.Carts
+                    .Include(c => c.CartItems)
+                    .FirstOrDefaultAsync(c => c.CustomerId == customerId);
+                if (trackedCart != null) cart = trackedCart;
+                else
+                {
+                    _context.Carts.Add(cart);
+                }
             }
+            else
+            {
+                // Lấy bản thể đang được theo dõi
+                var trackedCart = await _context.Carts
+                   .Include(c => c.CartItems)
+                   .FirstOrDefaultAsync(c => c.CartId == cart.CartId);
+                if (trackedCart != null) cart = trackedCart;
+            }
+
 
             var product = await _context.Products.FindAsync(productId);
             if (product == null) return;
@@ -67,20 +85,24 @@ namespace DAL.Repositories
         {
             var item = await _context.CartItems
                 .Include(i => i.Product)
-                .Include(i => i.Cart)
                 .FirstOrDefaultAsync(i => i.CartItemId == cartItemId);
 
-            if (item != null && item.Product != null && item.Cart != null)
+            if (item != null && item.Product != null)
             {
                 item.Quantity = quantity;
                 item.SubTotal = quantity * (item.Product.Price ?? 0);
 
-                // ✅ Cập nhật lại tổng tiền giỏ hàng
-                item.Cart.TotalPrice = await _context.CartItems
-                    .Where(ci => ci.CartId == item.CartId)
-                    .SumAsync(ci => ci.SubTotal);
-
                 await _context.SaveChangesAsync();
+
+                var cart = await _context.Carts.FindAsync(item.CartId);
+                if (cart != null)
+                {
+                    cart.TotalPrice = await _context.CartItems
+                        .Where(ci => ci.CartId == item.CartId)
+                        .SumAsync(ci => ci.SubTotal);
+
+                    await _context.SaveChangesAsync();
+                }
             }
         }
 
@@ -89,8 +111,21 @@ namespace DAL.Repositories
             var item = await _context.CartItems.FindAsync(cartItemId);
             if (item != null)
             {
+                var cartId = item.CartId;
+
                 _context.CartItems.Remove(item);
+
                 await _context.SaveChangesAsync();
+
+                var cart = await _context.Carts.FindAsync(cartId);
+                if (cart != null)
+                {
+                    cart.TotalPrice = await _context.CartItems
+                        .Where(ci => ci.CartId == cartId)
+                        .SumAsync(ci => ci.SubTotal);
+
+                    await _context.SaveChangesAsync();
+                }
             }
         }
     }
