@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BLL.Interfaces;
+using DAL.Interfaces;
+using DAL.Models;
+using DAL.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BLL.Interfaces;
-using DAL.Interfaces;
-using DAL.Models;
 
 namespace BLL.Services
 {
@@ -26,13 +27,27 @@ namespace BLL.Services
         public async Task<IEnumerable<Product>> SearchProductsAsync(string keyword)
             => await _productRepo.SearchByNameAsync(keyword);
 
-        public async Task AddProductAsync(Product product)
-            => await _productRepo.AddAsync(product);
+        public async Task CreateProductAsync(Product product)
+        {
+            product.Quantity_Product = 0;
+            product.Quantity_Sell = 0;
+            product.IsDelete = 0;
+            await _productRepo.AddAsync(product);
+        }
 
         public async Task UpdateProductAsync(Product product)
-            => await _productRepo.UpdateAsync(product);
+        {
+            await _productRepo.UpdateAsync(product);
+        }
 
         public async Task DeleteProductAsync(int id)
-            => await _productRepo.DeleteAsync(id);
+        {
+            await _productRepo.DeleteAsync(id);
+        }
+
+        public async Task<bool> ProductExistsAsync(int id)
+        {
+            return await _productRepo.ExistsAsync(id);
+        }
     }
 }

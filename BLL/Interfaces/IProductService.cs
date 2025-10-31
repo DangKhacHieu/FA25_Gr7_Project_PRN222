@@ -12,8 +12,9 @@ namespace BLL.Interfaces
         Task<IEnumerable<Product>> GetAllProductsAsync();
         Task<Product?> GetProductByIdAsync(int id);
         Task<IEnumerable<Product>> SearchProductsAsync(string keyword);
-        Task AddProductAsync(Product product);
+        Task CreateProductAsync(Product product);
         Task UpdateProductAsync(Product product);
         Task DeleteProductAsync(int id);
+        Task<bool> ProductExistsAsync(int id);
     }
 }

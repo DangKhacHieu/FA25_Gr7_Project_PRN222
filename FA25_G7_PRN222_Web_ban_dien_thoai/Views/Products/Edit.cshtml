@@ -1,0 +1,374 @@
+﻿@model DAL.Models.Product
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Sản Phẩm";
+}
+
+<style>
+    .page-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+    .form-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-info-custom {
+        background: #e7f3ff;
+        border-left: 4px solid #667eea;
+        padding: 15px 20px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: start;
+        gap: 12px;
+    }
+
+        .alert-info-custom i {
+            color: #667eea;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .alert-info-custom p {
+            margin: 0;
+            color: #1a1f3a;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+    .section-divider {
+        border-top: 2px solid #f0f0f0;
+        margin: 30px 0;
+        position: relative;
+    }
+
+        .section-divider span {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #fff;
+            padding: 0 15px;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-weight: 600;
+            color: #2d3561;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 14px;
+        }
+
+    .form-control {
+        border: 2px solid #e8eef5;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+        }
+
+        .form-control:disabled,
+        .form-control[readonly] {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+
+    .readonly-badge {
+        display: inline-block;
+        background: #fff3cd;
+        color: #856404;
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-left: 8px;
+        font-weight: 600;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+    .btn-secondary {
+        background: #f5f7fa;
+        color: #6c757d;
+        border: 2px solid #e8eef5;
+    }
+
+        .btn-secondary:hover {
+            background: #e8eef5;
+        }
+
+    .form-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 2px solid #f0f0f0;
+    }
+</style>
+
+<div class="page-header">
+    <h1><i class="bi bi-pencil-square"></i> Chỉnh Sửa Sản Phẩm</h1>
+</div>
+
+<div class="form-card">
+    <div class="alert-info-custom">
+        <i class="bi bi-info-circle-fill"></i>
+        <p>
+            <strong>Lưu ý:</strong> Các trường có dấu <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+            là thông tin nhận diện sản phẩm và không thể thay đổi để đảm bảo tính nhất quán của dữ liệu.
+        </p>
+    </div>
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <input type="hidden" asp-for="ProductID" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ProductName">
+                        Tên sản phẩm
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="ProductName" class="form-control" readonly />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Brand">
+                        Thương hiệu
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Brand" class="form-control" readonly />
+                    <span asp-validation-for="Brand" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Price">Giá (VNĐ)</label>
+                    <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Color">Màu sắc</label>
+                    <input asp-for="Color" class="form-control" />
+                    <span asp-validation-for="Color" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="Size">
+                        Kích thước
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Size" class="form-control" readonly />
+                    <span asp-validation-for="Size" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ImageURL">URL hình ảnh</label>
+            <input asp-for="ImageURL" class="form-control" placeholder="https://..." />
+            <span asp-validation-for="ImageURL" class="text-danger"></span>
+        </div>
+
+        <div class="section-divider"><span>Cấu hình</span></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Chip_name">
+                        Chip
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Chip_name" class="form-control" readonly />
+                    <span asp-validation-for="Chip_name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="GPU_name">GPU</label>
+                    <input asp-for="GPU_name" class="form-control" />
+                    <span asp-validation-for="GPU_name" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Ram">
+                        RAM
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Ram" class="form-control" readonly />
+                    <span asp-validation-for="Ram" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Rom">
+                        Bộ nhớ
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Rom" class="form-control" readonly />
+                    <span asp-validation-for="Rom" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"><span>Màn hình</span></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Screen_resolution">Độ phân giải</label>
+                    <input asp-for="Screen_resolution" class="form-control" />
+                    <span asp-validation-for="Screen_resolution" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Refresh_rate">Tần số quét</label>
+                    <input asp-for="Refresh_rate" class="form-control" />
+                    <span asp-validation-for="Refresh_rate" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"><span>Camera</span></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Camera_Front">Camera trước</label>
+                    <input asp-for="Camera_Front" class="form-control" />
+                    <span asp-validation-for="Camera_Front" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Camera_Behind">Camera sau</label>
+                    <input asp-for="Camera_Behind" class="form-control" />
+                    <span asp-validation-for="Camera_Behind" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"><span>Hệ điều hành</span></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Operating_System_name">
+                        Hệ điều hành
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Operating_System_name" class="form-control" readonly />
+                    <span asp-validation-for="Operating_System_name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Operating_system_version">Phiên bản</label>
+                    <input asp-for="Operating_system_version" class="form-control" />
+                    <span asp-validation-for="Operating_system_version" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"><span>Kho hàng</span></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Quantity_Product">Số lượng trong kho</label>
+                    <input asp-for="Quantity_Product" class="form-control" type="number" min="0" />
+                    <span asp-validation-for="Quantity_Product" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Quantity_Sell">
+                        Đã bán
+                        <span class="readonly-badge">KHÔNG THỂ SỬA</span>
+                    </label>
+                    <input asp-for="Quantity_Sell" class="form-control" type="number" readonly />
+                    <span asp-validation-for="Quantity_Sell" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-check-circle"></i> Lưu thay đổi
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Hủy bỏ
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
