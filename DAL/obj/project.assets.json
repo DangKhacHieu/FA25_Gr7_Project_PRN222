@@ -5067,11 +5067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FA25_Gr7_Project_PRN222\\Project_PRN222\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Project_PRN222\\Project_PRN222\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\FA25_Gr7_Project_PRN222\\Project_PRN222\\DAL\\DAL.csproj",
+      "projectPath": "D:\\Project_PRN222\\Project_PRN222\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\FA25_Gr7_Project_PRN222\\Project_PRN222\\DAL\\obj\\",
+      "outputPath": "D:\\Project_PRN222\\Project_PRN222\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
