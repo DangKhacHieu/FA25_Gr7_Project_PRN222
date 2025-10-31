@@ -42,3 +42,18 @@ D:\CHUYEN NGANH\FALL_2025\PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\re
 D:\CHUYEN NGANH\FALL_2025\PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.pdb
 D:\CHUYEN NGANH\FALL_2025\PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
 D:\CHUYEN NGANH\FALL_2025\PRN222\FA25_Gr7_Project_PRN222\DAL\obj\Debug\net8.0\ref\DAL.dll
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\bin\Debug\net8.0\DAL.dll
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\bin\Debug\net8.0\DAL.pdb
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.dll
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.pdb
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\FA25_Gr7_Project_PRN222\Project_PRN222\DAL\obj\Debug\net8.0\ref\DAL.dll

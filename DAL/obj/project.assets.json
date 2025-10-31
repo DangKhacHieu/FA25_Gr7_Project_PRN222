@@ -5061,23 +5061,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\FA25_Gr7_Project_PRN222\\Project_PRN222\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\DAL\\obj\\",
+      "projectPath": "D:\\FA25_Gr7_Project_PRN222\\Project_PRN222\\DAL\\DAL.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\FA25_Gr7_Project_PRN222\\Project_PRN222\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
