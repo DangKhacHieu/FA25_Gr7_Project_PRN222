@@ -1,0 +1,69 @@
+﻿@page
+@using DAL.Models
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Home.IndexModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div class="container mt-4">
+    <h4 class="fw-bold mb-3">Gợi ý cho bạn</h4>
+
+    @if (Model.Products == null || !Model.Products.Any())
+    {
+        <p class="text-center text-muted">Không có sản phẩm nào.</p>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var p in Model.Products)
+            {
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card shadow-sm border-0 h-100 hover-shadow transition"
+                         style="cursor:pointer;"
+                         onclick="window.location='@Url.Page("/Products/Details", new { id = p.ProductID })'">
+
+                        <img src="@p.ImageURL" class="card-img-top"
+                             alt="@p.ProductName"
+                             style="height:200px;object-fit:cover;">
+
+                        <div class="card-body">
+                            <h6 class="fw-bold text-truncate text-primary"
+                                onclick="window.location='@Url.Page("/Products/Details", new { id = p.ProductID })'">
+                                @p.ProductName
+                            </h6>
+
+                            <p class="text-danger fw-bold mb-1">
+                                @p.Price?.ToString("N0") đ
+                            </p>
+
+                            <p class="text-muted small mb-2">
+                                RAM: @p.Ram | ROM: @p.Rom
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-3">
+            <a class="btn btn-outline-secondary" asp-page="/Products/Index">Xem thêm sản phẩm</a>
+        </div>
+    }
+</div>
+
+<style>
+    /* Hiệu ứng hover đẹp như thegioididong */
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .transition {
+        transition: all 0.2s ease-in-out;
+    }
+
+    .text-truncate {
+        cursor: pointer;
+    }
+</style>

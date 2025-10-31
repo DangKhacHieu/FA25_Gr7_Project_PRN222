@@ -1,0 +1,81 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.ViewProfileModel
+@{
+    ViewData["Title"] = "Customer Profile";
+}
+
+<h2 class="text-center">Customer Profile</h2>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-success text-center">@Model.Message</div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success text-center">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div class="profile-container">
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Customer.CustomerId" />
+
+        <div class="form-group">
+            <label>Username:</label>
+            <input asp-for="Customer.UserName" class="form-control" readonly />
+        </div>
+
+        <div class="form-group">
+            <label>Full Name:</label>
+            <input asp-for="Customer.FullName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Email:</label>
+            <input asp-for="Customer.Email" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number:</label>
+            <input asp-for="Customer.PhoneNumber" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Address:</label>
+            <input asp-for="Customer.Address" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Sex:</label>
+            <select asp-for="Customer.Sex" class="form-control">
+                <option value="">-- Select --</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Date of Birth:</label>
+            <input asp-for="Customer.DOB" type="date" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-2">Update Profile</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Ẩn thông báo sau 3 giây
+        setTimeout(() => {
+            const msg = document.getElementById("successMessage");
+            if (msg) {
+                msg.style.transition = "opacity 0.5s";
+                msg.style.opacity = "0";
+                setTimeout(() => msg.remove(), 500);
+            }
+        }, 3000);
+    </script>
+}

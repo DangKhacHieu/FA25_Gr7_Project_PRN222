@@ -1,10 +1,13 @@
-﻿using System;
+﻿using DAL.Data;
+using DAL.Interfaces;
+using DAL.IRepositories;
+using DAL.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.Data;
-using DAL.Models;
 
 namespace DAL.Repositories
 {
@@ -35,6 +38,30 @@ namespace DAL.Repositories
                 .ToList();
         }
 
+        public Customer? GetByUsername(string username)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Customer? GetByEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Add(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Customer?> GetByIdAsync(int id)
+        {
+            return await _context.Customers.FirstOrDefaultAsync(c => c.CustomerId == id);
+        }
+
+        public async Task UpdateAsync(Customer customer)
+        {
+            _context.Customers.Update(customer);
+            await _context.SaveChangesAsync();
+        }
     }
 }

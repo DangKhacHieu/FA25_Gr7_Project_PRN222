@@ -1,0 +1,244 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts.IndexModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Giỏ hàng của bạn";
+}
+
+<div class="container my-4">
+    <h3 class="fw-bold mb-4">🛒 Giỏ hàng của bạn</h3>
+
+    <div id="toast-container" class="position-fixed top-0 end-0 p-3"></div>
+
+    @if (Model.UserCart == null || Model.UserCart.CartItems.Count == 0)
+    {
+        <div class="alert alert-info text-center">Giỏ hàng của bạn đang trống.</div>
+    }
+    else
+    {
+        @Html.AntiForgeryToken()
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
+                @foreach (var item in Model.UserCart.CartItems)
+                {
+                    <div class="row align-items-center border-bottom py-3">
+                        <div class="col-2">
+                            <img src="@item.Product.ImageURL"
+                                 class="img-fluid rounded"
+                                 alt="@item.Product.ProductName" />
+                        </div>
+
+                        <div class="col-4">
+                            <h6 class="fw-bold mb-1">@item.Product.ProductName</h6>
+                            <p class="text-muted small mb-1">
+                                RAM: @item.Product.Ram | ROM: @item.Product.Rom
+                                <br /><span class="text-muted small">Tồn kho: @item.Product.Quantity_Product</span>
+                            </p>
+                            <p class="fw-bold text-danger">@item.Product.Price?.ToString("N0") đ</p>
+                        </div>
+
+                        <div class="col-3 d-flex align-items-center">
+                            <form class="d-flex align-items-center" onsubmit="return false;">
+                                <input type="hidden" name="CartItemId" value="@item.CartItemId" />
+
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                        onclick="changeQty(this, -1)">
+                                        -
+                                </button>
+
+                                <input type="number" value="@item.Quantity"
+                                       class="form-control text-center mx-2 visible-qty"
+                                       style="width:90px"
+                                       data-id="@item.CartItemId"
+                                       data-quantity="@item.Quantity"
+                                       data-max="@item.Product.Quantity_Product"
+                                       onchange="sendUpdate(this)" />
+
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                        onclick="changeQty(this, +1)">
+                                    +
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="col-2 text-end fw-bold subtotal">@item.SubTotal.ToString("N0") đ</div>
+                        <div class="col-1 text-end">
+                            <div class="col-1 text-end">
+                                <form method="post" asp-page="Remove" class="form-delete">
+                                    <input type="hidden" name="CartItemId" value="@item.CartItemId" />
+                                    <button type="submit" class="btn btn-link text-danger p-0">🗑️</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="fw-bold">Tổng tiền:</span>
+                    <span class="fw-bold text-danger" id="cart-total">
+                        @Model.UserCart.TotalPrice.ToString("N0") đ
+                    </span>
+                </div>
+
+                <button class="btn btn-warning w-100 fw-bold py-2">Đặt hàng</button>
+            </div>
+        </div>
+    }
+</div>
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">🗑️ Xác nhận xóa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc muốn xóa sản phẩm này khỏi giỏ hàng?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger" id="btn-confirm-delete">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        // --- CÁC BIẾN VÀ KHỞI TẠO MODAL ---
+        let formToDelete = null;
+        const deleteModalElement = document.getElementById('deleteConfirmModal');
+        const deleteModal = new bootstrap.Modal(deleteModalElement);
+        const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+
+        // Gắn sự kiện cho các form xóa
+        document.querySelectorAll('.form-delete').forEach(form => {
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Ngăn submit
+                formToDelete = event.target; // Lưu lại form
+                deleteModal.show(); // Hiển thị modal
+            });
+        });
+
+        // Gắn sự kiện cho nút "Xóa" trong modal
+        btnConfirmDelete.addEventListener('click', async function () {
+            if (formToDelete) {
+                const cartItemId = formToDelete.querySelector('input[name="CartItemId"]').value;
+                const data = { CartItemId: cartItemId };
+
+                // Gọi JsonTask cho hành động Remove
+                await JsonTask("/Carts/Remove", data, formToDelete);
+
+                deleteModal.hide();
+                formToDelete = null;
+            }
+        });
+
+        // Xử lý khi người dùng nhấn "Hủy"
+        deleteModalElement.addEventListener('hidden.bs.modal', function () {
+            if (formToDelete) {
+                formToDelete = null;
+            }
+        });
+
+        async function JsonTask(url, data, contextElement) {
+            const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "X-Requested-With": "XMLHttpRequest",
+                        "RequestVerificationToken": token
+                    },
+                    body: new URLSearchParams(data)
+                });
+
+                const result = await response.json();
+
+                let toastType = result.success ? "success" : "warning";
+
+                if (result.success) {
+                    if (url.includes("Update")) {
+                        const input = contextElement;
+                        input.dataset.quantity = input.value;
+
+                        const row = input.closest(".row");
+                        const subtotalEl = row.querySelector(".subtotal");
+                        if (subtotalEl) subtotalEl.textContent = result.subtotal.toLocaleString("vi-VN") + " đ";
+                    }
+                    else if (url.includes("Remove")) {
+                        const form = contextElement;
+                        form.closest(".row").remove();
+                    }
+
+                    const totalEl = document.getElementById("cart-total");
+                    if (totalEl) totalEl.textContent = result.total.toLocaleString("vi-VN") + " đ";
+
+                    console.log("Total từ server:", result.total.toLocaleString("vi-VN") + " đ");
+                    if (document.querySelectorAll('.card-body .row').length === 0) {
+                        location.reload(); 
+                    }
+                }
+
+                showToast(result.message, toastType);
+
+            } catch (err) {
+                console.error("Lỗi JsonTask:", err);
+                showToast("⚠️ Lỗi kết nối máy chủ.", "danger");
+            }
+        }
+
+        async function sendUpdate(input) {
+            let baseQuantity = input.dataset.quantity;
+            let quantity = input.valueAsNumber;
+            const max = parseInt(input.dataset.max) || 9999;
+            const cartItemId = input.dataset.id;
+
+            if (Number.isNaN(quantity)) {
+                showToast("Lỗi: Số lượng không hợp lệ.", "danger");
+                input.value = baseQuantity;
+                return;
+            }
+
+            if (quantity < 1 || quantity > max) {
+                 input.value = baseQuantity;
+            }
+
+            if (quantity == baseQuantity) {
+                return;
+            }
+
+            const data = {
+                CartItemId: cartItemId,
+                Quantity: quantity
+            };
+            await JsonTask("/Carts/Update", data, input);
+        }
+
+        function changeQty(btn, delta) {
+            const input = btn.parentElement.querySelector(".visible-qty");
+            let value = parseInt(input.value) || 1;
+
+            value += delta;
+            input.value = value;
+            sendUpdate(input);
+        }
+
+        function showToast(message, type = "info") {
+            const toast = document.createElement("div");
+            toast.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 mt-3 me-3`;
+            toast.style.zIndex = 1050;
+            toast.innerHTML = `
+                <div>${message}</div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 1500);
+        }
+    </script>
+}

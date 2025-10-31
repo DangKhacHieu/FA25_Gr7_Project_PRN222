@@ -1,0 +1,104 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Customer Register";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/register.css" />
+}
+
+<div class="register-container">
+    <div class="register-card">
+        <h2 class="register-title">Create Customer Account</h2>
+        @if (!string.IsNullOrEmpty(Model.Message))
+        {
+            var alertClass = Model.Message.Contains("successful", StringComparison.OrdinalIgnoreCase)
+            ? "alert-success"
+            : "alert-error";
+
+            <div id="alert-message" class="alert-message @alertClass">
+                @Model.Message
+            </div>
+        }
+
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Input.UserName"></label>
+                <input asp-for="Input.UserName" class="form-control" placeholder="Enter username" />
+                <span asp-validation-for="Input.UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.FullName"></label>
+                <input asp-for="Input.FullName" class="form-control" placeholder="Enter full name" />
+                <span asp-validation-for="Input.FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" placeholder="example@gmail.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" type="password" class="form-control" placeholder="Enter password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.PhoneNumber"></label>
+                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="e.g. 0357629176" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Address"></label>
+                <input asp-for="Input.Address" class="form-control" placeholder="City, Province..." />
+                <span asp-validation-for="Input.Address" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.Sex"></label>
+                <select asp-for="Input.Sex" class="form-control">
+                    <option value="">-- Select --</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+                <span asp-validation-for="Input.Sex" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Input.DOB"></label>
+                <input asp-for="Input.DOB" type="date" class="form-control" />
+                <span asp-validation-for="Input.DOB" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+
+        <div class="text-center mt-3">
+            <p>Already have an account? <a href="/Login" class="login-link">Login here</a></p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // ✅ Tự động ẩn thông báo sau 3 giây
+        document.addEventListener("DOMContentLoaded", function () {
+            const alertBox = document.getElementById("alert-message");
+            if (alertBox) {
+                setTimeout(() => {
+                    alertBox.classList.add("fade-out");
+                    setTimeout(() => alertBox.style.display = "none", 1000);
+                }, 3000);
+            }
+        });
+    </script>
+}
