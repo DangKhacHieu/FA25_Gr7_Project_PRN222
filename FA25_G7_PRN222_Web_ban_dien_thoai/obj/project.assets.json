@@ -2922,41 +2922,6 @@
             "rid": "win"
           }
         }
-      },
-      "BLL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "DAL": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "9.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
-          "Microsoft.Extensions.Configuration": "9.0.10",
-          "Microsoft.Extensions.Configuration.Json": "9.0.10",
-          "Newtonsoft.Json": "13.0.4"
-        },
-        "compile": {
-          "bin/placeholder/BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.dll": {}
-        }
-      },
-      "DAL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.10",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
-          "Microsoft.Extensions.Configuration": "9.0.10",
-          "Microsoft.Extensions.Configuration.Json": "9.0.10",
-          "Newtonsoft.Json": "13.0.4"
-        },
-        "compile": {
-          "bin/placeholder/DAL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAL.dll": {}
-        }
       }
     }
   },
@@ -8067,22 +8032,12 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "BLL/1.0.0": {
-      "type": "project",
-      "path": "../BLL/BLL.csproj",
-      "msbuildProject": "../BLL/BLL.csproj"
-    },
-    "DAL/1.0.0": {
-      "type": "project",
-      "path": "../DAL/DAL.csproj",
-      "msbuildProject": "../DAL/DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "BLL >= 1.0.0",
-      "DAL >= 1.0.0",
+      "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\BLL\\BLL.csproj",
+      "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\DAL\\DAL.csproj",
       "Microsoft.EntityFrameworkCore >= 9.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.10",
@@ -8094,23 +8049,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huyen\\.nuget\\packages\\": {},
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
+      "projectUniqueName": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
       "projectName": "FA25_G7_PRN222_Web_ban_dien_thoai",
-      "projectPath": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-      "packagesPath": "C:\\Users\\huyen\\.nuget\\packages\\",
-      "outputPath": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\obj\\",
+      "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\huyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8126,11 +8081,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Code_PRN222\\Project_PRN222\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Code_PRN222\\Project_PRN222\\BLL\\BLL.csproj"
+            "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\BLL\\BLL.csproj"
             },
-            "D:\\Code_PRN222\\Project_PRN222\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Code_PRN222\\Project_PRN222\\DAL\\DAL.csproj"
+            "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\DAL\\DAL.csproj"
             }
           }
         }
@@ -8210,5 +8165,25 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\DAL\\DAL.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\DAL\\DAL.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\BLL\\BLL.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\Project_PRN222\\BLL\\BLL.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

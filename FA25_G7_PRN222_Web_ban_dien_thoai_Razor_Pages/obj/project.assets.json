@@ -5096,23 +5096,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huyen\\.nuget\\packages\\": {},
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
+      "projectUniqueName": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
       "projectName": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages",
-      "projectPath": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
-      "packagesPath": "C:\\Users\\huyen\\.nuget\\packages\\",
-      "outputPath": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\obj\\",
+      "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\huyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5128,11 +5128,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Code_PRN222\\Project_PRN222\\BLL\\BLL.csproj": {
-              "projectPath": "D:\\Code_PRN222\\Project_PRN222\\BLL\\BLL.csproj"
+            "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\BLL\\BLL.csproj"
             },
-            "D:\\Code_PRN222\\Project_PRN222\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\Code_PRN222\\Project_PRN222\\DAL\\DAL.csproj"
+            "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\CHUYEN NGANH\\FALL_2025\\PRN222\\FA25_Gr7_Project_PRN222\\DAL\\DAL.csproj"
             }
           }
         }
