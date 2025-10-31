@@ -16,12 +16,17 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 
         public async Task<IActionResult> OnPostAsync([FromForm] int CartItemId)
         {
-            int customerId = 1;
+            var customerId = HttpContext.Session.GetInt32("CustomerId");
+            if (customerId == null)
+            {
+                TempData["Message_alert"] = "Vui lòng đăng nhập để xóa sản phẩm.";
+                return RedirectToPage("/Login");
+            }
             await _cartService.RemoveCartItemAsync(CartItemId);
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
             {
-                var cart = await _cartService.GetCartAsync(customerId);
+                var cart = await _cartService.GetCartAsync(customerId.Value);
 
                 return new JsonResult(new
                 {

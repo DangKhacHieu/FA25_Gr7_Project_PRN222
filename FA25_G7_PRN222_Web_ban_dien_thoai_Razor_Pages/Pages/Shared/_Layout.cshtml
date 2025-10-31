@@ -1,6 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var customerName = HttpContextAccessor.HttpContext?.Session.GetString("CustomerName");
+}
+<!DOCTYPE html>
 <html lang="en">
-     @RenderSection("Styles", required: false)
+    @RenderSection("Styles", required: false)
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,14 +28,25 @@
             </form>
 
             <div class="d-flex align-items-center">
-                @if (User?.Identity?.IsAuthenticated ?? false)
+                @if (customerName != null)
                 {
-                    <a asp-page="/Account/Profile" class="text-dark text-decoration-none me-3">👤 @User.Identity.Name</a>
+                    <div class="dropdown me-3">
+                        <a class="nav-link dropdown-toggle text-dark text-decoration-none fw-bold" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            👤 Chào, @customerName
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" asp-page="/ViewProfile">Thông tin cá nhân</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-page="/Logout">Đăng xuất</a></li>
+                        </ul>
+                    </div>
                 }
                 else
                 {
-                    <a asp-page="/Account/Login" class="btn btn-outline-dark btn-sm me-2">Đăng nhập</a>
+                    <a asp-page="/Login" class="btn btn-outline-dark btn-sm me-2">Đăng nhập</a>
+                    <a asp-page="/Register" class="btn btn-outline-dark btn-sm me-2">Đăng ký</a>
                 }
+
                 <a asp-page="/Carts/Index" class="position-relative text-dark text-decoration-none fs-5">
                     🛒
                     @if (TempData["CartCount"] != null)

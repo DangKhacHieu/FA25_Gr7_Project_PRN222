@@ -17,7 +17,12 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 
         public async Task<IActionResult> OnPostAsync([FromForm] int CartItemId, [FromForm] int Quantity)
         {
-            int customerId = 1;
+            var customerId = HttpContext.Session.GetInt32("CustomerId");
+            if (customerId == null)
+            {
+                TempData["Message_alert"] = "Vui lòng đăng nhập để cập nhật sản phẩm.";
+                return RedirectToPage("/Login");
+            }
             var result = await _cartService.UpdateCartItemWithCheckAsync(CartItemId, Quantity);
 
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
@@ -25,7 +30,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
                 if (!result.Success)
                     return new JsonResult(new { success = false, message = result.Message });
 
-                var cart = await _cartService.GetCartAsync(customerId);
+                var cart = await _cartService.GetCartAsync(customerId.Value);
                 var item = cart?.CartItems.FirstOrDefault(x => x.CartItemId == CartItemId);
 
                 return new JsonResult(new

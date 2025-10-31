@@ -15,14 +15,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-// ✅ Add session
+// 1. THÊM BỘ NHỚ CACHE CHO SESSION
+builder.Services.AddDistributedMemoryCache();
+
+// 2. THÊM DỊCH VỤ SESSION
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian chờ
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-
+builder.Services.AddHttpContextAccessor();
 // 🔌 Kết nối database
 builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
@@ -50,7 +53,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapStaticAssets();
