@@ -1,149 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\",
+  "WorkspaceRootPath": "D:\\Code_PRN222\\Project_PRN222\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\interfaces\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\icustomerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\38f764eb06a1524a7eb6233e1131819f2134c59fecc72355a55df9ccd589ce11\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\views\\staffs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\staffs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\views\\staffs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\staffs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\controllers\\staffscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\controllers\\staffscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\fa25_g7_prn222_web_ban_dien_thoai.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\fa25_g7_prn222_web_ban_dien_thoai.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\data\\phonestorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\data\\phonestorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\repositories\\staffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\repositories\\staffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\bll\\services\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\bll\\interfaces\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\istaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\bll\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\remove.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\remove.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\interfaces\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\update.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\update.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\bll\\interfaces\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\add.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\add.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\products\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\products\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\reply_feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\reply_feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\order_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\order_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\import_inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\import_inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\models\\order_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\order_list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\fpt\\giao_trinh\\ky_07\\prn_222\\project_prn222\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -153,449 +70,190 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\38f764eb06a1524a7eb6233e1131819f2134c59fecc72355a55df9ccd589ce11\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\38f764eb06a1524a7eb6233e1131819f2134c59fecc72355a55df9ccd589ce11\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T13:10:06.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Index.cshtml",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Index.cshtml",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Index.cshtml",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Index.cshtml",
-              "ViewState": "AgIAADQBAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Register.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Register.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Register.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Register.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAA8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T17:35:22.803Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-21T07:00:59.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:02:00.369Z",
+              "WhenOpened": "2025-10-31T14:14:22.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ICustomerRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Interfaces\\ICustomerRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\ICustomerRepository.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Interfaces\\ICustomerRepository.cs",
-              "RelativeToolTip": "DAL\\Interfaces\\ICustomerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:08:43.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Repositories\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\CustomerRepository.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Repositories\\CustomerRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\CustomerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:45:55.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "StaffsController.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\StaffsController.cs",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\StaffsController.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\StaffsController.cs",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\StaffsController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwH8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:20:25.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-21T06:27:52.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAmwBIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:27:09.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PhoneStoreContext.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Data\\PhoneStoreContext.cs",
-              "RelativeDocumentMoniker": "DAL\\Data\\PhoneStoreContext.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Data\\PhoneStoreContext.cs",
-              "RelativeToolTip": "DAL\\Data\\PhoneStoreContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAcwBcAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:46:08.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Create.cshtml",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Create.cshtml",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Create.cshtml",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Create.cshtml",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAWwGEAAAAdAAAAAAAAAA==",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Login.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Login.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Login.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Login.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-21T17:25:22.752Z",
+              "WhenOpened": "2025-10-31T14:14:15.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAHABAAAAAAAAAAAAAHoBAAAKAAAAAAAAAA==",
+              "Title": "Update.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T06:37:32.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T06:22:27.337Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "StaffRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Repositories\\StaffRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Repositories\\StaffRepository.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Repositories\\StaffRepository.cs",
-              "RelativeToolTip": "DAL\\Repositories\\StaffRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwBkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:09:18.464Z"
+              "WhenOpened": "2025-10-25T12:44:05.039Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-22T06:22:23.123Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "StaffService.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Services\\StaffService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\StaffService.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Services\\StaffService.cs",
-              "RelativeToolTip": "BLL\\Services\\StaffService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:10:05.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IStaffService.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Interfaces\\IStaffService.cs",
-              "RelativeDocumentMoniker": "BLL\\Interfaces\\IStaffService.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Interfaces\\IStaffService.cs",
-              "RelativeToolTip": "BLL\\Interfaces\\IStaffService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:09:47.287Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CustomerService.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Services\\CustomerService.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\CustomerService.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Services\\CustomerService.cs",
-              "RelativeToolTip": "BLL\\Services\\CustomerService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:38:08.53Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IStaffRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Interfaces\\IStaffRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\IStaffRepository.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Interfaces\\IStaffRepository.cs",
-              "RelativeToolTip": "DAL\\Interfaces\\IStaffRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:08:39.624Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-21T06:26:49.434Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ICartRepository.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Interfaces\\ICartRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Interfaces\\ICartRepository.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Interfaces\\ICartRepository.cs",
-              "RelativeToolTip": "DAL\\Interfaces\\ICartRepository.cs",
+              "Title": "Details.cshtml.cs",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml.cs",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml.cs",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml.cs",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:08:44.66Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ICustomerService.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Interfaces\\ICustomerService.cs",
-              "RelativeDocumentMoniker": "BLL\\Interfaces\\ICustomerService.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\Interfaces\\ICustomerService.cs",
-              "RelativeToolTip": "BLL\\Interfaces\\ICustomerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:06:46.729Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Staff.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Staff.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Staff.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Staff.cs",
-              "RelativeToolTip": "DAL\\Models\\Staff.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:41:45.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "BLL.csproj",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj",
-              "RelativeDocumentMoniker": "BLL\\BLL.csproj",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\BLL\\BLL.csproj",
-              "RelativeToolTip": "BLL\\BLL.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-21T06:27:45.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Reply_Feedback.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Reply_Feedback.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Reply_Feedback.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Reply_Feedback.cs",
-              "RelativeToolTip": "DAL\\Models\\Reply_Feedback.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:45:17.937Z"
+              "WhenOpened": "2025-10-25T11:56:17.791Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "CustomersController.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
-              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:33:40.497Z"
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-25T08:19:30.807Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Order_Details.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Order_Details.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Order_Details.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Order_Details.cs",
-              "RelativeToolTip": "DAL\\Models\\Order_Details.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:46:34.629Z"
+              "DocumentIndex": 13,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAADwv4MAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-25T08:07:53.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\CartItem.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\CartItem.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\CartItem.cs",
-              "RelativeToolTip": "DAL\\Models\\CartItem.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:46:03.037Z"
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml",
+              "ViewState": "AgIAANcAAAAAAAAAAAAgwPQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-25T08:05:57.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Cart.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Cart.cs",
-              "RelativeToolTip": "DAL\\Models\\Cart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Update.cshtml.cs",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml.cs",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml.cs",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml.cs",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Update.cshtml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwC8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:45:50.036Z"
+              "WhenOpened": "2025-10-25T08:05:11.48Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "Import_Inventory.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Import_Inventory.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Import_Inventory.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Import_Inventory.cs",
-              "RelativeToolTip": "DAL\\Models\\Import_Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Remove.cshtml.cs",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Remove.cshtml.cs",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Remove.cshtml.cs",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Remove.cshtml.cs",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Remove.cshtml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:45:33.634Z"
+              "WhenOpened": "2025-10-25T08:05:04.651Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Product.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Product.cs",
-              "RelativeToolTip": "DAL\\Models\\Product.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA3wB4AAAAFAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml.cs",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml.cs",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Index.cshtml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwBEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:43:53.087Z"
+              "WhenOpened": "2025-10-25T08:04:57.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 10,
+              "Title": "Add.cshtml.cs",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Add.cshtml.cs",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Add.cshtml.cs",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Add.cshtml.cs",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Carts\\Add.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T08:04:45.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Home\\Index.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Home\\Index.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-25T08:00:58.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
-              "ViewState": "AgIAAA0AAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-21T07:03:38.726Z"
+              "WhenOpened": "2025-10-25T07:45:43.334Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Customer.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Customer.cs",
-              "RelativeToolTip": "DAL\\Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:41:52.231Z"
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-25T07:43:59.715Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Feedback.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Feedback.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Feedback.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Feedback.cs",
-              "RelativeToolTip": "DAL\\Models\\Feedback.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:44:28.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Order_List.cs",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Order_List.cs",
-              "RelativeDocumentMoniker": "DAL\\Models\\Order_List.cs",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\Models\\Order_List.cs",
-              "RelativeToolTip": "DAL\\Models\\Order_List.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:46:18.718Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "DAL.csproj",
-              "DocumentMoniker": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj",
-              "RelativeDocumentMoniker": "DAL\\DAL.csproj",
-              "ToolTip": "D:\\FPT\\Giao_trinh\\ky_07\\PRN_222\\Project_PRN222\\DAL\\DAL.csproj",
-              "RelativeToolTip": "DAL\\DAL.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-21T06:26:54.205Z"
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
+              "ToolTip": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-25T07:43:51.132Z"
             }
           ]
         }
