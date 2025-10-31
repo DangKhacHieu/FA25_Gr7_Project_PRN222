@@ -11,5 +11,12 @@ namespace BLL.IServices
     {
         List<Customer> GetAllCustomers();
         Customer GetCustomerById(int id);
+        bool Register(Customer customer, out string message);
+        Customer? GetByLogin(string username, string password);
+        Task<Customer?> GetCustomerByIdAsync(int id);
+        Task UpdateCustomerAsync(Customer customer);
+        List<Customer> SearchExact(string keyword);
+        List<string> Suggest(string term, int maxResults = 5);
+        void ReloadCache();
     }
 }

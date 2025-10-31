@@ -13,11 +13,8 @@ namespace BLL.Common
         public bool Success { get; set; }
         public string Message { get; set; } = string.Empty;
 
-        public static OperationResult Ok(string message) =>
+        public static OperationResult Submit(string message, bool result) =>
             new OperationResult { Success = true, Message = message };
-
-        public static OperationResult Fail(string message) =>
-            new OperationResult { Success = false, Message = message };
     }
 }
 

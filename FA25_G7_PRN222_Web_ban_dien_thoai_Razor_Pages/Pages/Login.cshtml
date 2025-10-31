@@ -1,0 +1,45 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Customer Login";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/register.css" /> <!-- tái sử dụng CSS cũ -->
+}
+
+<div class="register-container">
+    <div class="register-card">
+        <h2 class="register-title">Customer Login</h2>
+
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Username">Username</label>
+                <input asp-for="Username" class="form-control" placeholder="Enter username" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Enter password" />
+            </div>
+
+            <button type="submit" class="btn-submit">Login</button>
+            @* <div class="text-center mt-3">
+                <a class="btn-google" href="/signin-google">
+                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" width="20" />
+                    Continue with Google
+                </a>
+            </div> *@
+
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.Message))
+        {
+            <div class="alert-message">@Model.Message</div>
+        }
+
+        <div class="text-center mt-3">
+            <p>Don't have an account? <a href="/Register">Register here</a></p>
+        </div>
+    </div>
+</div>

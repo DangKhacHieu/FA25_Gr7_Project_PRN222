@@ -12,28 +12,37 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
             _cartService = cartService;
         }
 
-        [BindProperty] public int CartItemId { get; set; }
-        [BindProperty] public int Quantity { get; set; }
+        public int CartItemId { get; set; }
+        public int Quantity { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync([FromForm] int CartItemId, [FromForm] int Quantity)
         {
-            // ✅ Check session
-            //int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            //if (customerId == null)
-            //{
-            //    TempData["Message_alert"] = true;
-            //    TempData["Message"] = "⚠️ Bạn cần đăng nhập để cập nhật giỏ hàng.";
-            //    return RedirectToPage("/Account/Login");
-            //}
-
+            int customerId = 1;
             var result = await _cartService.UpdateCartItemWithCheckAsync(CartItemId, Quantity);
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                if (!result.Success)
+                    return new JsonResult(new { success = false, message = result.Message });
+
+                var cart = await _cartService.GetCartAsync(customerId);
+                var item = cart?.CartItems.FirstOrDefault(x => x.CartItemId == CartItemId);
+
+                return new JsonResult(new
+                {
+                    success = true,
+                    message = result.Message,
+                    subtotal = item?.SubTotal ?? 0,
+                    total = cart?.TotalPrice ?? 0
+                });
+            }
+
             TempData["Message"] = result.Message;
-            if (result.Success)
-                TempData["Message_success"] = true;
-            else
-                TempData["Message_alert"] = true;
+            if (result.Success) TempData["Message_success"] = true;
+            else TempData["Message_alert"] = true;
 
             return RedirectToPage("Index");
         }
+
     }
 }

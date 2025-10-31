@@ -13,21 +13,12 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
             _cartService = cartService;
         }
 
-        public DAL.Models.Cart? UserCart { get; set; }
+        public Cart? UserCart { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
-            int? customerId = 1;
-            // ✅ Check session
-            //int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            //if (customerId == null)
-            //{
-            //    TempData["Message_alert"] = true;
-            //    TempData["Message"] = "⚠️ Bạn cần đăng nhập để xem giỏ hàng.";
-            //    return RedirectToPage("/Account/Login");
-            //}
-
-            UserCart = await _cartService.GetCartAsync(customerId.Value);
+            int customerId = 1; // sẽ thay bằng Session sau
+            UserCart = await _cartService.GetCartAsync(customerId);
             return Page();
         }
     }

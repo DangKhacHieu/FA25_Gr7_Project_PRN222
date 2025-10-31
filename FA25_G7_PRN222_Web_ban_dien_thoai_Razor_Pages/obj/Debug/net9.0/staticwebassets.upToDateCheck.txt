@@ -35,9 +35,11 @@ D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\css\register.css
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\jquery\dist\jquery.slim.js
+D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\css\ViewProfile.css
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\jquery\dist\jquery.slim.min.js
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
@@ -60,7 +62,9 @@ D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
 D:\FPT\Giao_trinh\ky_07\PRN_222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\css\register.css
 wwwroot\css\site.css
+wwwroot\css\ViewProfile.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
