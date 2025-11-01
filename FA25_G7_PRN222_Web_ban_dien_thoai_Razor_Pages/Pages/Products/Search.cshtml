@@ -1,0 +1,169 @@
+﻿@page "/products/search"
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Products.SearchModel
+@{
+    ViewData["Title"] = "Kết quả tìm kiếm";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            background-color: #fff;
+        }
+
+            .product-card:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                transform: translateY(-5px);
+            }
+
+        .product-img-wrapper {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        .product-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-card-body {
+            padding: 0.75rem;
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 3em;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-specs {
+            font-size: 0.8rem;
+            color: #6c757d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0.25rem;
+        }
+
+        .spec-divider {
+            margin: 0 0.25rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #dc3545;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-sales {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-rating {
+            color: #ffc107;
+        }
+
+        .product-sold {
+            color: #6c757d;
+        }
+
+        .product-card a {
+            text-decoration: none;
+        }
+
+        .product-card .btn-add-cart {
+            width: 100%;
+            font-weight: 600;
+        }
+    </style>
+}
+
+<div class="container my-4">
+
+    @if (!string.IsNullOrWhiteSpace(Model.q))
+    {
+        <h3 class="fw-bold mb-4">Kết quả tìm kiếm cho: "@Model.q"</h3>
+    }
+    else
+    {
+        <h3 class="fw-bold mb-4">Tìm kiếm sản phẩm</h3>
+    }
+
+    @if (!Model.Products.Any())
+    {
+        <div class="alert alert-info text-center">
+            Không tìm thấy sản phẩm nào phù hợp.
+        </div>
+    }
+    else
+    {
+        <div class="row g-3">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card h-100 d-flex flex-column">
+                        <a asp-page="/Products/Details" asp-route-id="@product.ProductID">
+                            <div class="product-img-wrapper">
+                                <img src="@(product.ImageURL ?? "https://placehold.co/200x200/eee/999?text=No+Image")"
+                                     class="product-img" alt="@product.ProductName">
+                            </div>
+                        </a>
+                        <div class="product-card-body d-flex flex-column flex-grow-1">
+                            <a asp-page="/Products/Details" asp-route-id="@product.ProductID">
+                                <h5 class="product-title">@product.ProductName</h5>
+                            </a>
+
+                            <!-- Thông tin specs -->
+                            <div class="product-specs">
+                                <span class="spec-item">@product.Size</span>
+                                @if (!string.IsNullOrEmpty(product.Screen_resolution))
+                                {
+                                    <span class="spec-divider">|</span>
+                                    <span class="spec-item">@product.Screen_resolution</span>
+                                }
+                            </div>
+
+                            <p class="product-price">@product.Price?.ToString("N0") đ</p>
+
+                            <!-- Đánh giá và lượt bán -->
+                            <div class="product-sales d-flex justify-content-between align-items-center">
+                                <span class="product-rating small">
+                                    ⭐️⭐️⭐️⭐️⭐️
+                                </span>
+                                <span class="product-sold small">
+                                    Đã bán @(product.Quantity_Sell ?? 0)
+                                </span>
+                            </div>
+
+                            @* Nút Thêm vào giỏ *@
+                            <form method="post" asp-page="/Carts/Add" class="mt-auto">
+                                <input type="hidden" name="ProductID" value="@product.ProductID" />
+                                <input type="hidden" name="Quantity" value="1" />
+                                <button type"submit" class="btn btn-warning btn-add-cart">Thêm vào giỏ</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

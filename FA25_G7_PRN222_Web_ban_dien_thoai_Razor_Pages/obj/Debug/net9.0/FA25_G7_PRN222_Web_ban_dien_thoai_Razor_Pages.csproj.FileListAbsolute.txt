@@ -475,8 +475,6 @@ D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\tgcuqy2ib8-9vr69e8ynj.gz
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\g2yzxx228h-87fc7y1x7t.gz
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\0gggdwzrgh-mlv21k5csn.gz
-D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\gndveefb41-3o6scu1h7l.gz
-D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\uak4mpyzqp-3o6scu1h7l.gz
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\staticwebassets.build.json
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\staticwebassets.development.json
@@ -488,3 +486,8 @@ D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.pdb
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.genruntimeconfig.cache
 D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\ref\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.dll
+D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\gndveefb41-24w3p6fvlk.gz
+D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\uak4mpyzqp-24w3p6fvlk.gz
+D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\yuyh7o5xlr-b8abnvvtsl.gz
+D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\y2q1051qpq-8ic1qmxyyk.gz
+D:\Code_PRN222\Project_PRN222\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\obj\Debug\net9.0\compressed\q2asb4asow-vnky08dnmx.gz
