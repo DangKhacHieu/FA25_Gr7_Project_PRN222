@@ -10,15 +10,15 @@ html, body {
 }
 
 /* ===== MAIN CONTENT ===== */
-.main-content {
+/*.main-content {
     position: relative;
-    margin-left: 280px; /*khớp với sidebar */
-   padding: 40px 50px;
-  min-height: 100vh;
+     margin-left: 280px; /*khớp với sidebar 
+    padding: 40px 50px;
+    min-height: 100vh;
     transition: margin-left 0.3s ease;
     background-color: #f8f9fb;
     box-sizing: border-box;
-}
+}*/
 
     .main-content h2 {
         font-weight: 600;

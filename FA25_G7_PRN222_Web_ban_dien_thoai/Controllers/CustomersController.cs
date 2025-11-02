@@ -1,330 +1,330 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BLL;
-using BLL.Services;
-using DAL.Data;
-using DAL.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+﻿    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using BLL;
+    using BLL.Services;
+    using DAL.Data;
+    using DAL.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.EntityFrameworkCore;
 
 
-namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
-{
-    public class CustomersController : Controller
+    namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
     {
-        private readonly PhoneContext _context;
-
-        // này dùng để tìm kiếm 
-
-        private readonly CustomerService _service;
-        //private readonly ICustomerService _service;
-
-        public CustomersController(PhoneContext context, CustomerService service)
+        public class CustomersController : Controller
         {
-            _context = context;
-            _service = service;
-        }
-        /* public CustomersController(PhoneContext context, ICustomerService service)
-         {
-             _context = context;
-             _service = service;
-         }*/
+            private readonly PhoneContext _context;
 
+            // này dùng để tìm kiếm 
 
-        // GET: Customers
-        /*  public async Task<IActionResult> Index()
-          {
-              //return View(await _context.Customers.ToListAsync());
+            private readonly CustomerService _service;
+            //private readonly ICustomerService _service;
 
-              // Chỉ lấy những khách hàng chưa bị block
-              var activeCustomers = await _context.Customers
-                  .Where(c => c.Status >= 0)
-                  .ToListAsync();
-
-              return View(activeCustomers);
-          }*/
-
-        // GET: Customers/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
+            public CustomersController(PhoneContext context, CustomerService service)
             {
-                return NotFound();
+                _context = context;
+                _service = service;
             }
+            /* public CustomersController(PhoneContext context, ICustomerService service)
+             {
+                 _context = context;
+                 _service = service;
+             }*/
 
-            var customer = await _context.Customers
-                .FirstOrDefaultAsync(m => m.CustomerId == id);
-            if (customer == null)
+
+            // GET: Customers
+            /*  public async Task<IActionResult> Index()
+              {
+                  //return View(await _context.Customers.ToListAsync());
+
+                  // Chỉ lấy những khách hàng chưa bị block
+                  var activeCustomers = await _context.Customers
+                      .Where(c => c.Status >= 0)
+                      .ToListAsync();
+
+                  return View(activeCustomers);
+              }*/
+
+            // GET: Customers/Details/5
+            public async Task<IActionResult> Details(int? id)
             {
-                return NotFound();
-            }
-
-            return View(customer);
-        }
-
-        // GET: Customers/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Customers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,UserName,FullName,Email,PhoneNumber,Address,Password,Status,Sex,DOB,ImgCustomer")] Customer customer)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(customer);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(customer);
-        }
-
-        // GET: Customers/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var customer = await _context.Customers.FindAsync(id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-            return View(customer);
-        }
-
-        // POST: Customers/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,UserName,FullName,Email,PhoneNumber,Address,Password,Status,Sex,DOB,ImgCustomer")] Customer customer)
-        {
-            if (id != customer.CustomerId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (id == null)
                 {
-                    _context.Update(customer);
+                    return NotFound();
+                }
+
+                var customer = await _context.Customers
+                    .FirstOrDefaultAsync(m => m.CustomerId == id);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+
+                return View(customer);
+            }
+
+            // GET: Customers/Create
+            public IActionResult Create()
+            {
+                return View();
+            }
+
+            // POST: Customers/Create
+            // To protect from overposting attacks, enable the specific properties you want to bind to.
+            // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public async Task<IActionResult> Create([Bind("CustomerId,UserName,FullName,Email,PhoneNumber,Address,Password,Status,Sex,DOB,ImgCustomer")] Customer customer)
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Add(customer);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
+                return View(customer);
+            }
+
+            // GET: Customers/Edit/5
+            public async Task<IActionResult> Edit(int? id)
+            {
+                if (id == null)
                 {
-                    if (!CustomerExists(customer.CustomerId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return NotFound();
                 }
+
+                var customer = await _context.Customers.FindAsync(id);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+                return View(customer);
+            }
+
+            // POST: Customers/Edit/5
+            // To protect from overposting attacks, enable the specific properties you want to bind to.
+            // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public async Task<IActionResult> Edit(int id, [Bind("CustomerId,UserName,FullName,Email,PhoneNumber,Address,Password,Status,Sex,DOB,ImgCustomer")] Customer customer)
+            {
+                if (id != customer.CustomerId)
+                {
+                    return NotFound();
+                }
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        _context.Update(customer);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!CustomerExists(customer.CustomerId))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(customer);
+            }
+
+            /*// GET: Customers/Delete/5
+            public async Task<IActionResult> Delete(int? id)
+            {
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                var customer = await _context.Customers
+                    .FirstOrDefaultAsync(m => m.CustomerId == id);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+
+                return View(customer);
+            }*/
+
+            // POST: Customers/Delete/5
+            /* [HttpPost, ActionName("Delete")]
+             [ValidateAntiForgeryToken]*/
+
+            /* public async Task<IActionResult> DeleteConfirmed(int id)
+             {
+                 var customer = await _context.Customers.FindAsync(id);
+                 if (customer != null)
+                 {
+                     customer.Status = -1;
+                     _context.Customers.Update(customer);
+                     await _context.SaveChangesAsync();
+                 }
+
+
+                 return RedirectToAction(nameof(Index));
+             }*/
+
+            public IActionResult Delete(int id)
+            {
+                var customer = _context.Customers.FirstOrDefault(c => c.CustomerId == id);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+
+                // Nếu tài khoản đã bị xóa mềm (-1), không cho xóa lại
+                if (customer.Status == -1)
+                {
+                    TempData["Error"] = "Khách hàng này đã bị xóa mềm, không thể xóa lại.";
+                    return RedirectToAction(nameof(Index));
+                }
+
+                // Soft delete
+                customer.Status = -1;
+                _context.SaveChanges();
+
+                TempData["Success"] = "Xóa khách hàng thành công.";
                 return RedirectToAction(nameof(Index));
             }
-            return View(customer);
-        }
 
-        /*// GET: Customers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
+
+            private bool CustomerExists(int id)
             {
-                return NotFound();
+                return _context.Customers.Any(e => e.CustomerId == id);
             }
 
-            var customer = await _context.Customers
-                .FirstOrDefaultAsync(m => m.CustomerId == id);
-            if (customer == null)
+            // update status
+            public IActionResult ToggleStatus(int id)
             {
-                return NotFound();
-            }
+                var customer = _context.Customers.FirstOrDefault(c => c.CustomerId == id);
+                if (customer == null)
+                {
+                    return NotFound();
+                }
 
-            return View(customer);
-        }*/
+                // Nếu tài khoản bị xóa mềm (-1) thì không cho toggle
+                if (customer.Status == -1)
+                {
+                    TempData["Error"] = "Tài khoản này đã bị xóa mềm, không thể thay đổi trạng thái.";
+                    return RedirectToAction(nameof(Index));
+                }
 
-        // POST: Customers/Delete/5
-        /* [HttpPost, ActionName("Delete")]
-         [ValidateAntiForgeryToken]*/
+                // Đảo trạng thái
+                customer.Status = (customer.Status == 1) ? 0 : 1;
+                _context.SaveChanges();
 
-        /* public async Task<IActionResult> DeleteConfirmed(int id)
-         {
-             var customer = await _context.Customers.FindAsync(id);
-             if (customer != null)
-             {
-                 customer.Status = -1;
-                 _context.Customers.Update(customer);
-                 await _context.SaveChangesAsync();
-             }
-
-
-             return RedirectToAction(nameof(Index));
-         }*/
-
-        public IActionResult Delete(int id)
-        {
-            var customer = _context.Customers.FirstOrDefault(c => c.CustomerId == id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            // Nếu tài khoản đã bị xóa mềm (-1), không cho xóa lại
-            if (customer.Status == -1)
-            {
-                TempData["Error"] = "Khách hàng này đã bị xóa mềm, không thể xóa lại.";
                 return RedirectToAction(nameof(Index));
             }
 
-            // Soft delete
-            customer.Status = -1;
-            _context.SaveChanges();
-
-            TempData["Success"] = "Xóa khách hàng thành công.";
-            return RedirectToAction(nameof(Index));
-        }
-
-
-        private bool CustomerExists(int id)
-        {
-            return _context.Customers.Any(e => e.CustomerId == id);
-        }
-
-        // update status
-        public IActionResult ToggleStatus(int id)
-        {
-            var customer = _context.Customers.FirstOrDefault(c => c.CustomerId == id);
-            if (customer == null)
-            {
-                return NotFound();
-            }
-
-            // Nếu tài khoản bị xóa mềm (-1) thì không cho toggle
-            if (customer.Status == -1)
-            {
-                TempData["Error"] = "Tài khoản này đã bị xóa mềm, không thể thay đổi trạng thái.";
-                return RedirectToAction(nameof(Index));
-            }
-
-            // Đảo trạng thái
-            customer.Status = (customer.Status == 1) ? 0 : 1;
-            _context.SaveChanges();
-
-            return RedirectToAction(nameof(Index));
-        }
-
-        // search account 
-        /* public async Task<IActionResult> Index(string searchString = "")
-         {
-             List<Customer> customers;
-
-             if (string.IsNullOrEmpty(searchString))
+            // search account 
+            /* public async Task<IActionResult> Index(string searchString = "")
              {
-                 customers = await _context.Customers
-                     .Where(c => c.Status >= 0)
-                     .ToListAsync();
-             }
-             else
-             {
-                 // Search chính xác theo FullName
-                 customers = await _context.Customers
-                     .Where(c => c.Status >= 0 && c.FullName.Contains(searchString))
-                     .ToListAsync();
-             }
+                 List<Customer> customers;
 
-             ViewData["CurrentFilter"] = searchString; // để giữ giá trị search trong textbox
-             return View(customers);
-         }*/
+                 if (string.IsNullOrEmpty(searchString))
+                 {
+                     customers = await _context.Customers
+                         .Where(c => c.Status >= 0)
+                         .ToListAsync();
+                 }
+                 else
+                 {
+                     // Search chính xác theo FullName
+                     customers = await _context.Customers
+                         .Where(c => c.Status >= 0 && c.FullName.Contains(searchString))
+                         .ToListAsync();
+                 }
 
-        // CustomersController.cs
-       /* public async Task<IActionResult> Index(string searchString)
-        {
-            List<Customer> customers;
+                 ViewData["CurrentFilter"] = searchString; // để giữ giá trị search trong textbox
+                 return View(customers);
+             }*/
 
-            if (string.IsNullOrEmpty(searchString))
+            // CustomersController.cs
+           /* public async Task<IActionResult> Index(string searchString)
             {
-                customers = await _context.Customers
-                    .Where(c => c.Status >= 0)
-                    .ToListAsync();
-            }
-            else
-            {
-                // Search chính xác theo FullName
-                customers = await _context.Customers
-                    .Where(c => c.Status >= 0 && c.FullName.Contains(searchString))
-                    .ToListAsync();
-            }
+                List<Customer> customers;
 
-            ViewData["CurrentFilter"] = searchString; // để giữ giá trị search trong textbox
-            return View(customers);
-        }*/
+                if (string.IsNullOrEmpty(searchString))
+                {
+                    customers = await _context.Customers
+                        .Where(c => c.Status >= 0)
+                        .ToListAsync();
+                }
+                else
+                {
+                    // Search chính xác theo FullName
+                    customers = await _context.Customers
+                        .Where(c => c.Status >= 0 && c.FullName.Contains(searchString))
+                        .ToListAsync();
+                }
+
+                ViewData["CurrentFilter"] = searchString; // để giữ giá trị search trong textbox
+                return View(customers);
+            }*/
 
         
-        [HttpGet]
-        public JsonResult SuggestCustomer(string term)
-        {
-            var suggestions = _context.Customers
-          .Where(c => c.Status >= 0 && c.FullName.Contains(term))
-          .Select(c => c.FullName)
-          .Take(10)
-          .ToList();
-            return Json(suggestions);
-        }
-
-        public async Task<IActionResult> Index(string searchString, int page = 1, int pageSize = 10)
-        {
-            IQueryable<Customer> customersQuery = _context.Customers.Where(c => c.Status >= 0);
-
-            if (!string.IsNullOrEmpty(searchString))
+            [HttpGet]
+            public JsonResult SuggestCustomer(string term)
             {
-                customersQuery = customersQuery.Where(c => c.FullName.Contains(searchString));
+                var suggestions = _context.Customers
+              .Where(c => c.Status >= 0 && c.FullName.Contains(term))
+              .Select(c => c.FullName)
+              .Take(10)
+              .ToList();
+                return Json(suggestions);
             }
 
-            int totalCustomers = await customersQuery.CountAsync();
-
-            // Tính số trang
-            int totalPages = totalCustomers > 0
-                ? (int)Math.Ceiling((double)totalCustomers / pageSize)
-                : 0;
-
-            // Nếu page hiện tại > totalPages, reset về trang cuối
-            if (page > totalPages) page = totalPages == 0 ? 1 : totalPages;
-
-            var customers = await customersQuery
-                .OrderBy(c => c.FullName)
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
-            ViewData["CurrentFilter"] = searchString;
-            ViewData["CurrentPage"] = page;
-            ViewData["TotalPages"] = totalPages;
-
-            if (!string.IsNullOrEmpty(searchString) && totalCustomers == 0)
+            public async Task<IActionResult> Index(string searchString, int page = 1, int pageSize = 10)
             {
-                ViewData["NoResultsMessage"] = $"Không tìm thấy kết quả cho '{searchString}'.";
+                IQueryable<Customer> customersQuery = _context.Customers.Where(c => c.Status >= 0);
+
+                if (!string.IsNullOrEmpty(searchString))
+                {
+                    customersQuery = customersQuery.Where(c => c.FullName.Contains(searchString));
+                }
+
+                int totalCustomers = await customersQuery.CountAsync();
+
+                // Tính số trang
+                int totalPages = totalCustomers > 0
+                    ? (int)Math.Ceiling((double)totalCustomers / pageSize)
+                    : 0;
+
+                // Nếu page hiện tại > totalPages, reset về trang cuối
+                if (page > totalPages) page = totalPages == 0 ? 1 : totalPages;
+
+                var customers = await customersQuery
+                    .OrderBy(c => c.FullName)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+                ViewData["CurrentFilter"] = searchString;
+                ViewData["CurrentPage"] = page;
+                ViewData["TotalPages"] = totalPages;
+
+                if (!string.IsNullOrEmpty(searchString) && totalCustomers == 0)
+                {
+                    ViewData["NoResultsMessage"] = $"Không tìm thấy kết quả cho '{searchString}'.";
+                }
+
+                return View(customers);
             }
 
-            return View(customers);
+
+
+
+
+
         }
-
-
-
-
-
-
     }
-}
