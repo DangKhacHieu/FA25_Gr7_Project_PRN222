@@ -1,6 +1,10 @@
-﻿using BLL;
+﻿using BLL.Interfaces;
+using BLL.IServices;
 using BLL.Services;
 using DAL.Data;
+using DAL.Interfaces;
+using DAL.IRepositories;
+using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +17,13 @@ builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
 
 // 🧠 Inject tầng BLL
-builder.Services.AddScoped<DAL.ICustomerRepository, DAL.Repositories.CustomerRepository>(); // ✅ THÊM DÒNG NÀY
+builder.Services.AddScoped<ICustomerRepository,CustomerRepository>(); // ✅ THÊM DÒNG NÀY
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<StaffRepository>();
+builder.Services.AddScoped<StaffService>();
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây

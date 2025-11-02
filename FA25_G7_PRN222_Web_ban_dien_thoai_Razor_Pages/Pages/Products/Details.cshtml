@@ -1,0 +1,126 @@
+﻿@page "{id:int}"
+@using DAL.Models
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Products.DetailsModel
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = Model.Product?.ProductName ?? "Chi tiết sản phẩm";
+}
+
+@if (Model.Product == null)
+{
+    <div class="alert alert-warning text-center mt-5">
+        Sản phẩm không tồn tại hoặc đã bị xóa.
+    </div>
+}
+else
+{
+    <div class="container my-4">
+        <div class="row">
+            <!-- LEFT: ẢNH + THÔNG TIN -->
+            <div class="col-lg-7">
+                <h4 class="fw-bold mb-3">@Model.Product.ProductName</h4>
+                <img src="@Model.Product.ImageURL" alt="@Model.Product.ProductName" class="img-fluid mb-3 rounded shadow-sm" />
+
+                <!-- (Accordion thông số...) -->
+                <div class="accordion" id="productInfo">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSpecs">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecs">
+                                Thông số kỹ thuật
+                            </button>
+                        </h2>
+                        <div id="collapseSpecs" class="accordion-collapse collapse show" data-bs-parent="#productInfo">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled mb-0">
+                                    <li><b>Màn hình:</b> @Model.Product.Screen_resolution - @Model.Product.Refresh_rate Hz</li>
+                                    <li><b>Hệ điều hành:</b> @Model.Product.Operating_System_name</li>
+                                    <li><b>Chip:</b> @Model.Product.Chip_name</li>
+                                    <li><b>GPU:</b> @Model.Product.GPU_name</li>
+                                    <li><b>RAM:</b> @Model.Product.Ram</li>
+                                    <li><b>ROM:</b> @Model.Product.Rom</li>
+                                    <li><b>Camera trước:</b> @Model.Product.Camera_Front</li>
+                                    <li><b>Camera sau:</b> @Model.Product.Camera_Behind</li>
+                                    <li><b>Pin & Sạc:</b> @Model.Product.Size</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingReview">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReview">
+                                Đánh giá sản phẩm
+                            </button>
+                        </h2>
+                        <div id="collapseReview" class="accordion-collapse collapse" data-bs-parent="#productInfo">
+                            <div class="accordion-body">
+                                @if (Model.Feedbacks.Any())
+                                {
+                                    @foreach (var fb in Model.Feedbacks)
+                                    {
+                                        <div class="border-bottom mb-2 pb-2">
+                                            <b>@fb.CustomerName</b> - ⭐ @fb.RatePoint/5
+                                            <p>@fb.Content</p>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="text-muted">Chưa có đánh giá nào.</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: GIÁ + KHÁC -->
+            <div class="col-lg-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="text-danger fw-bold">@Model.Product.Price?.ToString("N0") đ</h5>
+                        <div class="mb-3">
+                            <b>Màu sắc:</b>
+                            <div class="d-flex gap-2 mt-2">
+                                @foreach (var color in Model.AvailableColors)
+                                {
+                                    <span class="badge bg-light text-dark border px-3 py-2"
+                                          style="cursor:pointer"
+                                          onclick="window.location='@Url.Page("/Products/Details", new { id = color.ProductID })'">
+                                        @color.Color
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <b>Cấu hình (RAM/ROM):</b>
+                            <div class="d-flex gap-2 mt-2">
+                                @foreach (var variant in Model.Variants)
+                                {
+                                    <span class="badge bg-light text-dark border px-3 py-2"
+                                          style="cursor:pointer"
+                                          onclick="window.location='@Url.Page("/Products/Details", new { id = variant.ProductID })'">
+                                        @variant.Ram / @variant.Rom
+                                    </span>
+                                }
+                            </div>
+                        </div>
+
+                        <form method="post" asp-page="/Carts/Add">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="ProductID" value="@Model.Product.ProductID" />
+                            <div class="d-grid gap-2">
+
+                                <button type="button" id="btn-add-to-cart-ajax" class="btn btn-warning fw-bold">🛒 Thêm vào giỏ</button>
+                                <button type="submit"
+                                        class="btn btn-danger fw-bold">
+                                    💥 Mua ngay
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

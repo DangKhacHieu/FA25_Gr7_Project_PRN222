@@ -1,0 +1,346 @@
+﻿@model DAL.Models.Product
+
+@{
+    ViewData["Title"] = "Chi Tiết Sản Phẩm";
+}
+
+<style>
+    .page-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+    .details-container {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 30px;
+    }
+
+    .product-image-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        height: fit-content;
+        position: sticky;
+        top: 30px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 350px;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #f8f9fa;
+        padding: 20px;
+    }
+
+    .product-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: #1a1f3a;
+        margin: 20px 0 10px 0;
+    }
+
+    .product-price {
+        font-size: 28px;
+        font-weight: 700;
+        color: #667eea;
+        margin-bottom: 15px;
+    }
+
+    .stock-badge {
+        display: inline-block;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .stock-available {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .stock-low {
+        background: #fff3cd;
+        color: #856404;
+    }
+
+    .info-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1f3a;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #f0f0f0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+        .section-title i {
+            color: #667eea;
+        }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .info-label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .info-value {
+        font-size: 15px;
+        color: #1a1f3a;
+        font-weight: 500;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            color: #fff;
+        }
+
+    .btn-secondary {
+        background: #f5f7fa;
+        color: #6c757d;
+        border: 2px solid #e8eef5;
+    }
+
+        .btn-secondary:hover {
+            background: #e8eef5;
+            color: #495057;
+        }
+
+    @@media (max-width: 992px) {
+        .details-container {
+            grid-template-columns: 1fr;
+        }
+
+        .product-image-card {
+            position: static;
+        }
+    }
+</style>
+
+<div class="page-header">
+    <h1><i class="bi bi-info-circle-fill"></i> Chi Tiết Sản Phẩm</h1>
+</div>
+
+<div class="details-container">
+    <!-- Left: Product Image & Basic Info -->
+    <div class="product-image-card">
+        @if (!string.IsNullOrEmpty(Model.ImageURL))
+        {
+            <img src="@Model.ImageURL" alt="@Model.ProductName" class="product-image"
+                 onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="no-image-placeholder" style="display: none; width: 100%; height: 350px; background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); border-radius: 12px; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                <i class="bi bi-image" style="font-size: 80px; color: #667eea; opacity: 0.3;"></i>
+                <p style="color: #6c757d; font-weight: 500; margin: 0;">Không có hình ảnh</p>
+            </div>
+        }
+        else
+        {
+            <div class="no-image-placeholder" style="display: flex; width: 100%; height: 350px; background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%); border-radius: 12px; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                <i class="bi bi-image" style="font-size: 80px; color: #667eea; opacity: 0.3;"></i>
+                <p style="color: #6c757d; font-weight: 500; margin: 0;">Không có hình ảnh</p>
+            </div>
+        }
+
+        <div class="product-name">@Model.ProductName</div>
+
+        <div class="product-price">@(Model.Price.HasValue? Model.Price.Value.ToString("N0") : "0") ₫</div>
+
+        <div>
+            @if (Model.Quantity_Product > 10)
+            {
+                <span class="stock-badge stock-available">
+                    <i class="bi bi-check-circle"></i> Còn hàng (@Model.Quantity_Product)
+                </span>
+            }
+            else if (Model.Quantity_Product > 0)
+            {
+                <span class="stock-badge stock-low">
+                    <i class="bi bi-exclamation-circle"></i> Sắp hết (@Model.Quantity_Product)
+                </span>
+            }
+            else
+            {
+                <span class="stock-badge" style="background: #f8d7da; color: #721c24;">
+                    <i class="bi bi-x-circle"></i> Hết hàng
+                </span>
+            }
+        </div>
+
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #f0f0f0;">
+            <div class="info-item">
+                <div class="info-label">Đã bán</div>
+                <div class="info-value">@Model.Quantity_Sell sản phẩm</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Detailed Info -->
+    <div>
+        <!-- Thông tin cơ bản -->
+        <div class="info-card">
+            <div class="section-title">
+                <i class="bi bi-info-circle"></i>
+                Thông tin cơ bản
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Thương hiệu</div>
+                    <div class="info-value">@Model.Brand</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Màu sắc</div>
+                    <div class="info-value">@Model.Color</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Kích thước màn hình</div>
+                    <div class="info-value">@Model.Size</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Độ phân giải</div>
+                    <div class="info-value">@Model.Screen_resolution</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Tần số quét</div>
+                    <div class="info-value">@Model.Refresh_rate</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cấu hình phần cứng -->
+        <div class="info-card">
+            <div class="section-title">
+                <i class="bi bi-cpu"></i>
+                Cấu hình phần cứng
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Chip xử lý</div>
+                    <div class="info-value">@Model.Chip_name</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">GPU</div>
+                    <div class="info-value">@Model.GPU_name</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">RAM</div>
+                    <div class="info-value">@Model.Ram</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Bộ nhớ trong</div>
+                    <div class="info-value">@Model.Rom</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera -->
+        <div class="info-card">
+            <div class="section-title">
+                <i class="bi bi-camera"></i>
+                Camera
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Camera trước</div>
+                    <div class="info-value">@Model.Camera_Front</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Camera sau</div>
+                    <div class="info-value">@Model.Camera_Behind</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hệ điều hành -->
+        <div class="info-card">
+            <div class="section-title">
+                <i class="bi bi-gear"></i>
+                Hệ điều hành
+            </div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Hệ điều hành</div>
+                    <div class="info-value">@Model.Operating_System_name</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Phiên bản</div>
+                    <div class="info-value">@Model.Operating_system_version</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a asp-action="Edit" asp-route-id="@Model?.ProductID" class="btn btn-primary">
+                <i class="bi bi-pencil"></i> Chỉnh sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Quay lại
+            </a>
+        </div>
+    </div>
+</div>

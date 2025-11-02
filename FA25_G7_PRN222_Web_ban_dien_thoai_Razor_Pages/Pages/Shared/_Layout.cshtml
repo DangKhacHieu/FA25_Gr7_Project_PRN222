@@ -1,0 +1,105 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var customerName = HttpContextAccessor.HttpContext?.Session.GetString("CustomerName");
+}
+<!DOCTYPE html>
+<html lang="en">
+@RenderSection("Styles", required: false)
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/search-popup.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.styles.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <header class="shadow-sm" style="background-color: #FFD400;">
+        <div class="container py-2 d-flex justify-content-between align-items-center">
+            <a class="fw-bold text-dark fs-5 text-decoration-none" asp-page="/Home/Index">📱 PhoneStore</a>
+
+            <div class="position-relative w-50">
+                <form class="d-flex" method="get" asp-page="/Products/Search">
+                    <input class="form-control" name="q" id="search-input" placeholder="🔍 Tìm kiếm sản phẩm..." autocomplete="off" />
+                </form>
+                <div id="search-results-popup" class="search-popup"></div>
+            </div>
+
+            <div class="d-flex align-items-center">
+                @if (customerName != null)
+                {
+                    <li class="nav-item dropdown list-unstyled">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Chào, @customerName
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" asp-page="/ViewProfile">Thông tin cá nhân</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-page="/Logout">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <a asp-page="/Login" class="btn btn-outline-dark btn-sm me-2">Đăng nhập</a>
+                }
+                <a asp-page="/Carts/Index" class="position-relative text-dark text-decoration-none fs-5 ms-3">
+                    🛒
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold" style="color: #FFD400;">📱 PhoneStore</h5>
+                    <p>
+                        Cửa hàng điện thoại uy tín, mang đến những sản phẩm công nghệ
+                        chính hãng với giá tốt nhất thị trường.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold" style="color: #FFD400;">Hỗ trợ khách hàng</h5>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Chính sách bảo hành</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Chính sách đổi trả</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Hướng dẫn mua hàng</a></p>
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold" style="color: #FFD400;">Liên hệ</h5>
+                    <p><i class="fas fa-home me-3"></i> Cần Thơ, Việt Nam</p>
+                    <p><i class="fas fa-envelope me-3"></i> support@phonestore.vn</p>
+                    <p><i class="fas fa-phone me-3"></i> +84 123 456 789</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/cartAddAjax.js" asp-append-version="true"></script>
+    <script src="~/js/searchPopup.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

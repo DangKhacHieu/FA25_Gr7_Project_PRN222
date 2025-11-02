@@ -1,0 +1,221 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Home.IndexModel
+@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            background-color: #fff;
+        }
+
+            .product-card:hover {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                transform: translateY(-5px);
+            }
+
+        .product-img-wrapper {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        .product-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-card-body {
+            padding: 0.75rem; /* Giảm padding một chút */
+        }
+
+        .product-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            /* Giới hạn 2 dòng */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 3em; /* 1.5em * 2 dòng */
+            margin-bottom: 0.25rem;
+        }
+
+        /* CSS MỚI cho thông số kỹ thuật */
+        .product-specs {
+            font-size: 0.8rem;
+            color: #6c757d; /* text-muted */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0.25rem;
+        }
+
+        .spec-divider {
+            margin: 0 0.25rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #dc3545; /* Màu đỏ */
+            margin-bottom: 0.25rem;
+        }
+
+        /* CSS MỚI cho đánh giá và lượt bán */
+        .product-sales {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-rating {
+            color: #ffc107; /* text-warning */
+        }
+
+        .product-sold {
+            color: #6c757d; /* text-muted */
+        }
+
+        .product-card a {
+            text-decoration: none;
+        }
+
+        .product-card .btn-add-cart {
+            width: 100%;
+            font-weight: 600;
+        }
+    </style>
+}
+
+@* 1. HERO BANNER / CAROUSEL *@
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner" style="border-radius: 0.5rem; max-height: 400px;">
+        <div class="carousel-item active">
+            <img src="https://placehold.co/1200x400/FFD400/333?text=Khuyen+Mai+Dien+Thoai" class="d-block w-100" alt="Khuyến mãi 1">
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.co/1200x400/343a40/white?text=iPhone+Moi+Nhat" class="d-block w-100" alt="Khuyến mãi 2">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+@* SẢN PHẨM BÁN CHẠY *@
+<div class="container my-5">
+    <h2 class="fw-bold mb-4">🔥 Sản Phẩm Bán Chạy</h2>
+    <div class="row g-3">
+        @foreach (var product in Model.BestSellers)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="product-card h-100 d-flex flex-column">
+                    @* (Image wrapper) *@
+                    <a asp-page="/Products/Details" asp-route-id="@product.ProductID">
+                        <div class="product-img-wrapper">
+                            <img src="@(product.ImageURL ?? "https://placehold.co/200x200/eee/999?text=No+Image")"
+                                 class="product-img" alt="@product.ProductName">
+                        </div>
+                    </a>
+
+                    <div class="product-card-body d-flex flex-column flex-grow-1">
+                        @* (Title, specs, price, rating...) *@
+                        <a asp-page="/Products/Details" asp-route-id="@product.ProductID">
+                            <h5 class="product-title">@product.ProductName</h5>
+                        </a>
+                        <div class="product-specs">
+                            <span class="spec-item">@product.Size</span>
+                            @if (!string.IsNullOrEmpty(product.Screen_resolution))
+                            {
+                                <span class="spec-divider">|</span>
+                                <span class="spec-item">@product.Screen_resolution</span>
+                            }
+                        </div>
+                        <p class="product-price">@product.Price?.ToString("N0") đ</p>
+                        <div class="product-sales d-flex justify-content-between align-items-center">
+                            <span class="product-rating small">⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="product-sold small">Đã bán @(product.Quantity_Sell ?? 0)</span>
+                        </div>
+
+                        <form method="post" asp-page="/Carts/Add" class="mt-auto form-add-to-cart-ajax">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="ProductID" value="@product.ProductID" />
+                            <input type="hidden" name="Quantity" value="1" />
+                            <button type="submit" class="btn btn-warning btn-add-cart">Thêm vào giỏ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@* HÀNG MỚI VỀ *@
+<div class="container my-5">
+    <h2 class="fw-bold mb-4">✨ Hàng Mới Về</h2>
+    <div class="row g-3">
+        @foreach (var product in Model.NewArrivals)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="product-card h-100 d-flex flex-column">
+                    @* (Image wrapper) *@
+                    <a asp-page="/Products/Details" asp-route-id="@product.ProductID">
+                        <div class="product-img-wrapper">
+                            <img src="@(product.ImageURL ?? "https://placehold.co/200x200/eee/999?text=No+Image")"
+                                 class="product-img" alt="@product.ProductName">
+                        </div>
+                    </a>
+
+                    <div class="product-card-body d-flex flex-column flex-grow-1">
+                        @* (Title, specs, price, rating...) *@
+                        <a asp-page="/Products/Details" asp-route-id="@product.ProductID">
+                            <h5 class="product-title">@product.ProductName</h5>
+                        </a>
+                        <div class="product-specs">
+                            <span class="spec-item">@product.Size</span>
+                            @if (!string.IsNullOrEmpty(product.Screen_resolution))
+                            {
+                                <span class="spec-divider">|</span>
+                                <span class="spec-item">@product.Screen_resolution</span>
+                            }
+                        </div>
+                        <p class="product-price">@product.Price?.ToString("N0") đ</p>
+                        <div class="product-sales d-flex justify-content-between align-items-center">
+                            <span class="product-rating small">⭐️⭐️⭐️⭐️⭐️</span>
+                            <span class="product-sold small">Đã bán @(product.Quantity_Sell ?? 0)</span>
+                        </div>
+
+                        <form method="post" asp-page="/Carts/Add" class="mt-auto form-add-to-cart-ajax">
+                            @Html.AntiForgeryToken() 
+                            <input type="hidden" name="ProductID" value="@product.ProductID" />
+                            <input type="hidden" name="Quantity" value="1" />
+                            <button type="submit" class="btn btn-warning btn-add-cart">Thêm vào giỏ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
