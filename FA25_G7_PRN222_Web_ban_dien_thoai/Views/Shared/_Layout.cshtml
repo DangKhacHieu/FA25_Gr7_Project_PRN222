@@ -201,8 +201,8 @@
         /* Content area */
         .content {
             flex-grow: 1;
-            padding: 30px;
-            overflow-y: auto;
+            padding: 30px; 
+            overflow-y: auto; 
         }
 
         .content-header {
@@ -308,7 +308,7 @@
                         <span>Sản phẩm</span>
                         <span class="badge-count">125</span>
                     </a>
-                </li>
+                    </li>
                 <li>
                     <a href="@Url.Action("Index", "Orders")" class="nav-link">
                         <i class="bi bi-basket"></i>
@@ -380,6 +380,11 @@
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- ✅ Thêm 2 dòng dưới đây -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
