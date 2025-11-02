@@ -14,23 +14,14 @@
 }
 else
 {
-
     <div class="container my-4">
-        @if (TempData["Message_success"] != null)
-        {
-            <div id="page-message" class="alert alert-success text-center fade d-none">@TempData["Message"]</div>
-        }
-        @if (TempData["Message_alert"] != null)
-        {
-            <div id="page-message" class="alert alert-warning text-center fade d-none">@TempData["Message"]</div>
-        }
-
         <div class="row">
             <!-- LEFT: ẢNH + THÔNG TIN -->
             <div class="col-lg-7">
                 <h4 class="fw-bold mb-3">@Model.Product.ProductName</h4>
                 <img src="@Model.Product.ImageURL" alt="@Model.Product.ProductName" class="img-fluid mb-3 rounded shadow-sm" />
 
+                <!-- (Accordion thông số...) -->
                 <div class="accordion" id="productInfo">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingSpecs">
@@ -88,7 +79,6 @@ else
                 <div class="card shadow-sm border-0">
                     <div class="card-body">
                         <h5 class="text-danger fw-bold">@Model.Product.Price?.ToString("N0") đ</h5>
-
                         <div class="mb-3">
                             <b>Màu sắc:</b>
                             <div class="d-flex gap-2 mt-2">
@@ -102,7 +92,6 @@ else
                                 }
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <b>Cấu hình (RAM/ROM):</b>
                             <div class="d-flex gap-2 mt-2">
@@ -117,20 +106,13 @@ else
                             </div>
                         </div>
 
-                        @* <div class="alert alert-info small">
-                            Giao đến: <b>Cần Thơ</b> — Dự kiến giao hàng trong ngày <b>@DateTime.Now.AddDays(1).ToString("dd/MM")</b><br />
-                            <span class="text-success">Miễn phí vận chuyển</span>
-                        </div> *@
-
                         <form method="post" asp-page="/Carts/Add">
+                            @Html.AntiForgeryToken()
                             <input type="hidden" name="ProductID" value="@Model.Product.ProductID" />
                             <div class="d-grid gap-2">
-                                <!-- Nút thêm vào giỏ -->
-                                <button type="submit" class="btn btn-warning fw-bold">🛒 Thêm vào giỏ</button>
 
-                                <!-- Nút mua ngay -->
-                                <button onclick="window.location='@Url.Page("/Carts/Add", new { id = Model.Product.ProductID, redirect = "cart" })'"
-                                        type="button"
+                                <button type="button" id="btn-add-to-cart-ajax" class="btn btn-warning fw-bold">🛒 Thêm vào giỏ</button>
+                                <button type="submit"
                                         class="btn btn-danger fw-bold">
                                     💥 Mua ngay
                                 </button>
