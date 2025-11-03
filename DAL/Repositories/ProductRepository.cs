@@ -34,7 +34,7 @@ namespace DAL.Repositories
         public async Task<IEnumerable<Product>> SearchByNameAsync(string keyword)
         {
             return await _context.Products
-                .Where(p => p.IsDelete == 0 && p.ProductName.Contains(keyword))
+                .Where(p => p.IsDelete == 0 && p.ProductName.ToLower().Contains(keyword))
                 .ToListAsync();
         }
 
