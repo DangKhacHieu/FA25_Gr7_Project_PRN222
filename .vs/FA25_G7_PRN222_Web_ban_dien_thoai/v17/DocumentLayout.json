@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Code_PRN222\\Project_PRN222\\",
+  "WorkspaceRootPath": "D:\\HocKi7\\PRN222\\Project PRN\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\hocki7\\prn222\\project prn\\fa25_g7_prn222_web_ban_dien_thoai\\wwwroot\\css\\managecustomer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\wwwroot\\css\\managecustomer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\js\\cartaddajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\js\\cartaddajax.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\hocki7\\prn222\\project prn\\fa25_g7_prn222_web_ban_dien_thoai\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\code_prn222\\project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\hocki7\\prn222\\project prn\\fa25_g7_prn222_web_ban_dien_thoai\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\hocki7\\prn222\\project prn\\fa25_g7_prn222_web_ban_dien_thoai\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\hocki7\\prn222\\project prn\\fa25_g7_prn222_web_ban_dien_thoai\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\hocki7\\prn222\\project prn\\fa25_g7_prn222_web_ban_dien_thoai\\wwwroot\\js\\managecustomer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\wwwroot\\js\\managecustomer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,11 +33,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 138,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
@@ -47,11 +60,49 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-01T16:32:34.661Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "ManageCustomer.css",
+              "DocumentMoniker": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\ManageCustomer.css",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\ManageCustomer.css",
+              "ToolTip": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\ManageCustomer.css",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\ManageCustomer.css",
+              "ViewState": "AgIAANgAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-02T13:57:48.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
+              "ToolTip": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T13:57:01.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManageCustomer.js",
+              "DocumentMoniker": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\js\\ManageCustomer.js",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\js\\ManageCustomer.js",
+              "ToolTip": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\js\\ManageCustomer.js",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\js\\ManageCustomer.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-02T13:56:56.035Z",
+>>>>>>> f1e1b22fa982a3d77a6473ca5ce20652ba0b643c
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
               "Title": "cartAddAjax.js",
               "DocumentMoniker": "D:\\Code_PRN222\\Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\js\\cartAddAjax.js",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\js\\cartAddAjax.js",
@@ -60,6 +111,69 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-01T16:31:39.937Z"
+=======
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-02T13:55:35.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAnwN0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-02T13:53:31.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Customers\\Index.cshtml",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Customers\\Index.cshtml",
+              "ToolTip": "D:\\HocKi7\\PRN222\\Project PRN\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Customers\\Index.cshtml",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Customers\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-02T13:52:30.947Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 262,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{9a7cebbb-dc5c-4986-bc49-962da46aa506}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:86:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:87:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+>>>>>>> f1e1b22fa982a3d77a6473ca5ce20652ba0b643c
             }
           ]
         }
