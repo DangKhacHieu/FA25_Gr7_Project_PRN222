@@ -86,6 +86,9 @@ app.MapGet("/", context =>
     context.Response.Redirect("/Home");
     return Task.CompletedTask;
 });
-app.Run();
 
 app.MapHub<DataSignalR>("/DataSignalRChanel");
+
+app.Run();
+
+
