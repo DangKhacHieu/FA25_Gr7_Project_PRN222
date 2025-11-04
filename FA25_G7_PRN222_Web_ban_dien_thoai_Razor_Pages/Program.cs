@@ -30,7 +30,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
 
-// 🧠 Inject tầng BLL
+// 🧠 Inject tầng BLL và tầng DAL
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 

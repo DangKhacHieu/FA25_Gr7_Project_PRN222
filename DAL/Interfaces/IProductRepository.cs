@@ -16,5 +16,9 @@ namespace DAL.Interfaces
         Task UpdateAsync(Product product);
         Task DeleteAsync(int id);
         Task<bool> ExistsAsync(int id);
+        IQueryable<Product> GetQueryableProducts();
+        Task<List<string>> GetDistinctBrandsAsync();
+        Task<List<string>> GetDistinctRamsAsync();
+        Task<List<string>> GetDistinctRomsAsync();
     }
 }

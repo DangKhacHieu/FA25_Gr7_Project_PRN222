@@ -159,12 +159,12 @@
                             <span class="product-sold small">Đã bán @(product.Quantity_Sell ?? 0)</span>
                         </div>
 
-                        <form method="post" asp-page="/Carts/Add" class="mt-auto form-add-to-cart-ajax">
+                        @* <form method="post" asp-page="/Carts/Add" class="mt-auto form-add-to-cart-ajax">
                             @Html.AntiForgeryToken()
                             <input type="hidden" name="ProductID" value="@product.ProductID" />
                             <input type="hidden" name="Quantity" value="1" />
                             <button type="submit" class="btn btn-warning btn-add-cart">Thêm vào giỏ</button>
-                        </form>
+                        </form> *@
                     </div>
                 </div>
             </div>
@@ -207,12 +207,12 @@
                             <span class="product-sold small">Đã bán @(product.Quantity_Sell ?? 0)</span>
                         </div>
 
-                        <form method="post" asp-page="/Carts/Add" class="mt-auto form-add-to-cart-ajax">
+                      @*   <form method="post" asp-page="/Carts/Add" class="mt-auto form-add-to-cart-ajax">
                             @Html.AntiForgeryToken() 
                             <input type="hidden" name="ProductID" value="@product.ProductID" />
                             <input type="hidden" name="Quantity" value="1" />
                             <button type="submit" class="btn btn-warning btn-add-cart">Thêm vào giỏ</button>
-                        </form>
+                        </form> *@
                     </div>
                 </div>
             </div>
