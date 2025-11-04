@@ -1,4 +1,10 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿var connection = new signalR.HubConnectionBuilder()
+    .withUrl("https://localhost:7237/ProductSignalRChanel") // Host Hub
+    .build();
 
-// Write your JavaScript code.
+connection.on("load", function () {
+    location.href = '/Products/Index'; // hoặc location.reload();});
+
+    connection.start()
+        .then(() => console.log("SignalR connected from MVC"))
+        .catch(err => console.error("Lỗi kết nối SignalR:", err.toString()));
