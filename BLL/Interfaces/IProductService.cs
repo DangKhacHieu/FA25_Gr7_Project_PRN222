@@ -16,5 +16,9 @@ namespace BLL.Interfaces
         Task UpdateProductAsync(Product product);
         Task DeleteProductAsync(int id);
         Task<bool> ProductExistsAsync(int id);
+        IQueryable<Product> GetQueryableProducts();
+        Task<List<string>> GetDistinctBrandsAsync();
+        Task<List<string>> GetDistinctRamsAsync();
+        Task<List<string>> GetDistinctRomsAsync();
     }
 }

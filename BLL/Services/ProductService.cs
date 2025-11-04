@@ -49,5 +49,17 @@ namespace BLL.Services
         {
             return await _productRepo.ExistsAsync(id);
         }
+
+        public IQueryable<Product> GetQueryableProducts()
+            => _productRepo.GetQueryableProducts();
+
+        public async Task<List<string>> GetDistinctBrandsAsync()
+            => await _productRepo.GetDistinctBrandsAsync();
+
+        public async Task<List<string>> GetDistinctRamsAsync()
+            => await _productRepo.GetDistinctRamsAsync();
+
+        public async Task<List<string>> GetDistinctRomsAsync()
+            => await _productRepo.GetDistinctRomsAsync();
     }
 }

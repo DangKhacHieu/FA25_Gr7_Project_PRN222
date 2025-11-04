@@ -34,7 +34,7 @@ namespace DAL.Repositories
         public async Task<IEnumerable<Product>> SearchByNameAsync(string keyword)
         {
             return await _context.Products
-                .Where(p => p.IsDelete == 0 && p.ProductName.ToLower().Contains(keyword))
+                .Where(p => p.IsDelete == 0 && p.ProductName.StartsWith(keyword))
                 .ToListAsync();
         }
 
@@ -63,6 +63,43 @@ namespace DAL.Repositories
         public async Task<bool> ExistsAsync(int id)
         {
             return await _context.Products.AnyAsync(e => e.ProductID == id);
+        }
+
+
+        public IQueryable<Product> GetQueryableProducts()
+        {
+            // Trả về IQueryable để xây dựng truy vấn động
+            return _context.Products.Where(p => p.IsDelete == 0);
+        }
+
+        public async Task<List<string>> GetDistinctBrandsAsync()
+        {
+            return await _context.Products
+                .Where(p => p.IsDelete == 0 && !string.IsNullOrEmpty(p.Brand))
+                .Select(p => p.Brand!)
+                .Distinct()
+                .OrderBy(b => b)
+                .ToListAsync();
+        }
+
+        public async Task<List<string>> GetDistinctRamsAsync()
+        {
+            return await _context.Products
+                .Where(p => p.IsDelete == 0 && !string.IsNullOrEmpty(p.Ram))
+                .Select(p => p.Ram!)
+                .Distinct()
+                .OrderBy(r => r)
+                .ToListAsync();
+        }
+
+        public async Task<List<string>> GetDistinctRomsAsync()
+        {
+            return await _context.Products
+                .Where(p => p.IsDelete == 0 && !string.IsNullOrEmpty(p.Rom))
+                .Select(p => p.Rom!)
+                .Distinct()
+                .OrderBy(r => r)
+                .ToListAsync();
         }
     }
 }
