@@ -7,16 +7,34 @@ using DAL.Interfaces;
 using DAL.IRepositories;
 using DAL.Models;
 using DAL.Repositories;
+using FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Hubs;
 using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Add CORS policy for SignalR
+var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials(); // SignalR cần dòng này
+    });
+});
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 // 1. THÊM BỘ NHỚ CACHE CHO SESSION
 builder.Services.AddDistributedMemoryCache();
+
+//Cấu hình SignalR 
+builder.Services.AddSignalR();
 
 // 2. THÊM DỊCH VỤ SESSION
 builder.Services.AddSession(options =>
@@ -55,6 +73,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
+// sau Route
+app.UseCors(); // Enable CORS for SignalR
+
 
 app.MapStaticAssets();
 app.UseSession();
@@ -65,4 +86,5 @@ app.MapGet("/", context =>
     context.Response.Redirect("/Home");
     return Task.CompletedTask;
 });
+app.MapHub<DataSignalR>("/DataSignalRChanel");
 app.Run();
