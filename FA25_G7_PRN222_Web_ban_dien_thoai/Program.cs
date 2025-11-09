@@ -24,6 +24,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây

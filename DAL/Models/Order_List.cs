@@ -17,8 +17,15 @@ namespace DAL.Models
         public string? PhoneNumber { get; set; }
         public int? Total { get; set; }
 
+        // Khai báo mối quan hệ 1-n: Một Order_List có nhiều Order_Details
+        public ICollection<Order_Details>? Order_Details { get; set; }
         // Navigation properties (tuỳ chọn, nếu muốn ánh xạ quan hệ)
         public Customer? Customer { get; set; }
         public Staff? Staff { get; set; }
+        // Khởi tạo List trong constructor để tránh NullReferenceException
+        public Order_List()
+        {
+            Order_Details = new List<Order_Details>();
+        }
     }
 }
