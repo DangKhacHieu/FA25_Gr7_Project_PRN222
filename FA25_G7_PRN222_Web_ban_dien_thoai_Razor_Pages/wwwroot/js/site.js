@@ -1,20 +1,26 @@
 ﻿// wwwroot/js/site.js
 
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl("/DataSignalRChanel")
+    .withUrl("/DataSignalRChanel") 
     .build();
+
 
 connection.on("ReceiveCartNotification", (message, type) => {
     showGlobalToast(message, type);
 });
 
 connection.on("ReceiveCartUpdate", (data) => {
+    // data = { cartItemId, newQuantity, subtotal, total, message }
+    
     showGlobalToast(data.message, data.newQuantity === 0 ? "info" : "success");
 
+    // Tìm item trên trang
     const cartItemId = data.cartItemId;
     const inputEl = document.querySelector(`input[data-id="${cartItemId}"]`);
 
+    // Cập nhật UI (nếu tìm thấy item)
     if (inputEl && data.newQuantity > 0) {
+        // CẬP NHẬT SỐ LƯỢNG 
         const row = inputEl.closest(".row");
         const subtotalDisplay = row.querySelector(".subtotal");
         if (subtotalDisplay) {
@@ -24,17 +30,19 @@ connection.on("ReceiveCartUpdate", (data) => {
         inputEl.value = data.newQuantity;
 
     } else if (inputEl && data.newQuantity === 0) {
+        // XÓA ITEM 
         const row = inputEl.closest(".row");
         row.remove();
     }
 
+    // Cập nhật tổng tiền
     const totalEl = document.getElementById("cart-total");
     if (totalEl) {
         totalEl.textContent = data.total.toLocaleString("vi-VN") + " đ";
     }
 
-    if (data.total === 0 && document.querySelectorAll('.card-body .row').length === 0) {
-        // nếu cart bị xóa không còn cart items nào thì reload lại để hiện trang empty
+    // Nếu xóa item cuối cùng -> reload
+    if (data.total === 0 && document.querySelectorAll('.card-body .row[data-cartitem]').length === 0) {
         location.reload(); 
     }
 });
@@ -70,7 +78,7 @@ function showGlobalToast(message, type = 'info') {
     toastContainer.insertAdjacentHTML('beforeend', toastHTML);
 
     const toastElement = document.getElementById(toastId);
-    const toast = new bootstrap.Toast(toastElement, { delay: 1500 });
+    const toast = new bootstrap.Toast(toastElement, { delay: 3000 });
     toast.show();
 
     toastElement.addEventListener('hidden.bs.toast', () => {

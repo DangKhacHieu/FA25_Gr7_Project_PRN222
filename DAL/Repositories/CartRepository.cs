@@ -33,30 +33,16 @@ namespace DAL.Repositories
 
         public async Task AddToCartAsync(int customerId, int productId, int quantity)
         {
-            var cart = await GetCartByCustomerAsync(customerId);
+            var cart = await _context.Carts
+                .Include(c => c.CartItems)
+                .FirstOrDefaultAsync(c => c.CustomerId == customerId);
 
             if (cart == null)
             {
                 cart = new Cart { CustomerId = customerId, TotalPrice = 0, CartItems = new List<CartItem>() };
                 _context.Carts.Add(cart);
-                var trackedCart = await _context.Carts
-                    .Include(c => c.CartItems)
-                    .FirstOrDefaultAsync(c => c.CustomerId == customerId);
-                if (trackedCart != null) cart = trackedCart;
-                else
-                {
-                    _context.Carts.Add(cart);
-                }
+                await _context.SaveChangesAsync();
             }
-            else
-            {
-                // Lấy bản thể đang được theo dõi
-                var trackedCart = await _context.Carts
-                   .Include(c => c.CartItems)
-                   .FirstOrDefaultAsync(c => c.CartId == cart.CartId);
-                if (trackedCart != null) cart = trackedCart;
-            }
-
 
             var product = await _context.Products.FindAsync(productId);
             if (product == null) return;
@@ -78,8 +64,10 @@ namespace DAL.Repositories
             }
 
             cart.TotalPrice = cart.CartItems.Sum(i => i.SubTotal);
+
             await _context.SaveChangesAsync();
         }
+
 
         public async Task UpdateCartItemAsync(int cartItemId, int quantity)
         {

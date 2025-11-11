@@ -44,8 +44,8 @@ builder.Services.AddSession(options =>
 builder.Services.AddHttpContextAccessor();
 // 🔌 Kết nối database
 builder.Services.AddDbContext<PhoneContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")),
+    ServiceLifetime.Transient);
 // 🧠 Inject tầng BLL và tầng DAL
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
@@ -55,6 +55,11 @@ builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 
 var app = builder.Build();
 

@@ -23,44 +23,44 @@ namespace BLL.Services
         {
             var product = await _productRepository.GetByIdAsync(productId);
             if (product == null || product.IsDelete == 1)
-                return OperationResult.Submit("❌ Sản phẩm không tồn tại hoặc đã bị xóa.", false);
+                return new OperationResult(false, "❌ Sản phẩm không tồn tại hoặc đã bị xóa.");
 
             if (product.Quantity_Product <= 0)
-                return OperationResult.Submit($"❌ Sản phẩm {product.ProductName} đã hết hàng.", false);
+                return new OperationResult(false, $"❌ Sản phẩm {product.ProductName} đã hết hàng.");
 
             var cart = await _cartRepository.GetCartByCustomerAsync(customerId);
             var existingItem = cart?.CartItems.FirstOrDefault(i => i.ProductId == productId);
 
             int totalQuantityAfterAdd = (existingItem?.Quantity ?? 0) + quantity;
             if (totalQuantityAfterAdd > product.Quantity_Product)
-                return OperationResult.Submit($"⚠️ Sản phẩm {product.ProductName} chỉ còn {product.Quantity_Product} cái trong kho.", false);
+                return new OperationResult(false, $"⚠️ Sản phẩm {product.ProductName} chỉ còn {product.Quantity_Product} cái trong kho.");
             
 
             await _cartRepository.AddToCartAsync(customerId, productId, quantity);
             var checkProduct = _cartRepository.GetCartItemByIdAsync(productId);
             if (checkProduct != null)
-                return OperationResult.Submit("✅ Đã cập nhật giỏ hàng thành công!", true);
+                return new OperationResult(true, "✅ Đã cập nhật giỏ hàng thành công!");
 
-            return OperationResult.Submit("✅ Đã thêm sản phẩm thành công!", true);
+            return new OperationResult(true, "✅ Đã thêm sản phẩm thành công!");
         }
 
         public async Task<OperationResult> UpdateCartItemWithCheckAsync(int cartItemId, int quantity)
         {
             if (quantity < 1)
-                return OperationResult.Submit($"⚠️ Số lượng không hợp lệ.", false);
+                return new OperationResult(false, $"⚠️ Số lượng không hợp lệ.");
 
             var cartItem = await _cartRepository.GetCartItemByIdAsync(cartItemId);
-            if (cartItem == null) return OperationResult.Submit("❌ Không tìm thấy sản phẩm trong giỏ hàng.", false);
+            if (cartItem == null) return new OperationResult(false, "❌ Không tìm thấy sản phẩm trong giỏ hàng.");
 
             var product = await _productRepository.GetByIdAsync(cartItem.ProductId);
             if (product == null || product.IsDelete == 1)
-                return OperationResult.Submit("❌ Sản phẩm này hiện không còn tồn tại.", false);
+                return new OperationResult(false, "❌ Sản phẩm này hiện không còn tồn tại.");
 
             if (quantity > product.Quantity_Product)
-            return OperationResult.Submit($"⚠️ Số lượng tối đa có thể mua là {product.Quantity_Product}.", false);
+            return new OperationResult(false, $"⚠️ Số lượng tối đa có thể mua là {product.Quantity_Product}.");
 
             await _cartRepository.UpdateCartItemAsync(cartItemId, quantity);
-            return OperationResult.Submit("✅ Cập nhật giỏ hàng thành công!", true);
+            return new OperationResult(true, "✅ Cập nhật giỏ hàng thành công!");
         }
 
         public async Task RemoveCartItemAsync(int cartItemId)

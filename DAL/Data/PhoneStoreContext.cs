@@ -39,19 +39,11 @@ namespace DAL.Data
                 .HasForeignKey(od => od.OrderID)       // VÀ Cột khóa ngoại trên Order_Details là OrderID
                 .OnDelete(DeleteBehavior.NoAction);    // Ngăn chặn xóa cascade (tùy chọn)
 
-            // 2. Cấu hình mối quan hệ giữa Order_Details và Product
-            modelBuilder.Entity<Order_Details>()
-                .HasOne(od => od.Product)
-                .WithMany() // Giả định Product không cần Navigation Collection trở lại Order_Details
-                .HasForeignKey(od => od.ProductID)
-                .OnDelete(DeleteBehavior.NoAction);
-
-
             // Đặt tên bảng trùng với database
             modelBuilder.Entity<Cart>().ToTable("Cart");
             modelBuilder.Entity<CartItem>().ToTable("CartItem");
             modelBuilder.Entity<Customer>().ToTable("Customer");
-            //modelBuilder.Entity<Feedback>().ToTable("Feedback");
+            modelBuilder.Entity<Feedback>().ToTable("Feedback");
             //modelBuilder.Entity<Import_Inventory>().ToTable("Import_Inventory");
             modelBuilder.Entity<Order_Details>().ToTable("Order_Details");
             modelBuilder.Entity<Order_List>().ToTable("Order_List");

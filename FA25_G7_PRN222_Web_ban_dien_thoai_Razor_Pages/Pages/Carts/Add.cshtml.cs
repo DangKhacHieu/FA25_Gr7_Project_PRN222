@@ -45,23 +45,17 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
             var customerId = HttpContext.Session.GetInt32("CustomerId");
             if (customerId == null)
             {
-                return new JsonResult(new
-                {
-                    success = false,
-                    message = "Vui lòng đăng nhập để thêm sản phẩm."
-                });
+                return new JsonResult(new { success = false, message = "Vui lòng đăng nhập để thêm sản phẩm." });
             }
 
             var result = await _cartService.AddToCartWithCheckAsync(customerId.Value, ProductID, Quantity);
 
             string type = result.Success ? "success" : "danger";
+
+            // Gửi sự kiện CHỈ ĐỂ HIỂN THỊ TOAST
             await _hubContext.Clients.All.SendAsync("ReceiveCartNotification", result.Message, type);
 
-            return new JsonResult(new
-            {
-                success = result.Success,
-                message = result.Message
-            });
+            return new JsonResult(new { success = result.Success });
         }
 
         public async Task<IActionResult> OnGetAsync(int id, string? redirect)
