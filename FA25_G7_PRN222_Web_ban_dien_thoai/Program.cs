@@ -27,6 +27,7 @@ builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<DAL.Interfaces.ICartRepository, DAL.Repositories.CartRepository>();
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây

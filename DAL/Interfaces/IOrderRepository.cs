@@ -26,5 +26,10 @@ namespace DAL.Interfaces
         Task<IEnumerable<Order_List>> GetPagedOrdersAsync(int pageIndex, int pageSize, string? status = null);
         // THÊM: Phương thức đếm tổng số bản ghi (có lọc)
         Task<int> CountOrdersAsync(string? status = null);
+
+        // Lấy tất cả đơn hàng của 1 khách hàng (không phân trang)
+        Task<IEnumerable<Order_List>> GetOrdersByCustomerIdAsync(int customerId);
+
+        Task<Order_List> CreateOrderAsync(Order_List newOrder);
     }
 }

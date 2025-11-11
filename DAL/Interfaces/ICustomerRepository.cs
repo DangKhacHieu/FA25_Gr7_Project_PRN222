@@ -17,5 +17,7 @@ namespace DAL.IRepositories
         Task<Customer?> GetByIdAsync(int id);
         Task UpdateAsync(Customer customer);
         List<Customer> GetAllActive();
+
+        Task<Customer?> GetCustomerByIdAsync(int customerId);
     }
 }

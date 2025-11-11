@@ -33,6 +33,7 @@ namespace DAL.Repositories
         public async Task<Order_List?> GetOrderByIdAsync(int id)
         {
             // Lấy Order_List và Include tất cả các chi tiết liên quan
+            // HÀM NÀY DÙNG CHUNG ĐƯỢC CHO CẢ ADMIN VÀ CUSTOMER DETAILS
             return await _context.Order_Lists
                 .Include(o => o.Customer)
                 .Include(o => o.Staff)
@@ -91,11 +92,11 @@ namespace DAL.Repositories
 
             // Áp dụng phân trang (Skip/Take)
             return await query.Include(o => o.Customer)
-                              .Include(o => o.Staff)
-                              .OrderByDescending(o => o.Date)
-                              .Skip((pageIndex - 1) * pageSize)
-                              .Take(pageSize)
-                              .ToListAsync();
+                                .Include(o => o.Staff)
+                                .OrderByDescending(o => o.Date)
+                                .Skip((pageIndex - 1) * pageSize)
+                                .Take(pageSize)
+                                .ToListAsync();
         }
 
         // THÊM: Phương thức đếm tổng (có lọc)
@@ -109,5 +110,31 @@ namespace DAL.Repositories
             }
             return await query.CountAsync();
         }
+
+        public async Task<IEnumerable<Order_List>> GetOrdersByCustomerIdAsync(int customerId)
+        {
+            // Lấy tất cả đơn hàng của khách hàng, sắp xếp mới nhất lên đầu
+            return await _context.Order_Lists
+                                 .Where(o => o.CustomerID == customerId)
+                                 .OrderByDescending(o => o.Date)
+                                 .ToListAsync();
+        }
+
+        public async Task<Order_List> CreateOrderAsync(Order_List newOrder)
+        {
+            // Khi EF Core Add một đối tượng cha (Order_List)
+            // nó sẽ tự động Add luôn các đối tượng con (Order_Details)
+            // mà bạn đã gán vào newOrder.Order_Details
+            _context.Order_Lists.Add(newOrder);
+
+            await _context.SaveChangesAsync();
+
+            // Trả về đối tượng order (lúc này đã được gán OrderID)
+            return newOrder;
+        }
+
+
+
+
     }
 }
