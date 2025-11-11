@@ -1,53 +1,52 @@
 ﻿using BLL.Interfaces;
+using DAL.Models;
+using FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Hubs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
+using System.Linq;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 {
     public class UpdateModel : PageModel
     {
         private readonly ICartService _cartService;
-        public UpdateModel(ICartService cartService)
+        private readonly IHubContext<DataSignalR> _hubContext;
+
+        public UpdateModel(ICartService cartService, IHubContext<DataSignalR> hubContext)
         {
             _cartService = cartService;
+            _hubContext = hubContext;
         }
-
-        public int CartItemId { get; set; }
-        public int Quantity { get; set; }
-
         public async Task<IActionResult> OnPostAsync([FromForm] int CartItemId, [FromForm] int Quantity)
         {
             var customerId = HttpContext.Session.GetInt32("CustomerId");
             if (customerId == null)
             {
-                TempData["Message_alert"] = "Vui lòng đăng nhập để cập nhật sản phẩm.";
-                return RedirectToPage("/Login");
+                return new JsonResult(new { success = false, message = "Phiên đăng nhập hết hạn. Vui lòng tải lại trang." });
             }
+
             var result = await _cartService.UpdateCartItemWithCheckAsync(CartItemId, Quantity);
 
-            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            if (!result.Success)
             {
-                if (!result.Success)
-                    return new JsonResult(new { success = false, message = result.Message });
-
-                var cart = await _cartService.GetCartAsync(customerId.Value);
-                var item = cart?.CartItems.FirstOrDefault(x => x.CartItemId == CartItemId);
-
-                return new JsonResult(new
-                {
-                    success = true,
-                    message = result.Message,
-                    subtotal = item?.SubTotal ?? 0,
-                    total = cart?.TotalPrice ?? 0
-                });
+                await _hubContext.Clients.All.SendAsync("ReceiveCartNotification", result.Message, "warning");
+                return new JsonResult(new { success = false, message = result.Message });
             }
 
-            TempData["Message"] = result.Message;
-            if (result.Success) TempData["Message_success"] = true;
-            else TempData["Message_alert"] = true;
+            var cart = await _cartService.GetCartAsync(customerId.Value);
+            var item = cart?.CartItems.FirstOrDefault(x => x.CartItemId == CartItemId);
 
-            return RedirectToPage("Index");
+            await _hubContext.Clients.All.SendAsync("ReceiveCartUpdate", new
+            {
+                cartItemId = CartItemId,
+                newQuantity = item?.Quantity ?? Quantity,
+                subtotal = item?.SubTotal ?? 0,
+                total = cart?.TotalPrice ?? 0,
+                message = result.Message 
+            });
+
+            return new JsonResult(new { success = true, message = result.Message });
         }
-
     }
 }

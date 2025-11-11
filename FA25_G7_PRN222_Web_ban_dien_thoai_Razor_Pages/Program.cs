@@ -25,16 +25,14 @@ builder.Services.AddCors(options =>
               .AllowCredentials(); // SignalR cần dòng này
     });
 });
-
+//Cấu hình SignalR 
+builder.Services.AddSignalR();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 // 1. THÊM BỘ NHỚ CACHE CHO SESSION
 builder.Services.AddDistributedMemoryCache();
-
-//Cấu hình SignalR 
-builder.Services.AddSignalR();
 
 // 2. THÊM DỊCH VỤ SESSION
 builder.Services.AddSession(options =>

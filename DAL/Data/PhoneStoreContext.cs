@@ -13,7 +13,7 @@ namespace DAL.Data
         public DbSet<Cart> Carts { get; set; } = default!;
         public DbSet<CartItem> CartItems { get; set; } = default!;
         public DbSet<Customer> Customers { get; set; } = default!;
-        //public DbSet<Feedback> Feedbacks { get; set; } = default!;
+        public DbSet<Feedback> Feedbacks { get; set; } = default!;
         //public DbSet<Import_Inventory> Import_Inventories { get; set; } = default!;
         //public DbSet<Order_Details> Order_Details { get; set; } = default!;
         //public DbSet<Order_List> Order_Lists { get; set; } = default!;

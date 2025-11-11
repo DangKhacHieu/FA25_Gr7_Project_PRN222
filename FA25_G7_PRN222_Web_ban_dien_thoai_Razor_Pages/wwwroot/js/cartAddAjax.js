@@ -1,34 +1,4 @@
-﻿// --- HÀM TOAST TOÀN CỤC ---
-function showGlobalToast(message, type = 'info') {
-    const toastContainer = document.querySelector('.toast-container');
-    if (!toastContainer) return;
-
-    const toastId = 'toast-' + Math.random().toString(36).substr(2, 9);
-    const toastTypeClass = type === 'success' ? 'text-bg-success' : 'text-bg-danger';
-
-    const toastHTML = `
-        <div id="${toastId}" class="toast align-items-center ${toastTypeClass} border-0" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    ${message}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-    `;
-
-    toastContainer.insertAdjacentHTML('beforeend', toastHTML);
-
-    const toastElement = document.getElementById(toastId);
-    const toast = new bootstrap.Toast(toastElement, { delay: 3000 });
-    toast.show();
-
-    // Xóa element khỏi DOM sau khi toast đã ẩn
-    toastElement.addEventListener('hidden.bs.toast', () => {
-        toastElement.remove();
-    });
-}
-
+﻿// wwwroot/js/cartAddAjax.js
 async function handleAjaxAddToCart(form) {
     try {
         const formData = new FormData(form);
@@ -47,7 +17,14 @@ async function handleAjaxAddToCart(form) {
         }
 
         const result = await response.json();
-        showGlobalToast(result.message, result.success ? 'success' : 'danger');
+
+        if (result.success === false && result.message) {
+            showGlobalToast(result.message, 'danger');
+
+            if (result.message.includes("Vui lòng đăng nhập")) {
+                window.location.href = "/Login";
+            }
+        }
 
     } catch (error) {
         console.error('Lỗi khi thêm vào giỏ:', error);
@@ -55,12 +32,11 @@ async function handleAjaxAddToCart(form) {
     }
 }
 
-// Gắn sự kiện khi trang tải xong
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Gắn sự kiện cho các form "Thêm vào giỏ" (Home, Search)
     document.querySelectorAll('.form-add-to-cart-ajax').forEach(form => {
         form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Ngăn form submit
+            event.preventDefault();
             handleAjaxAddToCart(this);
         });
     });
@@ -69,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnAjax = document.getElementById('btn-add-to-cart-ajax');
     if (btnAjax) {
         btnAjax.addEventListener('click', function () {
-            const form = this.closest('form'); // Tìm form cha
+            const form = this.closest('form');
             if (form) {
                 handleAjaxAddToCart(form);
             }
