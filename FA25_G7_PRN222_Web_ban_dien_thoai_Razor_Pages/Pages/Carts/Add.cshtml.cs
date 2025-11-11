@@ -1,22 +1,25 @@
 ﻿using BLL.Interfaces;
 using DAL.Models;
+using FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Hubs; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
+using Microsoft.AspNetCore.SignalR;
 namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 {
     public class AddModel : PageModel
     {
         private readonly ICartService _cartService;
-        public AddModel(ICartService cartService)
+        private readonly IHubContext<DataSignalR> _hubContext;
+
+        public AddModel(ICartService cartService, IHubContext<DataSignalR> hubContext)
         {
             _cartService = cartService;
+            _hubContext = hubContext;
         }
 
         [BindProperty] public int ProductID { get; set; }
         [BindProperty] public int Quantity { get; set; } = 1;
 
-        // XỬ LÝ CHO NÚT "MUA NGAY" (SUBMIT THƯỜNG)
         public async Task<IActionResult> OnPostAsync()
         {
             var customerId = HttpContext.Session.GetInt32("CustomerId");
@@ -29,13 +32,11 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 
             if (!result.Success)
             {
-                // Nếu mua ngay mà lỗi (ví dụ hết hàng), báo lỗi và quay lại
                 TempData["Message"] = result.Message;
                 TempData["Message_alert"] = true;
                 return RedirectToPage("/Products/Details", new { id = ProductID });
             }
 
-            // Mua ngay thành công -> Chuyển đến giỏ hàng
             return RedirectToPage("/Carts/Index");
         }
 
@@ -44,22 +45,17 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
             var customerId = HttpContext.Session.GetInt32("CustomerId");
             if (customerId == null)
             {
-                // Trả về lỗi JSON
-                return new JsonResult(new
-                {
-                    success = false,
-                    message = "Vui lòng đăng nhập để thêm sản phẩm."
-                });
+                return new JsonResult(new { success = false, message = "Vui lòng đăng nhập để thêm sản phẩm." });
             }
 
             var result = await _cartService.AddToCartWithCheckAsync(customerId.Value, ProductID, Quantity);
 
-            // Luôn trả về JSON
-            return new JsonResult(new
-            {
-                success = result.Success,
-                message = result.Message
-            });
+            string type = result.Success ? "success" : "danger";
+
+            // Gửi sự kiện CHỈ ĐỂ HIỂN THỊ TOAST
+            await _hubContext.Clients.All.SendAsync("ReceiveCartNotification", result.Message, type);
+
+            return new JsonResult(new { success = result.Success });
         }
 
         public async Task<IActionResult> OnGetAsync(int id, string? redirect)
@@ -71,7 +67,6 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
                 return RedirectToPage("/Login");
             }
 
-            // Gán ProductID từ route
             ProductID = id;
             var result = await _cartService.AddToCartWithCheckAsync(customerId.Value, ProductID, Quantity);
 
@@ -82,13 +77,11 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
                 return RedirectToPage("/Products/Details", new { id = ProductID });
             }
 
-            // Nếu "Mua ngay" (redirect=cart) thì chuyển sang giỏ hàng
             if (redirect == "cart")
             {
                 return RedirectToPage("/Carts/Index");
             }
 
-            // Mặc định (nếu có)
             return RedirectToPage("/Index");
         }
     }

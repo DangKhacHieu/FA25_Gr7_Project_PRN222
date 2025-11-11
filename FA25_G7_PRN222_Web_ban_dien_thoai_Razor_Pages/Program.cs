@@ -25,16 +25,14 @@ builder.Services.AddCors(options =>
               .AllowCredentials(); // SignalR cần dòng này
     });
 });
-
+//Cấu hình SignalR 
+builder.Services.AddSignalR();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 // 1. THÊM BỘ NHỚ CACHE CHO SESSION
 builder.Services.AddDistributedMemoryCache();
-
-//Cấu hình SignalR 
-builder.Services.AddSignalR();
 
 // 2. THÊM DỊCH VỤ SESSION
 builder.Services.AddSession(options =>
@@ -46,8 +44,8 @@ builder.Services.AddSession(options =>
 builder.Services.AddHttpContextAccessor();
 // 🔌 Kết nối database
 builder.Services.AddDbContext<PhoneContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")),
+    ServiceLifetime.Transient);
 // 🧠 Inject tầng BLL và tầng DAL
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
@@ -57,6 +55,11 @@ builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 
 var app = builder.Build();
 
