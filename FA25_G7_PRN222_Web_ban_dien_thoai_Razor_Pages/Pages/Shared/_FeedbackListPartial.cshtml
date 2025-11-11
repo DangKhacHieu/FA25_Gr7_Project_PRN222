@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DAL.Models.Feedback>
+
+<style>
+    .star-display {
+        color: #ffc107; /* Màu vàng */
+        font-size: 0.9rem; /* Kích thước sao nhỏ hơn */
+        margin-bottom: 8px;
+    }
+
+    .feedback-item {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+        .feedback-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+</style>
+
+@if (Model == null || !Model?.Any() == true)
+{
+    <p class="text-muted">Chưa có đánh giá nào cho sản phẩm này.</p>
+}
+else
+{
+    @foreach (var fb in Model ?? Enumerable.Empty<DAL.Models.Feedback>())
+    {
+
+        <div class="feedback-item">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+                <h6 class="card-subtitle fw-bold mb-0">
+                    @* Hiển thị tên (hoặc "Khách hàng" nếu tên bị null) *@
+                    @(fb.Customer?.FullName ?? "Khách hàng")
+                </h6>
+            </div>
+
+            <div class="star-display">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    <span class="fa-star @(i <= fb.RatePoint ? "fas" : "far")"></span>
+                }
+            </div>
+
+            <p class="card-text mb-0">@fb.Content</p>
+        </div>
+    }
+}

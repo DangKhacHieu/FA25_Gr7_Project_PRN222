@@ -16,6 +16,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
 
+builder.Services.AddScoped<DbContext>(provider => provider.GetService<PhoneContext>()!);
 // 🧠 Inject tầng BLL
 builder.Services.AddScoped<ICustomerRepository,CustomerRepository>(); // ✅ THÊM DÒNG NÀY
 builder.Services.AddScoped<ICustomerService, CustomerService>();
@@ -26,6 +27,7 @@ builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+
 builder.Services.AddScoped<IRevenueRepository, RevenueRepository>();
 builder.Services.AddScoped<IRevenueService, RevenueService>();
 
@@ -36,6 +38,8 @@ builder.Services.AddScoped<IImportProductRepository, ImportProductRepository>();
 // Service
 builder.Services.AddScoped<IImportProductService, ImportProductService>();
 builder.Services.AddSignalR();
+
+builder.Services.AddScoped<DAL.Interfaces.ICartRepository, DAL.Repositories.CartRepository>();
 
 var app = builder.Build();
 

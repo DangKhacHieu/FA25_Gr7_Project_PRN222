@@ -85,7 +85,9 @@
                     </span>
                 </div>
 
-                <button class="btn btn-warning w-100 fw-bold py-2">Đặt hàng</button>
+                <a asp-page="/Order/CheckOut" class="btn btn-warning w-100 fw-bold py-2">
+                    Đặt hàng
+                </a>
             </div>
         </div>
     }
@@ -110,34 +112,45 @@
 @section Scripts {
     <script>
         let formToDelete = null;
-        const deleteModalElement = document.getElementById('deleteConfirmModal');
-        const deleteModal = new bootstrap.Modal(deleteModalElement);
-        const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+        let deleteModalElement = null;
+        let deleteModal = null;
+        let btnConfirmDelete = null;
 
-        document.querySelectorAll('.form-delete').forEach(form => {
-            form.addEventListener('submit', function (event) {
-                event.preventDefault();
-                formToDelete = event.target; 
-                deleteModal.show(); 
+        document.addEventListener('DOMContentLoaded', (event) => {
+            deleteModalElement = document.getElementById('deleteConfirmModal');
+            if (deleteModalElement) {
+                deleteModal = new bootstrap.Modal(deleteModalElement);
+            }
+            btnConfirmDelete = document.getElementById('btn-confirm-delete');
+
+            if(btnConfirmDelete) {
+                btnConfirmDelete.addEventListener('click', async function () {
+                    if (formToDelete) {
+                        const cartItemId = formToDelete.querySelector('input[name="CartItemId"]').value;
+                        await JsonTask("/Carts/Remove", { CartItemId: cartItemId }, formToDelete);
+                        deleteModal.hide();
+                        formToDelete = null;
+                    }
+                });
+            }
+
+            if(deleteModalElement) {
+                deleteModalElement.addEventListener('hidden.bs.modal', function () {
+                    if (formToDelete) {
+                        formToDelete = null;
+                    }
+                });
+            }
+
+            document.querySelectorAll('.form-delete').forEach(form => {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    formToDelete = event.target;
+                    if(deleteModal) {
+                        deleteModal.show();
+                    }
+                });
             });
-        });
-
-        btnConfirmDelete.addEventListener('click', async function () {
-            if (formToDelete) {
-                const cartItemId = formToDelete.querySelector('input[name="CartItemId"]').value;
-                const data = { CartItemId: cartItemId };
-
-                await JsonTask("/Carts/Remove", data, formToDelete);
-
-                deleteModal.hide();
-                formToDelete = null;
-            }
-        });
-
-        deleteModalElement.addEventListener('hidden.bs.modal', function () {
-            if (formToDelete) {
-                formToDelete = null;
-            }
         });
 
         async function JsonTask(url, data, contextElement) {
@@ -161,11 +174,14 @@
                 const result = await response.json();
 
                 if (result.success === false && result.message) {
-                    showGlobalToast(result.message, 'danger');
 
-                    // Nếu lỗi hết hạn, tải lại trang
+                    if (url.includes("/Carts/Update") && contextElement) {
+                        const input = contextElement;
+                        input.value = input.dataset.quantity; 
+                    }
+
                     if (result.message.includes("hết hạn")) {
-                        location.reload();
+                        setTimeout(() => { location.reload(); }, 2000);
                     }
                 }
 
@@ -175,38 +191,29 @@
             }
         }
 
-        // HÀM GỬI CẬP NHẬT SỐ LƯỢNG
+        // HÀM GỬI CẬP NHẬT (ĐÃ BỎ CHECK VALIDATION)
         async function sendUpdate(input) {
             let baseQuantity = parseInt(input.dataset.quantity);
             let quantity = input.valueAsNumber;
-            const max = parseInt(input.dataset.max) || 9999;
             const cartItemId = input.dataset.id;
 
-            // 1. Kiểm tra NaN hoặc số âm
-            // if (Number.isNaN(quantity) || quantity < 1) {
-            //     showGlobalToast("Số lượng phải là số dương.", "danger");
-            //     input.value = baseQuantity; Trả về giá trị cũ
-            //     return;
-            // }
+            // Nếu nhập chữ (NaN), coi như là 1
+            if (Number.isNaN(quantity)) {
+                quantity = 1;
+            }
 
-            // 2. Kiểm tra vượt quá tồn kho
-            // if (quantity > max) {
-            //     showGlobalToast("Số lượng vượt quá tồn kho (" + max + ").", "warning");
-            //     input.value = max; 
-            //     quantity = max;
-            // }
-
-            if (quantity == baseQuantity) {
+            // Chỉ check nếu giá trị không thay đổi
+            if (quantity === baseQuantity) {
                 return;
             }
 
-            input.dataset.quantity = quantity;
-
+            // Gửi request đi (Backend sẽ check)
             const data = {
                 CartItemId: cartItemId,
                 Quantity: quantity
             };
 
+            // Truyền 'input' (contextElement) để JsonTask có thể reset
             await JsonTask("/Carts/Update", data, input);
         }
 
@@ -214,10 +221,8 @@
         function changeQty(btn, delta) {
             const input = btn.parentElement.querySelector(".visible-qty");
             let value = parseInt(input.value) || 1;
-
             value += delta;
             input.value = value;
-
             sendUpdate(input);
         }
     </script>

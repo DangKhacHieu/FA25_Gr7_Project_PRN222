@@ -15,26 +15,26 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
         }
 
         // GET: Order
-        public async Task<IActionResult> Index(string? status)
+        public async Task<IActionResult> Index(string? status, int page = 1, int pageSize = 10)
         {
-            IEnumerable<Order_List> orders;
+            // 1. Lấy dữ liệu đã phân trang (kiểu PagedResult<Order_List>)
+            var pagedResultOrder = await _orderService.GetOrdersPaginatedAsync(page, pageSize, status);
 
-            if (string.IsNullOrEmpty(status) || status == "All")
+            // 2. ÉP KIỂU SANG PagedResult<object> ĐỂ TRÁNH LỖI INVALID OPERATION
+            var pagedResultObject = new PagedResult<object>
             {
-                // Nếu không có status, gọi GetAll
-                orders = await _orderService.GetAllOrdersAsync();
-            }
-            else
-            {
-                // Nếu có status, gọi GetOrdersByStatus
-                orders = await _orderService.GetOrdersByStatusAsync(status);
-            }
+                Items = pagedResultOrder.Items.Cast<object>(), // Ép kiểu danh sách
+                TotalCount = pagedResultOrder.TotalCount,
+                PageIndex = pagedResultOrder.PageIndex,
+                PageSize = pagedResultOrder.PageSize
+            };
 
-            // Tạo danh sách trạng thái để truyền cho Dropdown trong View
+            // Khai báo danh sách trạng thái cố định cho ViewBag (dùng trong Dropdown)
             ViewBag.StatusList = new List<string> { "All", "Pending", "Shipping", "Completed", "Failed" };
-            ViewBag.CurrentStatus = status ?? "All"; // Lưu trạng thái hiện tại
+            ViewBag.CurrentStatus = status ?? "All";
 
-            return View(orders);
+            // Trả về View với PagedResult<object>
+            return View(pagedResultObject);
         }
 
         // GET: Order/Details/5

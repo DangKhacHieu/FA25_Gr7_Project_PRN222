@@ -1,4 +1,5 @@
 ﻿// wwwroot/js/cartAddAjax.js
+
 async function handleAjaxAddToCart(form) {
     try {
         const formData = new FormData(form);
@@ -18,12 +19,9 @@ async function handleAjaxAddToCart(form) {
 
         const result = await response.json();
 
-        if (result.success === false && result.message) {
-            showGlobalToast(result.message, 'danger');
-
-            if (result.message.includes("Vui lòng đăng nhập")) {
-                window.location.href = "/Login";
-            }
+        // Chỉ xử lý lỗi "Chưa đăng nhập"
+        if (!result.success && result.message.includes("Vui lòng đăng nhập")) {
+            window.location.href = "/Login";
         }
 
     } catch (error) {
@@ -33,7 +31,6 @@ async function handleAjaxAddToCart(form) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Gắn sự kiện cho các form "Thêm vào giỏ" (Home, Search)
     document.querySelectorAll('.form-add-to-cart-ajax').forEach(form => {
         form.addEventListener('submit', function (event) {
             event.preventDefault();
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Gắn sự kiện cho nút "Thêm vào giỏ" (trang Details)
     const btnAjax = document.getElementById('btn-add-to-cart-ajax');
     if (btnAjax) {
         btnAjax.addEventListener('click', function () {

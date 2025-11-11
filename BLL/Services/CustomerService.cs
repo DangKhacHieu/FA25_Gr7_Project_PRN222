@@ -4,6 +4,8 @@ using DAL.IRepositories;
 using DAL.Models;
 using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BLL.Services
 {
@@ -123,5 +125,58 @@ namespace BLL.Services
         }
 
         public void ReloadCache() { }
+        // THÊM: Phương thức HashPassword (SHA256)
+        public string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2")); // convert byte -> hex
+                }
+                return builder.ToString();
+            }
+        }
+
+        // THÊM: Phương thức VerifyPassword (So sánh hash)
+        public bool VerifyPassword(string storedHashedPassword, string providedPassword)
+        {
+            // Hash mật khẩu người dùng cung cấp và so sánh với mật khẩu đã lưu (đã hash)
+            var providedHash = HashPassword(providedPassword);
+            return storedHashedPassword == providedHash;
+        }
+
+        // THÊM: Phương thức Đổi mật khẩu (Change Password)
+        public async Task<(bool Success, string Message)> ChangePasswordAsync(int customerId, string oldPassword, string newPassword)
+        {
+            // 1. Lấy thông tin khách hàng
+            var customer = await _repository.GetByIdAsync(customerId);
+
+            if (customer == null || string.IsNullOrEmpty(customer.Password))
+            {
+                return (false, "Tài khoản không tồn tại hoặc có lỗi dữ liệu.");
+            }
+
+            // 2. Xác minh mật khẩu cũ
+            if (!VerifyPassword(customer.Password, oldPassword))
+            {
+                return (false, "Mật khẩu cũ không chính xác.");
+            }
+
+            // 3. Hash mật khẩu mới và cập nhật
+            customer.Password = HashPassword(newPassword);
+
+            try
+            {
+                await _repository.UpdateAsync(customer);
+                return (true, "Mật khẩu đã được đổi thành công.");
+            }
+            catch (Exception ex)
+            {
+                return (false, $"Đổi mật khẩu thất bại: {ex.Message}");
+            }
+        }
     }
 }

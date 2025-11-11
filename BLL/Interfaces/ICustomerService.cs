@@ -18,5 +18,8 @@ namespace BLL.IServices
         List<Customer> SearchExact(string keyword);
         List<string> Suggest(string term, int maxResults = 5);
         void ReloadCache();
+        bool VerifyPassword(string storedHashedPassword, string providedPassword);
+        string HashPassword(string password);
+        Task<(bool Success, string Message)> ChangePasswordAsync(int customerId, string oldPassword, string newPassword);
     }
 }

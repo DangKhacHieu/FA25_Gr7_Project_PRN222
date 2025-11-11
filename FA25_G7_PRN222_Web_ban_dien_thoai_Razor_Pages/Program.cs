@@ -25,6 +25,7 @@ builder.Services.AddCors(options =>
               .AllowCredentials(); // SignalR cần dòng này
     });
 });
+
 //Cấu hình SignalR 
 builder.Services.AddSignalR();
 
@@ -42,10 +43,11 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<DbContext>(provider => provider.GetService<PhoneContext>()!);
 // 🔌 Kết nối database
 builder.Services.AddDbContext<PhoneContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
-
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")),
+    ServiceLifetime.Transient);
 // 🧠 Inject tầng BLL và tầng DAL
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
@@ -55,6 +57,11 @@ builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
 
 var app = builder.Build();
 

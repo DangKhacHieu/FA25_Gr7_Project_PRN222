@@ -18,13 +18,22 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
             _cartService = cartService;
             _hubContext = hubContext;
         }
+
         public async Task<IActionResult> OnPostAsync([FromForm] int CartItemId, [FromForm] int Quantity)
         {
             var customerId = HttpContext.Session.GetInt32("CustomerId");
             if (customerId == null)
             {
-                return new JsonResult(new { success = false, message = "Phiên đăng nhập hết hạn. Vui lòng tải lại trang." });
+                return new JsonResult(new { success = false, message = "Phiên đăng nhập hết hạn." });
             }
+
+            //// 1. Kiểm tra logic (ví dụ: số lượng < 1)
+            //if (Quantity < 1)
+            //{
+            //    // Gửi thông báo lỗi (Notification) và trả về
+            //    await _hubContext.Clients.All.SendAsync("ReceiveCartNotification", "Số lượng phải lớn hơn 0.", "warning");
+            //    return new JsonResult(new { success = false, message = "Số lượng không hợp lệ." });
+            //}
 
             var result = await _cartService.UpdateCartItemWithCheckAsync(CartItemId, Quantity);
 
@@ -43,10 +52,10 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
                 newQuantity = item?.Quantity ?? Quantity,
                 subtotal = item?.SubTotal ?? 0,
                 total = cart?.TotalPrice ?? 0,
-                message = result.Message 
+                message = result.Message
             });
 
-            return new JsonResult(new { success = true, message = result.Message });
+            return new JsonResult(new { success = true });
         }
     }
 }

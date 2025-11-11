@@ -63,5 +63,10 @@ namespace DAL.Repositories
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<Customer?> GetCustomerByIdAsync(int customerId)
+        {
+            return await _context.Customers.FindAsync(customerId);
+        }
     }
 }

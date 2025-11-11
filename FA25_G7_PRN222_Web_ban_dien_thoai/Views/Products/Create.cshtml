@@ -233,7 +233,11 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Operating_System_name"></label> <input asp-for="Operating_System_name" class="form-control" />
+                    <label asp-for="Operating_System_name"></label> <select asp-for="Operating_System_name" class="form-control">
+                        <option value="" disabled selected>-- Chọn Hệ điều hành --</option>
+                        <option value="Android">Android</option>
+                        <option value="iOS">iOS</option>
+                    </select>
                     <span asp-validation-for="Operating_System_name" class="text-danger"></span>
                 </div>
             </div>

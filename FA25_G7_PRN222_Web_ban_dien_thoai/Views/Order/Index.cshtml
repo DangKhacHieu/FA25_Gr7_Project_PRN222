@@ -1,9 +1,10 @@
-﻿@model IEnumerable<DAL.Models.Order_List>
+﻿@model DAL.Models.PagedResult<System.Object>
 
 @{
     ViewData["Title"] = "Order Management";
     var statusList = (List<string>)ViewBag.StatusList;
     var currentStatus = (string)ViewBag.CurrentStatus;
+    var pagedOrders = Model.Items.Cast<DAL.Models.Order_List>();
 }
 
 <div class="modal fade" id="updateStatusModal" tabindex="-1" aria-labelledby="updateStatusModalLabel" aria-hidden="true">
@@ -156,6 +157,7 @@
             }
 
         </select>
+        <input type="hidden" name="pageSize" value="@Model.PageSize" />
     </form>
 </div>
 
@@ -174,7 +176,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in pagedOrders)
             {
                 var statusClass = item.Status switch
                 {
@@ -210,6 +212,7 @@
         </tbody>
     </table>
 </div>
+<partial name="_Pagination" model="Model" />
 
 @* Modal thông báo thành công/thất bại *@
 <partial name="_StatusMessage" />
