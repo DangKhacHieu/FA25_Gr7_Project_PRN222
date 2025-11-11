@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53f4c07f0cc195528646fdd36a1389006e48d5eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+831f4b239a251ec3389f990a9a629793b9db3a1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

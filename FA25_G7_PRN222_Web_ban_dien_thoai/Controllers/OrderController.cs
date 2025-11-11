@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly IOrderService _orderService;
 

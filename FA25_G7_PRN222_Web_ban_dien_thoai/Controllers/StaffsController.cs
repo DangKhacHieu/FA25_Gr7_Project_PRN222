@@ -10,7 +10,7 @@ using DAL.Models;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
-    public class StaffsController : Controller
+    public class StaffsController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly PhoneContext _context;
 

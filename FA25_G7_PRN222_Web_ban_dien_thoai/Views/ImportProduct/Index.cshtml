@@ -1,0 +1,58 @@
+﻿@model List<DAL.Models.Product>
+
+<h2>Danh sách sản phẩm</h2>
+
+<h2>Import sản phẩm từ Excel</h2>
+
+<form asp-action="Index" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label>Chọn file Excel (.xlsx)</label>
+        <input type="file" name="file" class="form-control" accept=".xlsx" required />
+    </div>
+    <button type="submit" class="btn btn-success">Import</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-2">@ViewBag.Message</div>
+}
+
+
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-2">@ViewBag.Message</div>
+}
+</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Brand</th>
+            <th>Số lượng còn</th>
+            <th>Giá</th>
+            <th>RAM</th>
+            <th>ROM</th>
+            <th>Màu</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ProductName</td>
+                <td>@p.Brand</td>
+                <td>@p.Quantity_Product</td>
+                <td>@p.Price?.ToString("C")</td>
+                <td>@p.Ram</td>
+                <td>@p.Rom</td>
+                <td>@p.Color</td>
+                <td>
+                    <a asp-action="ManualImport" asp-route-id="@p.ProductID" class="btn btn-warning btn-sm">Sửa / Nhập</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -14,5 +14,7 @@ namespace BLL.Interfaces
         void AddStaff(Staff staff);
         void UpdateStaff(Staff staff);
         void DeleteStaff(int id);
+
+        Task<Staff?> GetStaffByIdAsync(int id);
     }
 }

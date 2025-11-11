@@ -1,0 +1,117 @@
+﻿@using System.Globalization
+@model List<DAL.Models.Order_List>
+
+@{
+    ViewBag.Title = "Danh sách Doanh thu";
+    var orders = ViewBag.Orders as List<DAL.Models.Order_List>;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    int currentPage = ViewBag.CurrentPage ?? 1;
+}
+
+<h2>Danh sách Doanh thu</h2>
+
+<form method="get" class="mb-3">
+    <div class="row g-2">
+        <!-- Dropdown Năm -->
+        <div class="col-auto">
+            <select name="year" class="form-control">
+                <option value="">-- Chọn năm --</option>
+                @foreach (var y in ViewBag.Years as List<int>)
+                {
+                    if (y == ViewBag.SelectedYear)
+                    {
+                        <option value="@y" selected>@y</option>
+                    }
+                    else
+                    {
+                        <option value="@y">@y</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <!-- Dropdown Quý -->
+        <div class="col-auto">
+            <select name="quarter" class="form-control">
+                <option value="">-- Chọn quý --</option>
+                @foreach (var q in ViewBag.Quarters as List<int>)
+                {
+                    if (q == ViewBag.SelectedQuarter)
+                    {
+                        <option value="@q" selected>@q</option>
+                    }
+                    else
+                    {
+                        <option value="@q">@q</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <!-- Dropdown Tháng -->
+        <div class="col-auto">
+            <select name="month" class="form-control">
+                <option value="">-- Chọn tháng --</option>
+                @foreach (var m in ViewBag.Months as List<int>)
+                {
+                    if (m == ViewBag.SelectedMonth)
+                    {
+                        <option value="@m" selected>@m</option>
+                    }
+                    else
+                    {
+                        <option value="@m">@m</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Lọc</button>
+        </div>
+    </div>
+</form>
+
+@if (orders == null || !orders.Any())
+{
+    <p>Không có đơn hàng.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ngày đặt</th>
+                <th>Tổng tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 1 + (currentPage - 1) * 5;
+                foreach (var o in orders)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td>@o.Date?.ToString("yyyy-MM-dd")</td>
+                        <td>@(o.Total?.ToString("N0") + " VND")</td>
+                    </tr>
+                    i++;
+                }
+            }
+        </tbody>
+    </table>
+
+    <!-- Phân trang -->
+    <nav>
+        <ul class="pagination">
+            @for (int p = 1; p <= totalPages; p++)
+            {
+                <li class="page-item @(p == currentPage ? "active" : "")">
+                    <a class="page-link" href="?year=@ViewBag.SelectedYear&quarter=@ViewBag.SelectedQuarter&month=@ViewBag.SelectedMonth&page=@p">@p</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}
+

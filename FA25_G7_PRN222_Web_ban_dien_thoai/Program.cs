@@ -26,6 +26,17 @@ builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IRevenueRepository, RevenueRepository>();
+builder.Services.AddScoped<IRevenueService, RevenueService>();
+
+builder.Services.AddScoped<IProfileStaffRepository, ProfileStaffRepository>();
+builder.Services.AddScoped<IProfileStaffService, ProfileStaffService>();
+// Repository
+builder.Services.AddScoped<IImportProductRepository, ImportProductRepository>();
+// Service
+builder.Services.AddScoped<IImportProductService, ImportProductService>();
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây

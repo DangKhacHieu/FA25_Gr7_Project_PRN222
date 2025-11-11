@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly ILogger<HomeController> _logger;
 
