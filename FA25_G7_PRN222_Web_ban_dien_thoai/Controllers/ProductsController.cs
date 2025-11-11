@@ -71,6 +71,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
             if (ModelState.IsValid)
             {
                 await _productService.CreateProductAsync(product);
+                TempData["SuccessMessage"] = $"Đã thêm sản phẩm '{product.ProductName}' thành công!";
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -107,6 +108,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
                 try
                 {
                     await _productService.UpdateProductAsync(product);
+                    TempData["SuccessMessage"] = $"Đã cập nhật sản phẩm '{product.ProductName}' thành công!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {

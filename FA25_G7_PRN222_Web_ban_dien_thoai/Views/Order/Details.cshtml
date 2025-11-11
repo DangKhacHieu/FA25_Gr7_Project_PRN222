@@ -1,0 +1,205 @@
+﻿@model DAL.Models.Order_List
+
+@{
+    ViewData["Title"] = "Order Details #" + Model.OrderID;
+    // Đảm bảo sử dụng Layout chung nếu cần
+    // Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<style>
+    /* --- CSS Đồng Bộ với Index --- */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .page-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a1f3a;
+        margin: 0;
+    }
+
+    .detail-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        margin-bottom: 25px;
+    }
+
+    .detail-row {
+        display: flex;
+        padding: 12px 0;
+        border-bottom: 1px dashed #f0f0f0; /* Dùng dashed cho khác biệt với bảng */
+    }
+    
+    .detail-row:last-of-type {
+        border-bottom: none;
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: #6c757d;
+        width: 180px;
+    }
+
+    .detail-value {
+        font-weight: 500;
+        color: #1a1f3a;
+        flex-grow: 1;
+    }
+    
+    .price-highlight {
+        font-size: 1.1rem;
+        color: #dc3545; /* Màu đỏ cho Tổng tiền */
+        font-weight: 700;
+    }
+
+    /* CSS cho Bảng chi tiết sản phẩm */
+    .table-details th {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); /* Đảo màu gradient để khác Header chính */
+        color: white;
+        font-weight: 600;
+        padding: 15px;
+        font-size: 13px;
+    }
+    .table-details td {
+        font-size: 14px;
+    }
+
+    /* CSS Trạng thái (đồng bộ với Index) */
+    .badge-status-Pending { background: #fff3cd; color: #856404; }
+    .badge-status-Shipping { background: #cce5ff; color: #004085; }
+    .badge-status-Completed { background: #d4edda; color: #155724; }
+    .badge-status-Failed { background: #f8d7da; color: #721c24; }
+    
+    /* Nút Quay lại */
+    .btn-back {
+        background: #f8f9fa;
+        color: #6c757d;
+        border: 1px solid #dee2e6;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+    .btn-back:hover {
+        background: #e9ecef;
+    }
+</style>
+
+<div class="page-header">
+    <h1 class="page-title">Order Details #@Model.OrderID</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-5">
+        <h3 class="mb-3 text-secondary">General Information</h3>
+        <div class="detail-card">
+            <div class="detail-row">
+                <span class="detail-label">Order ID:</span>
+                <span class="detail-value">#@Model.OrderID</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Order Date:</span>
+                <span class="detail-value">@Model.Date?.ToString("dd/MM/yyyy HH:mm")</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-value">
+                    
+                    @{
+                        var statusClass = Model.Status switch
+                        {
+                            "Pending" => "badge-status-Pending",
+                            "Shipping" => "badge-status-Shipping",
+                            "Completed" => "badge-status-Completed",
+                            "Failed" => "badge-status-Failed",
+                            _ => ""
+                        };
+                    }
+                    <span class="badge @statusClass">@Model.Status</span>
+                </span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Total Amount:</span>
+                <span class="detail-value price-highlight">@(Model.Total.HasValue ? Model.Total.Value.ToString("N0") : "0") ₫</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <h3 class="mb-3 text-secondary">Customer & Shipping Info</h3>
+        <div class="detail-card">
+            <div class="detail-row">
+                <span class="detail-label">Customer Name:</span>
+                <span class="detail-value">@(Model.Customer?.FullName ?? "N/A")</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Customer Phone:</span>
+                <span class="detail-value">@Model.PhoneNumber</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Shipping Address:</span>
+                <span class="detail-value">@Model.Address</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Handled by Staff:</span>
+                <span class="detail-value">@(Model.Staff?.FullName ?? "Unassigned")</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-4 mb-3 text-secondary">Product Details</h3>
+<div class="detail-card p-0">
+    <table class="table table-hover mb-0 table-details">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Color/ROM</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Order_Details != null)
+            {
+                @foreach (var detail in Model.Order_Details)
+                {
+                    <tr>
+                        <td>@detail.Product?.ProductName</td>
+                        <td>@(detail.Product?.Color) / @(detail.Product?.Rom) GB</td>
+                        
+                        @* Đã sửa lỗi Price.HasValue và sử dụng GetValueOrDefault để an toàn hơn *@
+                        <td>@(detail.Product?.Price.GetValueOrDefault(0).ToString("N0")) ₫</td>
+                        
+                        <td>@detail.Quantity</td>
+                        <td>
+                            @{
+                                var subTotal = (detail.Product?.Price ?? 0) * (detail.Quantity ?? 0);
+                            }
+                            <span class="fw-bold">@subTotal.ToString("N0") ₫</span>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">No products found in this order.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index" class="btn-back">
+        <i class="bi bi-arrow-left me-1"></i> Back to Order List
+    </a>
+</div>

@@ -4,8 +4,6 @@
     ViewData["Title"] = "Quản lý Sản phẩm";
 }
 
-<!-- Thêm Bootstrap JS và CSS nếu chưa có (đã có trong layout, chỉ cần đảm bảo) -->
-<!-- Thêm Modal cho xác nhận xóa -->
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -27,25 +25,8 @@
     </div>
 </div>
 
-<!-- Thêm Modal cho thông báo thành công -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">Thành công</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Sản phẩm đã được xóa thành công!
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Đóng</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <style>
+    /* CSS giữ nguyên */
     .page-header {
         display: flex;
         justify-content: space-between;
@@ -211,6 +192,8 @@
     </a>
 </div>
 
+<partial name="_StatusMessage" />
+
 <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." />
 </div>
@@ -265,6 +248,7 @@
     </table>
 </div>
 
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     // Hàm hiển thị popup xác nhận xóa
@@ -275,15 +259,7 @@
         deleteModal.show();
     }
 
-    // Xử lý sau khi xóa thành công
-    @if (TempData["SuccessMessage"] != null)
-    {
-            <text>
-                var successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                successModal.show();
-                setTimeout(function() {
-                    successModal.hide();
-                }, 2000); // Ẩn popup sau 2 giây
-            </text>
-    }
+    // ĐÃ XÓA LOGIC JS KÍCH HOẠT POPUP THÔNG BÁO THÀNH CÔNG Ở ĐÂY.
+    // Viêc hiển thị thông báo giờ do _StatusMessage.cshtml đảm nhận.
+
 </script>

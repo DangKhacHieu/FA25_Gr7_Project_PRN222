@@ -1,0 +1,298 @@
+﻿@model IEnumerable<DAL.Models.Order_List>
+
+@{
+    ViewData["Title"] = "Order Management";
+    var statusList = (List<string>)ViewBag.StatusList;
+    var currentStatus = (string)ViewBag.CurrentStatus;
+}
+
+<div class="modal fade" id="updateStatusModal" tabindex="-1" aria-labelledby="updateStatusModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="updateStatusModalLabel">
+                    <i class="bi bi-arrow-repeat me-2"></i> Update Order Status
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>You are updating status for Order **#<span id="orderIdToUpdate" class="fw-bold text-primary"></span>**.</p>
+                <div class="alert alert-info py-2">
+                    <i class="bi bi-info-circle-fill me-2"></i> Current Status: <span id="currentStatusDisplay" class="fw-bold"></span>
+                </div>
+
+                <label for="newStatusSelect" class="form-label fw-bold mt-3">Select New Status:</label>
+                <select id="newStatusSelect" class="form-select">
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form asp-action="UpdateStatus" method="post" id="updateStatusForm">
+                    <input type="hidden" name="orderId" id="updateOrderId" />
+                    <input type="hidden" name="newStatus" id="updateNewStatus" />
+                    <button type="submit" class="btn btn-primary" id="confirmUpdateButton">
+                        <i class="bi bi-check-lg me-1"></i> Confirm Update
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* --- CSS CƠ BẢN (GIỮ NGUYÊN) --- */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1a1f3a;
+        margin: 0;
+    }
+
+    .products-table {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+        .products-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 15px;
+            border: none;
+            text-align: left;
+        }
+
+        .products-table td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .products-table tbody tr:hover {
+            background: #f8f9ff;
+        }
+
+    .btn-update-status {
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        .btn-update-status.cho-xl {
+            background-color: #ffc107;
+            color: #343a40;
+            border: none;
+        }
+
+    /* --- CSS TRẠNG THÁI (ĐÃ CẬP NHẬT) --- */
+    .badge-status-Pending {
+        background: #fff3cd;
+        color: #856404;
+    }
+
+    .badge-status-Shipping {
+        background: #cce5ff;
+        color: #004085;
+    }
+
+    .badge-status-Completed {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .badge-status-Failed {
+        background: #f8d7da;
+        color: #721c24;
+    }
+
+    /* --- CSS HIỂN THỊ ICON VÀ MÀU TRONG SELECT (MỚI) --- */
+    #newStatusSelect {
+        font-size: 16px;
+        padding: 10px;
+        border-color: #ced4da;
+    }
+
+    .filter-bar {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+        .filter-bar .form-select {
+            max-width: 250px;
+        }
+
+    
+</style>
+
+<div class="page-header">
+    <h1 class="page-title">Order Management</h1>
+</div>
+
+<div class="filter-bar">
+    <form asp-action="Index" method="get" id="filterForm">
+        <label for="statusFilter" class="form-label mb-0 fw-bold text-secondary">Filter by Status:</label>
+        <select name="status" id="statusFilter" class="form-select" onchange="document.getElementById('filterForm').submit()">
+
+            @foreach (var status in statusList)
+            {
+                <option value="@status" selected="@(status == currentStatus)">
+                    @status
+                </option>
+            }
+
+        </select>
+    </form>
+</div>
+
+<div class="products-table">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Staff</th>
+                <th>Total</th>
+                <th>Ship Address</th>
+                <th>Order Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var statusClass = item.Status switch
+                {
+                    "Pending" => "badge-status-Pending",
+                    "Shipping" => "badge-status-Shipping",
+                    "Completed" => "badge-status-Completed",
+                    "Failed" => "badge-status-Failed",
+                    _ => ""
+                };
+
+                <tr>
+                    <td>#@item.OrderID</td>
+                    <td>@(item.Customer?.FullName ?? "N/A")</td>
+                    <td>@(item.Staff?.FullName ?? "Unassigned")</td>
+                    <td>@(item.Total.HasValue? item.Total.Value.ToString("N0") : "0") ₫</td>
+                    <td>@item.Address</td>
+                    <td>@item.Date?.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <span class="badge @statusClass">@item.Status</span>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.OrderID" class="btn-action btn-details me-2">Details</a>
+                        @if (item.Status != "Completed" && item.Status != "Failed")
+                        {
+                            <button class="btn btn-update-status cho-xl"
+                                    onclick="showUpdateStatusModal('@item.OrderID', '@item.Status')">
+                                Update
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@* Modal thông báo thành công/thất bại *@
+<partial name="_StatusMessage" />
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const statusMap = {
+        "Pending": ["Shipping"],
+        "Shipping": ["Completed", "Failed"],
+        "Completed": [],
+        "Failed": []
+    };
+
+    // Icon map
+    const statusIcons = {
+        "Pending": "bi-clock-fill",
+        "Shipping": "bi-truck",
+        "Completed": "bi-check-circle-fill",
+        "Failed": "bi-x-octagon-fill"
+    };
+
+    // Màu chữ Bootstrap text-utility
+    const statusTextColors = {
+        "Pending": "text-warning",
+        "Shipping": "text-info",
+        "Completed": "text-success",
+        "Failed": "text-danger"
+    };
+
+
+    function showUpdateStatusModal(orderId, currentStatus) {
+        document.getElementById('orderIdToUpdate').textContent = orderId;
+        document.getElementById('updateOrderId').value = orderId;
+
+        // Hiển thị trạng thái hiện tại
+        const currentStatusDisplay = document.getElementById('currentStatusDisplay');
+        currentStatusDisplay.textContent = currentStatus;
+        currentStatusDisplay.className = `fw-bold ${statusTextColors[currentStatus] || 'text-secondary'}`;
+
+
+        const selectElement = document.getElementById('newStatusSelect');
+        selectElement.innerHTML = '';
+        document.getElementById('confirmUpdateButton').disabled = true;
+
+        const nextStatuses = statusMap[currentStatus];
+
+        if (nextStatuses && nextStatuses.length > 0) {
+            document.getElementById('confirmUpdateButton').disabled = false;
+
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.textContent = `-- Select new status --`;
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            selectElement.appendChild(defaultOption);
+
+            nextStatuses.forEach(status => {
+                const option = document.createElement('option');
+                option.value = status;
+
+                // *** THỦ THUẬT: Tạo nội dung HTML bao gồm icon và màu sắc cho option ***
+                // Lưu ý: Các trình duyệt cũ có thể không hiển thị HTML trong option tag
+                option.innerHTML = `<i class="bi ${statusIcons[status]} me-2 ${statusTextColors[status]}"></i> ${status}`;
+
+                // Dùng thuộc tính class của option để styling (ít hiệu quả hơn innerHTML)
+                // option.className = statusTextColors[status];
+
+                selectElement.appendChild(option);
+            });
+
+            // Lắng nghe sự kiện thay đổi để cập nhật input hidden
+            selectElement.onchange = function() {
+                document.getElementById('updateNewStatus').value = this.value;
+            };
+
+        } else {
+            const option = document.createElement('option');
+            option.value = "";
+            option.textContent = `Cannot update status from ${currentStatus}`;
+            selectElement.appendChild(option);
+        }
+
+        var updateModal = new bootstrap.Modal(document.getElementById('updateStatusModal'));
+        updateModal.show();
+    }
+</script>
