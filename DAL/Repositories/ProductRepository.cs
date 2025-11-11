@@ -23,6 +23,8 @@ namespace DAL.Repositories
             return await _context.Products
                 .Where(p => p.IsDelete == 0)
                 .ToListAsync();
+
+
         }
 
         public async Task<Product?> GetByIdAsync(int id)
@@ -101,5 +103,40 @@ namespace DAL.Repositories
                 .OrderBy(r => r)
                 .ToListAsync();
         }
+
+        public async Task IncreaseProductQuantityAsync(int productId, int quantityToAdd)
+        {
+            var product = await _context.Products.FindAsync(productId);
+
+            if (product != null)
+            {
+                // Sử dụng GetValueOrDefault để xử lý trường hợp Quantity_Product là null
+                int currentQuantity = product.Quantity_Product.GetValueOrDefault();
+
+                product.Quantity_Product = currentQuantity + quantityToAdd;
+
+                // Chỉ đánh dấu thuộc tính Quantity_Product là Modified
+                _context.Entry(product).Property(p => p.Quantity_Product).IsModified = true;
+
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<IEnumerable<Product>> GetPagedProductsAsync(int pageIndex, int pageSize)
+        {
+            return await _context.Products
+                .Where(p => p.IsDelete == 0)
+                .OrderBy(p => p.ProductID) // Quan trọng: Phải có OrderBy trước Skip/Take
+                .Skip((pageIndex - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+        }
+
+        // THÊM PHƯƠNG THỨC ĐẾM TỔNG:
+        public async Task<int> CountProductsAsync()
+        {
+            return await _context.Products.CountAsync(p => p.IsDelete == 0);
+        }
+
     }
 }

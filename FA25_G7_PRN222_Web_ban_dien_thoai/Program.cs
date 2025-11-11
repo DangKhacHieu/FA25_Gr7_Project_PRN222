@@ -16,6 +16,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
 
+builder.Services.AddScoped<DbContext>(provider => provider.GetService<PhoneContext>()!);
 // 🧠 Inject tầng BLL
 builder.Services.AddScoped<ICustomerRepository,CustomerRepository>(); // ✅ THÊM DÒNG NÀY
 builder.Services.AddScoped<ICustomerService, CustomerService>();

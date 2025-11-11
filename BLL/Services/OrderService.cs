@@ -1,6 +1,7 @@
 ﻿using BLL.Interfaces;
 using DAL.Interfaces;
 using DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,15 @@ namespace BLL.Services
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepo;
+        private readonly IProductService _productService;
+        private readonly DbContext _dbContext; //DbContext để quản lý Transaction
 
-        public OrderService(IOrderRepository orderRepo)
+        
+        public OrderService(IOrderRepository orderRepo, IProductService productService, DbContext dbContext)
         {
             _orderRepo = orderRepo;
+            _productService = productService;
+            _dbContext = dbContext; // Gán DbContext
         }
 
         public async Task<IEnumerable<Order_List>> GetAllOrdersAsync()
@@ -63,8 +69,48 @@ namespace BLL.Services
 
             if (canUpdate)
             {
-                order.Status = newStatus;
-                await _orderRepo.UpdateAsync(order);
+                // Kiểm tra điều kiện hoàn trả kho hàng: chuyển sang Failed, và chưa Failed/Completed trước đó
+                bool shouldReturnStock = (currentStatus != "Failed" && currentStatus != "Completed")
+                                         && newStatus == "Failed";
+
+                // --- BẮT ĐẦU GIAO DỊCH ĐỂ ĐẢM BẢO TÍNH TOÀN VẸN ---
+                using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
+                try
+                {
+                    // 2. THAO TÁC 1: Cập nhật trạng thái đơn hàng
+                    order.Status = newStatus;
+                    await _orderRepo.UpdateAsync(order);
+
+                    // 3. THAO TÁC 2: Hoàn trả kho hàng nếu cần
+                    if (shouldReturnStock)
+                    {
+                        if (order.Order_Details != null)
+                        {
+                            foreach (var detail in order.Order_Details)
+                            {
+                                // ProductID là int non-nullable, Quantity là int? nullable
+                                if (detail.Quantity.HasValue)
+                                {
+                                    await _productService.IncreaseProductQuantityAsync(
+                                        detail.ProductID, // Dùng trực tiếp
+                                        detail.Quantity.Value
+                                    );
+                                }
+                            }
+                        }
+                    }
+
+                    // 4. COMMIT giao dịch nếu cả hai thao tác thành công
+                    await transaction.CommitAsync();
+                }
+                catch (Exception)
+                {
+                    // 5. Nếu có lỗi (DB, logic, tồn kho), ROLLBACK
+                    await transaction.RollbackAsync();
+                    // Ném lỗi lên Controller để hiển thị thông báo
+                    throw;
+                }
             }
             else
             {
@@ -80,6 +126,22 @@ namespace BLL.Services
                 return await _orderRepo.GetAllOrdersAsync();
             }
             return await _orderRepo.GetOrdersByStatusAsync(status);
+        }
+        public async Task<PagedResult<Order_List>> GetOrdersPaginatedAsync(int pageIndex, int pageSize, string? status = null)
+        {
+            if (pageIndex < 1) pageIndex = 1;
+
+            var totalCount = await _orderRepo.CountOrdersAsync(status);
+            var items = await _orderRepo.GetPagedOrdersAsync(pageIndex, pageSize, status);
+
+            // TRẢ VỀ PagedResult<Order_List>
+            return new PagedResult<Order_List>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            };
         }
     }
 }

@@ -14,5 +14,6 @@ namespace BLL.Interfaces
         Task<Order_List?> GetOrderByIdAsync(int id);
         Task UpdateOrderStatusAsync(int orderId, string newStatus);
         Task<bool> OrderExistsAsync(int id);
+        Task<PagedResult<Order_List>> GetOrdersPaginatedAsync(int pageIndex, int pageSize, string? status = null);
     }
 }

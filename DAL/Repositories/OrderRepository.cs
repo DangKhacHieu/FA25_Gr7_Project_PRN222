@@ -79,5 +79,35 @@ namespace DAL.Repositories
         {
             return await _context.Order_Lists.AnyAsync(e => e.OrderID == id);
         }
+        public async Task<IEnumerable<Order_List>> GetPagedOrdersAsync(int pageIndex, int pageSize, string? status = null)
+        {
+            var query = _context.Order_Lists.AsQueryable();
+
+            // Áp dụng lọc trạng thái (filter)
+            if (!string.IsNullOrEmpty(status) && status != "All")
+            {
+                query = query.Where(o => o.Status == status);
+            }
+
+            // Áp dụng phân trang (Skip/Take)
+            return await query.Include(o => o.Customer)
+                              .Include(o => o.Staff)
+                              .OrderByDescending(o => o.Date)
+                              .Skip((pageIndex - 1) * pageSize)
+                              .Take(pageSize)
+                              .ToListAsync();
+        }
+
+        // THÊM: Phương thức đếm tổng (có lọc)
+        public async Task<int> CountOrdersAsync(string? status = null)
+        {
+            var query = _context.Order_Lists.AsQueryable();
+
+            if (!string.IsNullOrEmpty(status) && status != "All")
+            {
+                query = query.Where(o => o.Status == status);
+            }
+            return await query.CountAsync();
+        }
     }
 }
