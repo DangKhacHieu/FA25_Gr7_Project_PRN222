@@ -3,6 +3,54 @@
   "WorkspaceRootPath": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\hubs\\datasignalr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\hubs\\datasignalr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\services\\cartservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\cartservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\dal\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\interfaces\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -143,16 +187,8 @@
       "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\interfaces\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\hubs\\datasignalr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\hubs\\datasignalr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\dal\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -215,26 +251,6 @@
       "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CA5EC004-C363-4B0F-9D43-8319ECF21D85}|FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\microsoft\\signalr\\dist\\browser\\signalr.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -251,20 +267,12 @@
       "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{62AF9091-1BBC-4C9B-AE31-35FF2EDE0086}|FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj|solutionrelative:fa25_g7_prn222_web_ban_dien_thoai_razor_pages\\fa25_g7_prn222_web_ban_dien_thoai_razor_pages.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\common\\operationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\common\\operationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\bll\\services\\cartservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\cartservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -297,10 +305,6 @@
       "RelativeMoniker": "D:0:0:{5875EBB1-01BE-2D17-3613-D0BAD09CBB40}|BLL\\BLL.csproj|solutionrelative:bll\\services\\staffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\dal\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|d:\\project_prn222\\fa25_gr7_project_prn222\\dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{12357D34-2A02-1ECD-BC6C-D84ADDC1A72E}|DAL\\DAL.csproj|solutionrelative:dal\\dal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -312,11 +316,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 39,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "libman.json",
+              "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\libman.json",
+              "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\libman.json",
+              "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\libman.json",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\libman.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-11T19:40:30.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Product.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Product.cs",
@@ -328,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "_Pagination.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Pagination.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Pagination.cshtml",
@@ -340,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\PagedResult.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\PagedResult.cs",
@@ -352,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 31,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Edit.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Edit.cshtml",
@@ -364,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 36,
               "Title": "Search.cshtml.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Search.cshtml.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Search.cshtml.cs",
@@ -376,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 37,
               "Title": "Search.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Search.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Search.cshtml",
@@ -388,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 39,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Index.cshtml.cs",
@@ -400,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 38,
               "Title": "Details.cshtml.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml.cs",
@@ -412,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 41,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Details.cshtml",
@@ -424,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 40,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Products\\Index.cshtml",
@@ -436,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 42,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Login.cshtml.cs",
@@ -448,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 43,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Index.cshtml.cs",
@@ -460,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 35,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Delete.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Delete.cshtml",
@@ -472,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 55,
               "Title": "_Sidebar.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Sidebar.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Sidebar.cshtml",
@@ -484,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\HomeController.cs",
@@ -496,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "IProductService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Interfaces\\IProductService.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IProductService.cs",
@@ -508,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 29,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\ProductRepository.cs",
@@ -520,7 +541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IProductRepository.cs",
@@ -532,7 +553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 32,
               "Title": "_StatusMessage.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_StatusMessage.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_StatusMessage.cshtml",
@@ -544,7 +565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 57,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -556,7 +577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 13,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Create.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Create.cshtml",
@@ -568,7 +589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Order\\Details.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Order\\Details.cshtml",
@@ -580,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Order\\Index.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Order\\Index.cshtml",
@@ -592,7 +613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\OrderController.cs",
@@ -605,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\OrderService.cs",
@@ -617,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Interfaces\\IOrderService.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IOrderService.cs",
@@ -625,11 +646,12 @@
               "RelativeToolTip": "BLL\\Interfaces\\IOrderService.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAYwBAAAAByAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T11:58:32.161Z"
+              "WhenOpened": "2025-11-09T11:58:32.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Repositories\\OrderRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\OrderRepository.cs",
@@ -641,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "IOrderRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Interfaces\\IOrderRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IOrderRepository.cs",
@@ -653,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 30,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\ProductService.cs",
@@ -665,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 28,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\ProductsController.cs",
@@ -677,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Products\\Index.cshtml",
@@ -689,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 7,
               "Title": "libman.json",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\libman.json",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\libman.json",
@@ -697,11 +719,12 @@
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\libman.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-09T11:05:50.801Z"
+              "WhenOpened": "2025-11-09T11:05:50.801Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 4,
               "Title": "signalr.js",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\Microsoft\\signalr\\dist\\browser\\signalr.js",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\Microsoft\\signalr\\dist\\browser\\signalr.js",
@@ -709,11 +732,12 @@
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\Microsoft\\signalr\\dist\\browser\\signalr.js",
               "ViewState": "AgIAAAsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-09T11:04:48.275Z"
+              "WhenOpened": "2025-11-09T11:04:48.275Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 5,
               "Title": "DataSignalR.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Hubs\\DataSignalR.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Hubs\\DataSignalR.cs",
@@ -721,11 +745,12 @@
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Hubs\\DataSignalR.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T11:04:48.449Z"
+              "WhenOpened": "2025-11-09T11:04:48.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 64,
               "Title": "FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
@@ -733,11 +758,12 @@
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\FA25_G7_PRN222_Web_ban_dien_thoai.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-09T11:04:48.454Z"
+              "WhenOpened": "2025-11-09T11:04:48.454Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 50,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Shared\\_Layout.cshtml",
@@ -749,31 +775,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
               "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-09T11:04:48.516Z"
+              "WhenOpened": "2025-11-09T11:04:48.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs*",
+              "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Program.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T11:04:48.517Z"
+              "WhenOpened": "2025-11-09T11:04:48.517Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 62,
               "Title": "site.js",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\wwwroot\\js\\site.js",
@@ -785,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 63,
               "Title": "site.js",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\wwwroot\\js\\site.js",
@@ -797,7 +825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 65,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\Pages\\Shared\\_Layout.cshtml",
@@ -809,31 +837,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 10,
               "Title": "CartService .cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Services\\CartService .cs",
               "RelativeDocumentMoniker": "BLL\\Services\\CartService .cs",
               "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Services\\CartService .cs",
               "RelativeToolTip": "BLL\\Services\\CartService .cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAYwBwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAYwBwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T11:04:48.523Z"
+              "WhenOpened": "2025-11-09T11:04:48.523Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
               "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-09T11:04:48.527Z"
+              "WhenOpened": "2025-11-09T11:04:48.527Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 58,
               "Title": "ICartRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Interfaces\\ICartRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\ICartRepository.cs",
@@ -845,7 +875,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 33,
               "Title": "StaffsController.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\StaffsController.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\StaffsController.cs",
@@ -857,7 +887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "BLL.csproj",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\BLL.csproj",
               "RelativeDocumentMoniker": "BLL\\BLL.csproj",
@@ -865,11 +895,12 @@
               "RelativeToolTip": "BLL\\BLL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-09T11:04:48.532Z"
+              "WhenOpened": "2025-11-09T11:04:48.532Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 8,
               "Title": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
@@ -877,11 +908,12 @@
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages\\FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-09T11:04:48.537Z"
+              "WhenOpened": "2025-11-09T11:04:48.537Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "OperationResult.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Common\\OperationResult.cs",
               "RelativeDocumentMoniker": "BLL\\Common\\OperationResult.cs",
@@ -893,7 +925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 56,
               "Title": "CartRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Repositories\\CartRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\CartRepository.cs",
@@ -905,7 +937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 68,
               "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
@@ -915,7 +947,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 71,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Index.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Index.cshtml",
@@ -927,7 +959,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 69,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\38f764eb06a1524a7eb6233e1131819f2134c59fecc72355a55df9ccd589ce11\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
               "ToolTip": "C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\38f764eb06a1524a7eb6233e1131819f2134c59fecc72355a55df9ccd589ce11\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
@@ -937,19 +969,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
               "ToolTip": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
               "RelativeToolTip": "FA25_G7_PRN222_Web_ban_dien_thoai\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T11:04:48.556Z"
+              "WhenOpened": "2025-11-09T11:04:48.556Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 26,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Repositories\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\CustomerRepository.cs",
@@ -961,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 52,
               "Title": "ICustomerRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Interfaces\\ICustomerRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\ICustomerRepository.cs",
@@ -973,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 34,
               "Title": "PhoneStoreContext.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Data\\PhoneStoreContext.cs",
               "RelativeDocumentMoniker": "DAL\\Data\\PhoneStoreContext.cs",
@@ -985,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 70,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Create.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\Staffs\\Create.cshtml",
@@ -997,7 +1030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 72,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewStart.cshtml",
@@ -1009,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 74,
               "Title": "StaffRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Repositories\\StaffRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Repositories\\StaffRepository.cs",
@@ -1021,7 +1054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 73,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Views\\_ViewImports.cshtml",
@@ -1033,7 +1066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 75,
               "Title": "StaffService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Services\\StaffService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\StaffService.cs",
@@ -1045,7 +1078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 44,
               "Title": "IStaffService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Interfaces\\IStaffService.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IStaffService.cs",
@@ -1057,7 +1090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 46,
               "Title": "CustomerService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Services\\CustomerService.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\CustomerService.cs",
@@ -1069,7 +1102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 45,
               "Title": "IStaffRepository.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Interfaces\\IStaffRepository.cs",
               "RelativeDocumentMoniker": "DAL\\Interfaces\\IStaffRepository.cs",
@@ -1081,7 +1114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 53,
               "Title": "ICustomerService.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\BLL\\Interfaces\\ICustomerService.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\ICustomerService.cs",
@@ -1093,7 +1126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 47,
               "Title": "Staff.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Staff.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Staff.cs",
@@ -1105,7 +1138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 59,
               "Title": "Reply_Feedback.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Reply_Feedback.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Reply_Feedback.cs",
@@ -1117,7 +1150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 54,
               "Title": "CustomersController.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
               "RelativeDocumentMoniker": "FA25_G7_PRN222_Web_ban_dien_thoai\\Controllers\\CustomersController.cs",
@@ -1129,7 +1162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 48,
               "Title": "Order_Details.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Order_Details.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Order_Details.cs",
@@ -1141,7 +1174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 61,
               "Title": "CartItem.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\CartItem.cs",
@@ -1153,7 +1186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 60,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Cart.cs",
@@ -1165,7 +1198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 49,
               "Title": "Import_Inventory.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Import_Inventory.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Import_Inventory.cs",
@@ -1177,7 +1210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 51,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Customer.cs",
@@ -1189,7 +1222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 11,
               "Title": "Feedback.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Feedback.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Feedback.cs",
@@ -1197,11 +1230,12 @@
               "RelativeToolTip": "DAL\\Models\\Feedback.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T11:04:48.598Z"
+              "WhenOpened": "2025-11-09T11:04:48.598Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "Order_List.cs",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\Models\\Order_List.cs",
               "RelativeDocumentMoniker": "DAL\\Models\\Order_List.cs",
@@ -1213,7 +1247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 76,
               "Title": "DAL.csproj",
               "DocumentMoniker": "D:\\Project_PRN222\\FA25_Gr7_Project_PRN222\\DAL\\DAL.csproj",
               "RelativeDocumentMoniker": "DAL\\DAL.csproj",
@@ -1221,11 +1255,8 @@
               "RelativeToolTip": "DAL\\DAL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-09T11:04:48.602Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+              "WhenOpened": "2025-11-09T11:04:48.602Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -25,6 +25,7 @@ builder.Services.AddCors(options =>
               .AllowCredentials(); // SignalR cần dòng này
     });
 });
+
 //Cấu hình SignalR 
 builder.Services.AddSignalR();
 
@@ -42,6 +43,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<DbContext>(provider => provider.GetService<PhoneContext>()!);
 // 🔌 Kết nối database
 builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")),
