@@ -1,0 +1,24 @@
+﻿@model DAL.Models.Staff
+
+<div class="container mt-5">
+    <h2 class="text-danger fw-bold mb-4">Staff Profile</h2>
+
+    <div class="card shadow p-4">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Full Name:</strong> @Model.FullName</p>
+                <p><strong>Username:</strong> @Model.Username</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Phone:</strong> @Model.PhoneNumber</p>
+                <p><strong>Sex:</strong> @Model.Sex</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Address:</strong> @Model.Address</p>
+                <p><strong>Province/City:</strong> @Model.Province_City</p>
+                <p><strong>CCCD:</strong> @Model.CCCD</p>
+                <p><strong>Date of Birth:</strong> @Model.DOB?.ToString("dd/MM/yyyy")</p>
+            </div>
+        </div>
+        <a asp-action="Edit" asp-route-id="@Model.StaffID" class="btn btn-primary mt-3">Edit Profile</a>
+    </div>
+</div>

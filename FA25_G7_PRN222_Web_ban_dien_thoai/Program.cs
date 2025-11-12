@@ -29,17 +29,46 @@ builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
 
 
+builder.Services.AddScoped<DbContext>(provider => provider.GetService<PhoneContext>()!);
 
 // 🧠 Inject tầng BLL
 builder.Services.AddScoped<ICustomerRepository,CustomerRepository>(); // ✅ THÊM DÒNG NÀY
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<BLL.Interfaces.IStaffService, BLL.Services.StaffService>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
+
 builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian sống của Session
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+builder.Services.AddScoped<IRevenueRepository, RevenueRepository>();
+builder.Services.AddScoped<IRevenueService, RevenueService>();
+
+builder.Services.AddScoped<IProfileStaffRepository, ProfileStaffRepository>();
+builder.Services.AddScoped<IProfileStaffService, ProfileStaffService>();
+// Repository
+builder.Services.AddScoped<IImportProductRepository, ImportProductRepository>();
+// Service
+builder.Services.AddScoped<IImportProductService, ImportProductService>();
+builder.Services.AddSignalR();
+
+builder.Services.AddScoped<DAL.Interfaces.ICartRepository, DAL.Repositories.CartRepository>();
+
+
 
 var app = builder.Build();
 
@@ -77,10 +106,11 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
+
 app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Staffs}/{action=Login}/{id?}");
 
 app.Run();

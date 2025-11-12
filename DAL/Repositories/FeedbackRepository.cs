@@ -1,8 +1,15 @@
 ﻿using DAL.Data;
 using DAL.Interfaces;
 using DAL.Models;
+
 using System.Collections.Generic;
 using System.Linq;
+
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace DAL.Repositories
 {
@@ -14,6 +21,7 @@ namespace DAL.Repositories
         {
             _context = context;
         }
+
 
         // --- FEEDBACK ---
         public List<Feedback> GetAllFeedbacks() => _context.Feedbacks.ToList();
@@ -45,5 +53,28 @@ namespace DAL.Repositories
         }
 
         public void Save() => _context.SaveChanges();
+    
+
+        public async Task AddFeedbackAsync(Feedback feedback)
+        {
+            await _context.Feedbacks.AddAsync(feedback);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Feedback>> GetFeedbacksByProductIdAsync(int productId)
+        {
+            return await _context.Feedbacks
+                .Where(f => f.ProductID == productId)
+                .Include(f => f.Customer)
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
+        public async Task<bool> HasFeedbackSubmittedAsync(int customerId, int productId)
+        {
+            return await _context.Feedbacks
+                .AnyAsync(f => f.CustomerID == customerId && f.ProductID == productId);
+        }
     }
 }
+

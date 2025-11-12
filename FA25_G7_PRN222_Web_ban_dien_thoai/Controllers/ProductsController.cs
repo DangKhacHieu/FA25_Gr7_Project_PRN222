@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly IProductService _productService;
 
@@ -22,10 +22,20 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 5)
         {
-            var products = await _productService.GetAllProductsAsync();
-            return View(products);
+            var pagedResultProduct = await _productService.GetProductsPaginatedAsync(page, pageSize);
+
+            // ÉP KIỂU TẠI ĐÂY VÀ TRẢ VỀ:
+            var pagedResultObject = new DAL.Models.PagedResult<object> // Giả sử PagedResult nằm ở DAL.Models
+            {
+                Items = pagedResultProduct.Items.Cast<object>(), // Ép kiểu danh sách items
+                TotalCount = pagedResultProduct.TotalCount,
+                PageIndex = pagedResultProduct.PageIndex,
+                PageSize = pagedResultProduct.PageSize
+            };
+
+            return View(pagedResultObject); // Trả về kiểu PagedResult<object>
         }
 
         // GET: Products/Details/5
@@ -71,6 +81,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
             if (ModelState.IsValid)
             {
                 await _productService.CreateProductAsync(product);
+                TempData["SuccessMessage"] = $"Đã thêm sản phẩm '{product.ProductName}' thành công!";
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -107,6 +118,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
                 try
                 {
                     await _productService.UpdateProductAsync(product);
+                    TempData["SuccessMessage"] = $"Đã cập nhật sản phẩm '{product.ProductName}' thành công!";
                 }
                 catch (DbUpdateConcurrencyException)
                 {

@@ -1,0 +1,49 @@
+﻿@model DAL.Models.Product
+
+<h2>Thêm/Sửa sản phẩm thủ công</h2>
+
+<form asp-action="ManualImport" method="post">
+    <input type="hidden" asp-for="ProductID" />
+
+    <div class="mb-3">
+        <label>Tên sản phẩm</label>
+        <input asp-for="ProductName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Brand</label>
+        <input asp-for="Brand" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label>Hệ điều hành</label>
+        <input asp-for="Operating_System_name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>RAM</label>
+        <input asp-for="Ram" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>ROM</label>
+        <input asp-for="Rom" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Màu sắc</label>
+        <input asp-for="Color" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Số lượng nhập</label>
+        <input asp-for="Quantity_Product" class="form-control" required min="0" />
+    </div>
+
+    <div class="mb-3">
+        <label>Giá</label>
+        <input asp-for="Price" class="form-control" required min="0" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Lưu</button>
+</form>

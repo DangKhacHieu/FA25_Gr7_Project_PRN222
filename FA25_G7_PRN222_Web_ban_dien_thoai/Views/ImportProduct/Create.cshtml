@@ -1,0 +1,123 @@
+﻿@model DAL.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageURL" class="control-label"></label>
+                <input asp-for="ImageURL" class="form-control" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand" class="control-label"></label>
+                <input asp-for="Brand" class="form-control" />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ram" class="control-label"></label>
+                <input asp-for="Ram" class="form-control" />
+                <span asp-validation-for="Ram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rom" class="control-label"></label>
+                <input asp-for="Rom" class="form-control" />
+                <span asp-validation-for="Rom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Operating_System_name" class="control-label"></label>
+                <input asp-for="Operating_System_name" class="form-control" />
+                <span asp-validation-for="Operating_System_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chip_name" class="control-label"></label>
+                <input asp-for="Chip_name" class="form-control" />
+                <span asp-validation-for="Chip_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GPU_name" class="control-label"></label>
+                <input asp-for="GPU_name" class="form-control" />
+                <span asp-validation-for="GPU_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity_Sell" class="control-label"></label>
+                <input asp-for="Quantity_Sell" class="form-control" />
+                <span asp-validation-for="Quantity_Sell" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity_Product" class="control-label"></label>
+                <input asp-for="Quantity_Product" class="form-control" />
+                <span asp-validation-for="Quantity_Product" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Camera_Front" class="control-label"></label>
+                <input asp-for="Camera_Front" class="form-control" />
+                <span asp-validation-for="Camera_Front" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Camera_Behind" class="control-label"></label>
+                <input asp-for="Camera_Behind" class="form-control" />
+                <span asp-validation-for="Camera_Behind" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Operating_system_version" class="control-label"></label>
+                <input asp-for="Operating_system_version" class="form-control" />
+                <span asp-validation-for="Operating_system_version" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Refresh_rate" class="control-label"></label>
+                <input asp-for="Refresh_rate" class="form-control" />
+                <span asp-validation-for="Refresh_rate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Screen_resolution" class="control-label"></label>
+                <input asp-for="Screen_resolution" class="form-control" />
+                <span asp-validation-for="Screen_resolution" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsDelete" class="control-label"></label>
+                <input asp-for="IsDelete" class="form-control" />
+                <span asp-validation-for="IsDelete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,87 @@
+﻿@using DAL.Models
+@using Microsoft.AspNetCore.Routing
+@model PagedResult<object>
+
+@{
+    // Lấy tên Action và Controller hiện tại
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+
+    // Khởi tạo một Dictionary mới để chứa các tham số Route hợp lệ
+    // Đảm bảo kiểu dữ liệu là Dictionary<string, string>
+    var routeParams = new Dictionary<string, string>();
+
+    // 1. Lấy các tham số Route cơ bản (Action, Controller)
+    foreach (var routeValue in ViewContext.RouteData.Values)
+    {
+        if (routeValue.Value != null)
+        {
+            routeParams.Add(routeValue.Key, routeValue.Value.ToString()!);
+        }
+    }
+
+    // 2. Thêm tất cả các Query String (tham số GET) hiện có vào Dictionary
+    foreach (var key in Context.Request.Query.Keys)
+    {
+        // Thêm tất cả các query parameters, loại trừ 'page' và các key đã có
+        if (!string.Equals(key, "page", StringComparison.OrdinalIgnoreCase) && !routeParams.ContainsKey(key))
+        {
+            // Ép kiểu giá trị thành string an toàn
+            routeParams.Add(key, Context.Request.Query[key].FirstOrDefault() ?? string.Empty);
+        }
+    }
+}
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+
+            @* Nút Trang Trước (Previous) *@
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                @{
+                    // Cập nhật tham số 'page' cho trang trước đó
+                    routeParams["page"] = (Model.PageIndex - 1).ToString();
+                }
+                <a class="page-link"
+                   asp-action="@action"
+                   asp-controller="@controller"
+                   asp-all-route-data="routeParams"
+                   aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span> Previous
+                </a>
+            </li>
+
+            @* Hiển thị các trang *@
+            @for (var i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    @{
+                        // Cập nhật tham số 'page' cho trang hiện tại
+                        routeParams["page"] = i.ToString();
+                    }
+                    <a class="page-link"
+                       asp-action="@action"
+                       asp-controller="@controller"
+                       asp-all-route-data="routeParams">@i</a>
+                </li>
+            }
+
+            @* Nút Trang Kế tiếp (Next) *@
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                @{
+                    // Cập nhật tham số 'page' cho trang kế tiếp
+                    routeParams["page"] = (Model.PageIndex + 1).ToString();
+                }
+                <a class="page-link"
+                   asp-action="@action"
+                   asp-controller="@controller"
+                   asp-all-route-data="routeParams"
+                   aria-label="Next">
+                    Next <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+        <p class="text-center text-muted">Showing @Model.Items.Count() of @Model.TotalCount records (Page @Model.PageIndex of @Model.TotalPages).</p>
+    </nav>
+}

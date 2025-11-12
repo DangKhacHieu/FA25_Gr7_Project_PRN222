@@ -20,5 +20,9 @@ namespace DAL.Interfaces
         Task<List<string>> GetDistinctBrandsAsync();
         Task<List<string>> GetDistinctRamsAsync();
         Task<List<string>> GetDistinctRomsAsync();
+        Task IncreaseProductQuantityAsync(int productId, int quantityToAdd);
+        Task<IEnumerable<Product>> GetPagedProductsAsync(int pageIndex, int pageSize);
+        Task<int> CountProductsAsync();
+
     }
 }

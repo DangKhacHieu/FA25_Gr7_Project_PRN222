@@ -1,15 +1,20 @@
 ﻿using BLL.Interfaces;
+using FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Hubs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.SignalR;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
 {
     public class RemoveModel : PageModel
     {
         private readonly ICartService _cartService;
-        public RemoveModel(ICartService cartService)
+        private readonly IHubContext<DataSignalR> _hubContext;
+
+        public RemoveModel(ICartService cartService, IHubContext<DataSignalR> hubContext)
         {
             _cartService = cartService;
+            _hubContext = hubContext;
         }
 
         [BindProperty] public int CartItemId { get; set; }
@@ -19,26 +24,23 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Carts
             var customerId = HttpContext.Session.GetInt32("CustomerId");
             if (customerId == null)
             {
-                TempData["Message_alert"] = "Vui lòng đăng nhập để xóa sản phẩm.";
-                return RedirectToPage("/Login");
+                return new JsonResult(new { success = false, message = "Phiên đăng nhập hết hạn." });
             }
+
             await _cartService.RemoveCartItemAsync(CartItemId);
+            var cart = await _cartService.GetCartAsync(customerId.Value);
 
-            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            // Gửi sự kiện CẬP NHẬT UI (với newQuantity = 0 để JS hiểu là xóa)
+            await _hubContext.Clients.All.SendAsync("ReceiveCartUpdate", new
             {
-                var cart = await _cartService.GetCartAsync(customerId.Value);
+                cartItemId = CartItemId,
+                newQuantity = 0, // <-- Dấu hiệu để JS xóa
+                subtotal = 0,
+                total = cart?.TotalPrice ?? 0,
+                message = "🗑️ Đã xóa sản phẩm khỏi giỏ hàng."
+            });
 
-                return new JsonResult(new
-                {
-                    success = true,
-                    message = "🗑️ Đã xóa sản phẩm khỏi giỏ hàng.",
-                    total = cart?.TotalPrice ?? 0
-                });
-            }
-
-            TempData["Message"] = "🗑️ Đã xóa sản phẩm khỏi giỏ hàng.";
-            TempData["Message_success"] = true;
-            return RedirectToPage("Index");
+            return new JsonResult(new { success = true });
         }
     }
 }

@@ -63,7 +63,7 @@ namespace DAL.Repositories
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
         }
-       
+
 
         public void Update(Customer customer)
         {
@@ -117,6 +117,11 @@ namespace DAL.Repositories
         {
             _context.Customers.Add(customer);
             _context.SaveChanges();
+        }
+        public async Task<Customer?> GetCustomerByIdAsyncT(int customerId)
+        {
+            return await _context.Customers.FindAsync(customerId);
+
         }
     }
 }

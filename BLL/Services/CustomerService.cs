@@ -95,7 +95,7 @@ namespace BLL.Services
 
         public async Task<Customer?> GetCustomerByIdAsync(int id)
         {
-            return await _repository.GetCustomerByIdAsync(id);
+            return await _repository.GetCustomerByIdAsyncT(id);
         }
 
         public async Task UpdateCustomerAsync(Customer customer)
@@ -132,6 +132,7 @@ namespace BLL.Services
         }
 
         public void ReloadCache() { }
+
         public Customer? GetCustomerByEmail(string email)
         {
             return _repository.GetByEmail(email);
@@ -148,7 +149,9 @@ namespace BLL.Services
             return true;
         }
 
-        private string HashPassword(string password)
+
+        public string HashPassword(string password)
+
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -161,6 +164,7 @@ namespace BLL.Services
                 return builder.ToString();
             }
         }
+
         // ✅ Đăng ký (sau khi xác thực OTP)
         public void RegisterCustomer(Customer customer)
         {
@@ -195,5 +199,46 @@ namespace BLL.Services
             SendOTPEmail(toEmail, otp);
             return otp;
         }
+
+
+        // THÊM: Phương thức VerifyPassword (So sánh hash)
+        public bool VerifyPassword(string storedHashedPassword, string providedPassword)
+        {
+            // Hash mật khẩu người dùng cung cấp và so sánh với mật khẩu đã lưu (đã hash)
+            var providedHash = HashPassword(providedPassword);
+            return storedHashedPassword == providedHash;
+        }
+
+        // THÊM: Phương thức Đổi mật khẩu (Change Password)
+        public async Task<(bool Success, string Message)> ChangePasswordAsync(int customerId, string oldPassword, string newPassword)
+        {
+            // 1. Lấy thông tin khách hàng
+            var customer = await _repository.GetByIdAsync(customerId);
+
+            if (customer == null || string.IsNullOrEmpty(customer.Password))
+            {
+                return (false, "Tài khoản không tồn tại hoặc có lỗi dữ liệu.");
+            }
+
+            // 2. Xác minh mật khẩu cũ
+            if (!VerifyPassword(customer.Password, oldPassword))
+            {
+                return (false, "Mật khẩu cũ không chính xác.");
+            }
+
+            // 3. Hash mật khẩu mới và cập nhật
+            customer.Password = HashPassword(newPassword);
+
+            try
+            {
+                await _repository.UpdateAsync(customer);
+                return (true, "Mật khẩu đã được đổi thành công.");
+            }
+            catch (Exception ex)
+            {
+                return (false, $"Đổi mật khẩu thất bại: {ex.Message}");
+            }
+        }
+
     }
 }

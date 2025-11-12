@@ -18,6 +18,7 @@ namespace BLL.IServices
         List<Customer> SearchExact(string keyword);
         List<string> Suggest(string term, int maxResults = 5);
         void ReloadCache();
+
         Customer? GetCustomerByEmail(string email);
         bool UpdatePassword(string email, string newPassword);
         Task<Customer?> GetAndUpdateCustomerAsync(Customer customer);
@@ -31,5 +32,10 @@ namespace BLL.IServices
         // ✅ Gửi OTP qua email
         void SendOTPEmail(string toEmail, string otp);
         string ResendRegisterOTP(string toEmail);
+
+        bool VerifyPassword(string storedHashedPassword, string providedPassword);
+        string HashPassword(string password);
+        Task<(bool Success, string Message)> ChangePasswordAsync(int customerId, string oldPassword, string newPassword);
+
     }
 }

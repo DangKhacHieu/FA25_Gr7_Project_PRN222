@@ -1,0 +1,109 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.CheckoutModel
+@{
+    ViewData["Title"] = "Thanh toán";
+}
+
+<div class="container mt-4">
+    <div class="row">
+
+        <div class="col-lg-7">
+            <h1 class="mb-4">@ViewData["Title"]</h1>
+
+            @if (Model.Cart != null && Model.Cart.CartItems.Any())
+            {
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-3">1. Thông tin giao hàng</h4>
+
+                            <div class="mb-3">
+                                <label asp-for="Address" class="form-label fw-bold">Địa chỉ nhận hàng</label>
+                                <input asp-for="Address" class="form-control form-control-lg" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="PhoneNumber" class="form-label fw-bold">Số điện thoại</label>
+                                <input asp-for="PhoneNumber" class="form-control form-control-lg" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-3">2. Phương thức thanh toán</h4>
+
+                            <div class="form-check fs-5 mb-2">
+                                <input asp-for="PaymentMethod" type="radio" value="COD" class="form-check-input" id="paymentCOD" checked />
+                                <label class="form-check-label" for="paymentCOD">
+                                    Thanh toán khi nhận hàng (COD)
+                                </label>
+                            </div>
+                            <div class="form-check fs-5">
+                                <input asp-for="PaymentMethod" type="radio" value="Momo" class="form-check-input" id="paymentMomo" />
+                                <label class="form-check-label" for="paymentMomo">
+                                    Ví điện tử Momo
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg py-3">
+                            Hoàn tất Đặt hàng
+                        </button>
+                    </div>
+                </form>
+            }
+            else
+            {
+                <div class="alert alert-warning">
+                    Không có sản phẩm nào trong giỏ hàng để thanh toán.
+                    <a asp-page="/Index">Quay lại trang chủ</a>.
+                </div>
+            }
+        </div>
+
+        <div class="col-lg-5">
+            @if (Model.Cart != null && Model.Cart.CartItems.Any())
+            {
+                <div class="card shadow-sm border-0" style="position: sticky; top: 20px;">
+                    <div class="card-header bg-white p-3">
+                        <h4 class="mb-0">Tóm tắt đơn hàng</h4>
+                    </div>
+                    <div class="card-body p-4">
+
+                        @foreach (var item in Model.Cart.CartItems)
+                        {
+                            <div class="d-flex mb-3">
+                                <div class="flex-shrink-0">
+                                    <img src="~/@item.Product?.ImageURL" alt="@item.Product?.ProductName" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;" />
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-0">@item.Product?.ProductName</h6>
+                                    <small class="text-muted">Số lượng: @item.Quantity</small>
+                                </div>
+                                <div class="text-end fw-bold">
+                                    @(((item.Product?.Price ?? 0) * item.Quantity).ToString("N0")) đ
+                                </div>
+                            </div>
+                        }
+
+                        <hr />
+
+                        <div class="d-flex justify-content-between h5">
+                            <span>TỔNG CỘNG</span>
+                            <span class="text-danger fw-bolder">
+                                @Model.Cart.TotalPrice.ToString("N0") đ
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>

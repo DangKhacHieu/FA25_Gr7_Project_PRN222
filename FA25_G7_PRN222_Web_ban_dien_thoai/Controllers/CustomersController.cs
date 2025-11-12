@@ -13,7 +13,7 @@
 
     namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
     {
-        public class CustomersController : Controller
+        public class CustomersController : Microsoft.AspNetCore.Mvc.Controller
         {
             private readonly PhoneContext _context;
 

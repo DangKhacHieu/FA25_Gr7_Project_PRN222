@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BLL.Interfaces;
+using DAL.Data;
+using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using DAL.Data;
-using DAL.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
-    public class StaffsController : Controller
+    public class StaffsController : Microsoft.AspNetCore.Mvc.Controller
     {
+        private readonly IStaffService _staffService;
         private readonly PhoneContext _context;
 
-        public StaffsController(PhoneContext context)
+        public StaffsController(PhoneContext context, IStaffService staffService)
         {
             _context = context;
+            _staffService = staffService;
         }
 
         // GET: Staffs
@@ -140,6 +143,56 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
         private bool StaffExists(int id)
         {
             return _context.Staffs.Any(e => e.StaffID == id);
+        }
+
+        public IActionResult Login()
+        {
+            // Kiểm tra Session đơn giản
+            if (HttpContext.Session.GetInt32("StaffId") != null)
+            {
+                return RedirectToAction("Dashboard", "Admin");
+            }
+            return View();
+        }
+
+        // [POST] /Staff/Login
+        [HttpPost]
+       
+        public async Task<IActionResult> Login(string username, string password)
+        {
+          
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                // Thiết lập thông báo lỗi tạm thời để View có thể hiển thị
+                TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.";
+                return View();
+            }
+
+            // 1. Xác thực (Service sẽ so sánh plaintext)
+            var staff = await _staffService.AuthenticateStaffAsync(username, password);
+
+            if (staff == null)
+            {
+                TempData["ErrorMessage"] = "Sai tên đăng nhập hoặc mật khẩu.";
+                return View();
+            }
+
+            // 2. TẠO PHIÊN ĐĂNG NHẬP
+            HttpContext.Session.SetInt32("StaffId", staff.StaffID);
+            HttpContext.Session.SetString("StaffUsername", staff.Username!);
+
+            // 3. Chuyển hướng thành công
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken] // ✨ THÊM BẢO MẬT
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear(); // Xóa tất cả session (đăng xuất)
+                                         // Chuyển hướng về trang Login
+            return RedirectToAction("Login", "Staffs");
         }
     }
 }

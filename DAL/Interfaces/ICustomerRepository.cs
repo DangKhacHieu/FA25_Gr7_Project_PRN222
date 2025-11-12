@@ -17,6 +17,7 @@ namespace DAL.IRepositories
         Task<Customer?> GetByIdAsync(int id);
         Task UpdateAsync(Customer customer);
         List<Customer> GetAllActive();
+
         void Update(Customer customer);
         void Save();
         Task<Customer?> GetAndUpdateCustomerAsync(Customer customer);
@@ -27,6 +28,10 @@ namespace DAL.IRepositories
 
         // ✅ Thêm đăng ký khách hàng
         void RegisterCustomer(Customer customer);
+
+
+
+        Task<Customer?> GetCustomerByIdAsyncT(int customerId);
 
     }
 }

@@ -13,6 +13,7 @@ namespace BLL.Services
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepo;
+        
         public ProductService(IProductRepository productRepo)
         {
             _productRepo = productRepo;
@@ -61,5 +62,52 @@ namespace BLL.Services
 
         public async Task<List<string>> GetDistinctRomsAsync()
             => await _productRepo.GetDistinctRomsAsync();
+        public async Task IncreaseProductQuantityAsync(int productId, int quantityToAdd)
+        {
+            // Giả định IProductRepository có phương thức tương ứng
+            await _productRepo.IncreaseProductQuantityAsync(productId, quantityToAdd);
+        }
+        public async Task<DAL.Models.PagedResult<Product>> GetProductsPaginatedAsync(int pageIndex, int pageSize)
+        {
+            if (pageIndex < 1) pageIndex = 1;
+
+            // 1. Đếm tổng số bản ghi
+            var totalCount = await _productRepo.CountProductsAsync();
+
+            // 2. Lấy dữ liệu của trang hiện tại
+            var items = await _productRepo.GetPagedProductsAsync(pageIndex, pageSize);
+
+            // 3. Trả về PagedResult
+            return new DAL.Models.PagedResult<Product>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            };
+        }
+
+        public async Task DecreaseProductQuantityAsync(int productId, int quantityToDecrease)
+        {
+            // Bạn cần một hàm GetById trong IProductRepository (có thể bạn đã có)
+            var product = await _productRepo.GetByIdAsync(productId);
+
+            if (product == null)
+            {
+                throw new KeyNotFoundException($"Sản phẩm với ID {productId} không tồn tại.");
+            }
+
+            // Giả sử tên cột số lượng là QuantityProduct (dựa theo DB)
+            if (product.Quantity_Product < quantityToDecrease)
+            {
+                // Ném lỗi này sẽ ngăn chặn transaction thành công
+                throw new InvalidOperationException($"Không đủ hàng cho sản phẩm '{product.ProductName}'.");
+            }
+
+            product.Quantity_Product -= quantityToDecrease;
+
+            // Tái sử dụng hàm UpdateAsync
+            await _productRepo.UpdateAsync(product);
+        }
     }
 }

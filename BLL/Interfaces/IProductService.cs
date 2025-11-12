@@ -20,5 +20,10 @@ namespace BLL.Interfaces
         Task<List<string>> GetDistinctBrandsAsync();
         Task<List<string>> GetDistinctRamsAsync();
         Task<List<string>> GetDistinctRomsAsync();
+        Task IncreaseProductQuantityAsync(int productId, int quantityToAdd);
+        Task<DAL.Models.PagedResult<Product>> GetProductsPaginatedAsync(int pageIndex, int pageSize);
+
+        // Phương thức này được OrderService gọi trong khi checkout
+        Task DecreaseProductQuantityAsync(int productId, int quantityToDecrease);
     }
 }

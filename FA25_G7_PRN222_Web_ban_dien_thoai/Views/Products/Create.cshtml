@@ -5,6 +5,7 @@
 }
 
 <style>
+    /* --- CSS (GIỮ NGUYÊN) --- */
     .page-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: #fff;
@@ -124,15 +125,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="ProductName">Tên sản phẩm</label>
-                    <input asp-for="ProductName" class="form-control" placeholder="VD: iPhone 15 Pro Max" />
+                    <label asp-for="ProductName"></label> <input asp-for="ProductName" class="form-control" placeholder="VD: iPhone 15 Pro Max" />
                     <span asp-validation-for="ProductName" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Brand">Thương hiệu</label>
-                    <input asp-for="Brand" class="form-control" placeholder="Apple, Samsung..." />
+                    <label asp-for="Brand"></label> <input asp-for="Brand" class="form-control" placeholder="Apple, Samsung..." />
                     <span asp-validation-for="Brand" class="text-danger"></span>
                 </div>
             </div>
@@ -141,30 +140,25 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label asp-for="Price">Giá (VNĐ)</label>
-                    <input asp-for="Price" class="form-control" type="number" step="0.01" />
-                    <span asp-validation-for="Price" class="text-danger"></span>
+                    <label asp-for="Price"></label> <input asp-for="Price" class="form-control" type="number" /> <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label asp-for="Color">Màu sắc</label>
-                    <input asp-for="Color" class="form-control" />
+                    <label asp-for="Color"></label> <input asp-for="Color" class="form-control" />
                     <span asp-validation-for="Color" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label asp-for="Size">Kích thước</label>
-                    <input asp-for="Size" class="form-control" placeholder="6.7 inch" />
+                    <label asp-for="Size"></label> <input asp-for="Size" class="form-control" placeholder="6.7 inch" />
                     <span asp-validation-for="Size" class="text-danger"></span>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label asp-for="ImageURL">URL hình ảnh</label>
-            <input asp-for="ImageURL" class="form-control" placeholder="https://..." />
+            <label asp-for="ImageURL"></label> <input asp-for="ImageURL" class="form-control" placeholder="https://..." />
             <span asp-validation-for="ImageURL" class="text-danger"></span>
         </div>
 
@@ -173,15 +167,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Chip_name">Chip</label>
-                    <input asp-for="Chip_name" class="form-control" />
+                    <label asp-for="Chip_name"></label> <input asp-for="Chip_name" class="form-control" />
                     <span asp-validation-for="Chip_name" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="GPU_name">GPU</label>
-                    <input asp-for="GPU_name" class="form-control" />
+                    <label asp-for="GPU_name"></label> <input asp-for="GPU_name" class="form-control" />
                     <span asp-validation-for="GPU_name" class="text-danger"></span>
                 </div>
             </div>
@@ -190,15 +182,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Ram">RAM</label>
-                    <input asp-for="Ram" class="form-control" placeholder="8GB" />
+                    <label asp-for="Ram"></label> <input asp-for="Ram" class="form-control" placeholder="8GB" />
                     <span asp-validation-for="Ram" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Rom">Bộ nhớ</label>
-                    <input asp-for="Rom" class="form-control" placeholder="256GB" />
+                    <label asp-for="Rom"></label> <input asp-for="Rom" class="form-control" placeholder="256GB" />
                     <span asp-validation-for="Rom" class="text-danger"></span>
                 </div>
             </div>
@@ -209,15 +199,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Screen_resolution">Độ phân giải</label>
-                    <input asp-for="Screen_resolution" class="form-control" />
+                    <label asp-for="Screen_resolution"></label> <input asp-for="Screen_resolution" class="form-control" />
                     <span asp-validation-for="Screen_resolution" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Refresh_rate">Tần số quét</label>
-                    <input asp-for="Refresh_rate" class="form-control" placeholder="120Hz" />
+                    <label asp-for="Refresh_rate"></label> <input asp-for="Refresh_rate" class="form-control" placeholder="120Hz" />
                     <span asp-validation-for="Refresh_rate" class="text-danger"></span>
                 </div>
             </div>
@@ -228,15 +216,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Camera_Front">Camera trước</label>
-                    <input asp-for="Camera_Front" class="form-control" />
+                    <label asp-for="Camera_Front"></label> <input asp-for="Camera_Front" class="form-control" />
                     <span asp-validation-for="Camera_Front" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Camera_Behind">Camera sau</label>
-                    <input asp-for="Camera_Behind" class="form-control" />
+                    <label asp-for="Camera_Behind"></label> <input asp-for="Camera_Behind" class="form-control" />
                     <span asp-validation-for="Camera_Behind" class="text-danger"></span>
                 </div>
             </div>
@@ -247,15 +233,17 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Operating_System_name">Hệ điều hành</label>
-                    <input asp-for="Operating_System_name" class="form-control" />
+                    <label asp-for="Operating_System_name"></label> <select asp-for="Operating_System_name" class="form-control">
+                        <option value="" disabled selected>-- Chọn Hệ điều hành --</option>
+                        <option value="Android">Android</option>
+                        <option value="iOS">iOS</option>
+                    </select>
                     <span asp-validation-for="Operating_System_name" class="text-danger"></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Operating_system_version">Phiên bản</label>
-                    <input asp-for="Operating_system_version" class="form-control" />
+                    <label asp-for="Operating_system_version"></label> <input asp-for="Operating_system_version" class="form-control" />
                     <span asp-validation-for="Operating_system_version" class="text-danger"></span>
                 </div>
             </div>

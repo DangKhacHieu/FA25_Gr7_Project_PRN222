@@ -1,0 +1,124 @@
+﻿@* Đặt dòng này ở đầu để báo cho Razor KHÔNG sử dụng Layout mặc định *@
+@{
+    Layout = null;
+    ViewData["Title"] = "Đăng nhập Quản trị";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin</title>
+
+    @* Sử dụng Bootstrap 5 *@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    @* Thêm liên kết font icons (ví dụ: Font Awesome) nếu bạn dùng *@
+    @* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" /> *@
+
+    <style>
+        /* CSS cho giao diện đăng nhập Admin */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f4c75, #3282b8); /* Màu nền Admin tone lạnh */
+        }
+
+        .login-container {
+            padding: 40px;
+            border-radius: 12px; /* Bo góc mềm mại hơn */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Shadow nổi bật */
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 380px; /* Nhỏ gọn hơn */
+            animation: fadeIn 0.8s;
+        }
+
+        .login-header {
+            color: #0f4c75; /* Màu chữ tiêu đề */
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .form-control:focus {
+            border-color: #0f4c75;
+            box-shadow: 0 0 0 0.25rem rgba(15, 76, 117, 0.25);
+        }
+
+        .btn-primary {
+            background-color: #0f4c75;
+            border-color: #0f4c75;
+            transition: background-color 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: #1b262c;
+                border-color: #1b262c;
+            }
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h3 class="text-center login-header">
+            @* Thay đổi tiêu đề và có thể thêm icon nếu dùng Font Awesome *@
+            @* <i class="fas fa-user-lock me-2"></i> *@
+            ĐĂNG NHẬP HỆ THỐNG QUẢN TRỊ
+        </h3>
+        <hr class="mb-4" />
+
+        @* Hiển thị thông báo lỗi từ TempData *@
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form method="post" asp-controller="Staffs" asp-action="Login">
+
+            <div class="form-floating mb-3">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Tên đăng nhập" required />
+                <label for="username">Tên đăng nhập</label>
+            </div>
+
+            <div class="form-floating mb-4">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Mật khẩu" required />
+                <label for="password">Mật khẩu</label>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    @* <i class="fas fa-sign-in-alt me-2"></i> *@
+                    Đăng nhập
+                </button>
+            </div>
+
+            <div class="text-center mt-3">
+                <small class="text-muted">&copy; @DateTime.Now.Year Hệ thống Quản trị</small>
+            </div>
+        </form>
+    </div>
+
+    @* Script cần thiết cho Bootstrap (bao gồm dismissible alert) *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

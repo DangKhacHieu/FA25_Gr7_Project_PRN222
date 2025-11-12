@@ -18,10 +18,10 @@
     {
         @Html.AntiForgeryToken()
         <div class="card shadow-sm mb-4">
-            <div class="card-body">
+            <div class="card-body" id="cart-items-list">
                 @foreach (var item in Model.UserCart.CartItems)
                 {
-                    <div class="row align-items-center border-bottom py-3">
+                    <div class="row align-items-center border-bottom py-3" data-cartitem="@item.CartItemId">
                         <div class="col-2">
                             <img src="@item.Product.ImageURL"
                                  class="img-fluid rounded"
@@ -66,6 +66,7 @@
                             <div class="col-1 text-end">
                                 <form method="post" asp-page="Remove" class="form-delete">
                                     <input type="hidden" name="CartItemId" value="@item.CartItemId" />
+                                    <input type="hidden" name="CartId" value="@item.CartId" />
                                     <button type="submit" class="btn btn-link text-danger p-0">🗑️</button>
                                 </form>
                             </div>
@@ -84,7 +85,9 @@
                     </span>
                 </div>
 
-                <button class="btn btn-warning w-100 fw-bold py-2">Đặt hàng</button>
+                <a asp-page="/Order/CheckOut" class="btn btn-warning w-100 fw-bold py-2">
+                    Đặt hàng
+                </a>
             </div>
         </div>
     }
@@ -108,40 +111,46 @@
 </div>
 @section Scripts {
     <script>
-        // --- CÁC BIẾN VÀ KHỞI TẠO MODAL ---
         let formToDelete = null;
-        const deleteModalElement = document.getElementById('deleteConfirmModal');
-        const deleteModal = new bootstrap.Modal(deleteModalElement);
-        const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+        let deleteModalElement = null;
+        let deleteModal = null;
+        let btnConfirmDelete = null;
 
-        // Gắn sự kiện cho các form xóa
-        document.querySelectorAll('.form-delete').forEach(form => {
-            form.addEventListener('submit', function (event) {
-                event.preventDefault(); // Ngăn submit
-                formToDelete = event.target; // Lưu lại form
-                deleteModal.show(); // Hiển thị modal
+        document.addEventListener('DOMContentLoaded', (event) => {
+            deleteModalElement = document.getElementById('deleteConfirmModal');
+            if (deleteModalElement) {
+                deleteModal = new bootstrap.Modal(deleteModalElement);
+            }
+            btnConfirmDelete = document.getElementById('btn-confirm-delete');
+
+            if(btnConfirmDelete) {
+                btnConfirmDelete.addEventListener('click', async function () {
+                    if (formToDelete) {
+                        const cartItemId = formToDelete.querySelector('input[name="CartItemId"]').value;
+                        await JsonTask("/Carts/Remove", { CartItemId: cartItemId }, formToDelete);
+                        deleteModal.hide();
+                        formToDelete = null;
+                    }
+                });
+            }
+
+            if(deleteModalElement) {
+                deleteModalElement.addEventListener('hidden.bs.modal', function () {
+                    if (formToDelete) {
+                        formToDelete = null;
+                    }
+                });
+            }
+
+            document.querySelectorAll('.form-delete').forEach(form => {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    formToDelete = event.target;
+                    if(deleteModal) {
+                        deleteModal.show();
+                    }
+                });
             });
-        });
-
-        // Gắn sự kiện cho nút "Xóa" trong modal
-        btnConfirmDelete.addEventListener('click', async function () {
-            if (formToDelete) {
-                const cartItemId = formToDelete.querySelector('input[name="CartItemId"]').value;
-                const data = { CartItemId: cartItemId };
-
-                // Gọi JsonTask cho hành động Remove
-                await JsonTask("/Carts/Remove", data, formToDelete);
-
-                deleteModal.hide();
-                formToDelete = null;
-            }
-        });
-
-        // Xử lý khi người dùng nhấn "Hủy"
-        deleteModalElement.addEventListener('hidden.bs.modal', function () {
-            if (formToDelete) {
-                formToDelete = null;
-            }
         });
 
         async function JsonTask(url, data, contextElement) {
@@ -158,115 +167,63 @@
                     body: new URLSearchParams(data)
                 });
 
+                if (!response.ok) {
+                    throw new Error('Lỗi từ máy chủ: ' + response.status);
+                }
+
                 const result = await response.json();
 
-                let toastType = result.success ? "success" : "warning";
+                if (result.success === false && result.message) {
 
-                if (result.success) {
-                    if (url.includes("Update")) {
+                    if (url.includes("/Carts/Update") && contextElement) {
                         const input = contextElement;
-                        input.dataset.quantity = input.value;
-
-                        const row = input.closest(".row");
-                        const subtotalEl = row.querySelector(".subtotal");
-                        if (subtotalEl) subtotalEl.textContent = result.subtotal.toLocaleString("vi-VN") + " đ";
-                    }
-                    else if (url.includes("Remove")) {
-                        const form = contextElement;
-                        form.closest(".row").remove();
+                        input.value = input.dataset.quantity; 
                     }
 
-                    const totalEl = document.getElementById("cart-total");
-                    if (totalEl) totalEl.textContent = result.total.toLocaleString("vi-VN") + " đ";
-
-                    console.log("Total từ server:", result.total.toLocaleString("vi-VN") + " đ");
-                    if (document.querySelectorAll('.card-body .row').length === 0) {
-                        location.reload(); 
+                    if (result.message.includes("hết hạn")) {
+                        setTimeout(() => { location.reload(); }, 2000);
                     }
                 }
 
-                showToast(result.message, toastType);
-
             } catch (err) {
                 console.error("Lỗi JsonTask:", err);
-                showToast("⚠️ Lỗi kết nối máy chủ.", "danger");
+                showGlobalToast("⚠️ Lỗi kết nối máy chủ.", "danger");
             }
         }
 
+        // HÀM GỬI CẬP NHẬT (ĐÃ BỎ CHECK VALIDATION)
         async function sendUpdate(input) {
-            let baseQuantity = input.dataset.quantity;
+            let baseQuantity = parseInt(input.dataset.quantity);
             let quantity = input.valueAsNumber;
-            const max = parseInt(input.dataset.max) || 9999;
             const cartItemId = input.dataset.id;
 
+            // Nếu nhập chữ (NaN), coi như là 1
             if (Number.isNaN(quantity)) {
-                showToast("Lỗi: Số lượng không hợp lệ.", "danger");
-                input.value = baseQuantity;
+                quantity = 1;
+            }
+
+            // Chỉ check nếu giá trị không thay đổi
+            if (quantity === baseQuantity) {
                 return;
             }
 
-            if (quantity < 1 || quantity > max) {
-                 input.value = baseQuantity;
-            }
-
-            if (quantity == baseQuantity) {
-                return;
-            }
-
+            // Gửi request đi (Backend sẽ check)
             const data = {
                 CartItemId: cartItemId,
                 Quantity: quantity
             };
+
+            // Truyền 'input' (contextElement) để JsonTask có thể reset
             await JsonTask("/Carts/Update", data, input);
         }
 
+        // HÀM CHO NÚT (+)/(-)
         function changeQty(btn, delta) {
             const input = btn.parentElement.querySelector(".visible-qty");
             let value = parseInt(input.value) || 1;
-
             value += delta;
             input.value = value;
             sendUpdate(input);
-        }
-
-        function showToast(message, type = "info") {
-            // const toast = document.createElement("div");
-            // toast.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 mt-3 me-3`;
-            
-            // toast.innerHTML = `
-            //     <div>${message}</div>
-            //     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            // `;
-            // document.body.appendChild(toast);
-            // setTimeout(() => toast.remove(), 1500);
-
-
-
-            const toastContainer = document.querySelector('.toast-container');
-            if (!toastContainer) return;
-            const toastId = 'toast-' + Math.random().toString(36).substr(2, 9);
-
-            const toastHTML = `
-                <div id="${toastId}" class="toast align-items-center ${type} border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            ${message}
-                        </div>
-                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                </div>
-            `;
-
-            toastContainer.insertAdjacentHTML('beforeend', toastHTML);
-
-            const toastElement = document.getElementById(toastId);
-            const toast = new bootstrap.Toast(toastElement, { delay: 1500 });
-            toast.show();
-
-            // Xóa element khỏi DOM sau khi toast đã ẩn
-            toastElement.addEventListener('hidden.bs.toast', () => {
-                toastElement.remove();
-            });
         }
     </script>
 }
