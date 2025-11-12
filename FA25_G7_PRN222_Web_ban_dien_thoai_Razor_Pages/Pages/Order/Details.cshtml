@@ -1,12 +1,21 @@
 ﻿@page "{id:int}"
 @model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order.DetailsModel
 @{
-    // Phải kiểm tra Model.OrderDetails (thay vì Model.Order)
     if (Model.OrderDetails != null)
     {
         ViewData["Title"] = "Chi tiết đơn hàng #" + Model.OrderDetails.OrderID;
     }
 }
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
 
 @if (Model.OrderDetails != null)
 {
@@ -60,29 +69,52 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @{
+                        bool isOrderCompleted = (Model.OrderDetails.Status != null && Model.OrderDetails.Status.Contains("Completed"));
+                    }
+
                     @foreach (var item in Model.OrderDetails.Order_Details)
                     {
+                        // Logic kiểm tra đã review (từ PageModel)
+                        bool hasAlreadyReviewed = Model.AlreadyFeedbackProducts.Contains(item.ProductID);
+
                         <tr>
                             <td>
                                 <strong>@item.Product?.ProductName</strong>
-                            </td>
-                            <td class="text-center">
-                                @(item.Quantity ?? 0)
-                            </td>
-                            <td class="text-end">
-                                @((item.Product?.Price ?? 0).ToString("N0")) đ
-                            </td>
-                            <td class="text-end fw-bold">
-                                @{
-                                    var price = item.Product?.Price ?? 0;
-                                    var quantity = item.Quantity ?? 0;
-                                    var lineTotal = price * quantity;
+                                <br />
+
+                                @if (isOrderCompleted)
+                                {
+                                    @if (hasAlreadyReviewed)
+                                    {
+                                        <span class="text-success">✅ Đã đánh giá</span>
+                                    }
+                                    else
+                                    {
+                                        <form method="post" asp-page-handler="AddFeedback" class="mt-2">
+                                            <input type="hidden" name="ProductId" value="@item.ProductID" />
+                                            <input type="hidden" name="OrderId" value="@Model.OrderDetails.OrderID" />
+                                            <div class="input-group">
+                                                <input type="number" class="form-control" name="RatePoint" min="1" max="5" placeholder="⭐" required />
+                                                <input type="text" class="form-control" name="Content" placeholder="Viết nhận xét..." required />
+                                                <button type="submit" class="btn btn-outline-primary">Gửi</button>
+                                            </div>
+                                        </form>
+                                    }
                                 }
-                                @lineTotal.ToString("N0") đ
+                                else
+                                {
+                                    <span class="text-muted fst-italic">Hoàn thành đơn hàng để đánh giá</span>
+                                }
                             </td>
+                            <td class="text-center">@item.Quantity</td>
+                            <td class="text-end">@((item.Product?.Price ?? 0).ToString("N0")) đ</td>
+                            <td class="text-end fw-bold">@((item.Quantity ?? 0) * (item.Product?.Price ?? 0)).ToString("N0") đ</td>
                         </tr>
                     }
                 </tbody>
+
+
                 <tfoot class="table-light">
                     <tr class="border-top">
                         <td colspan="3" class="text-end h5">TỔNG CỘNG</td>

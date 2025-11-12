@@ -1,18 +1,16 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
-    // SỬA LỖI 1: Đổi ID thành "search-input" cho khớp với HTML
     const searchInput = document.getElementById("search-input");
     const resultsPopup = document.getElementById("search-results-popup");
     let debounceTimer;
 
     if (!searchInput || !resultsPopup) {
-        // Nếu không tìm thấy element, dừng lại
         console.warn("Không tìm thấy ô tìm kiếm hoặc popup.");
         return;
     }
 
     // Hàm fetch dữ liệu
     async function fetchSearchResults(query) {
-        if (query.length < 2) {
+        if (query.length < 3) {
             resultsPopup.style.display = "none";
             return;
         }
@@ -40,7 +38,6 @@
 
     // Hàm hiển thị kết quả
     function renderSuggestions(suggestions) {
-        // Đảm bảo định dạng giá tiền và đường dẫn đúng
         let html = suggestions.map(item => `
             <a href="/Products/Details/${item.productID}" class="search-popup-item">
                 <img src="${item.imageURL || 'https://placehold.co/40x40/eee/999?text=N/A'}" alt="${item.productName}" />

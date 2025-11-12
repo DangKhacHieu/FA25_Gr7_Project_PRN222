@@ -2,50 +2,72 @@
 using DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
+using System.Threading.Tasks;
+using BLL.Common;
+using System.Collections.Generic;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order
 {
     public class DetailsModel : PageModel
     {
         private readonly IOrderService _orderService;
+        private readonly IFeedbackService _feedbackService;
 
-        public DetailsModel(IOrderService orderService)
+        public DetailsModel(IOrderService orderService, IFeedbackService feedbackService)
         {
             _orderService = orderService;
+            _feedbackService = feedbackService;
         }
 
-        // Dùng để lưu chi tiết đơn hàng và hiển thị ra View
-        public Order_List OrderDetails { get; set; }
+        public Order_List OrderDetails { get; set; } = new();
+        public List<int> AlreadyFeedbackProducts { get; set; } = new();
 
         [BindProperty(SupportsGet = true)]
-        public int Id { get; set; } // Biến này sẽ tự động lấy từ ?id=5 hoặc /Order/Details/5
+        public int Id { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
-            // 1. Lấy CustomerID từ Session
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
-
             if (customerId == null)
-            {
-                // Nếu chưa đăng nhập, chuyển về trang đăng nhập
-                return RedirectToPage("/Login"); // Thay bằng trang đăng nhập của bạn
-            }
+                return RedirectToPage("/Login");
 
-            // 2. Gọi service. 
-            // Hàm này đã bao gồm logic bảo mật:
-            // "Chỉ lấy đơn hàng có OrderID = Id VÀ CustomerID = customerId"
             OrderDetails = await _orderService.GetOrderDetailsForCustomerAsync(Id, customerId.Value);
+            if (OrderDetails == null) return NotFound();
 
-            // 3. Kiểm tra kết quả
-            if (OrderDetails == null)
+            if (OrderDetails.Status != null && OrderDetails.Status.Contains("Completed"))
             {
-                // Không tìm thấy đơn hàng, 
-                // hoặc đơn hàng này không thuộc về khách hàng đang đăng nhập
-                return NotFound();
+                AlreadyFeedbackProducts = (await _feedbackService.GetAllFeedbacksAsync())
+                    .Where(f => f.CustomerID == customerId)
+                    .Select(f => f.ProductID ?? 0)
+                    .Distinct() 
+                    .ToList();
             }
 
-            // 4. Trả về trang với đầy đủ dữ liệu
             return Page();
+        }
+        
+        public async Task<IActionResult> OnPostAddFeedbackAsync(int ProductId, int OrderId, string Content, int RatePoint)
+        {
+            int? customerId = HttpContext.Session.GetInt32("CustomerId");
+            if (customerId == null)
+                return RedirectToPage("/Login");
+
+            var eligibility = await _feedbackService.CheckFeedbackEligibilityAsync(customerId.Value, OrderId, ProductId);
+
+            if (eligibility != IFeedbackService.FeedbackEligibility.Eligible)
+            {
+                if (eligibility == IFeedbackService.FeedbackEligibility.AlreadySubmitted)
+                    TempData["Error"] = "Bạn đã đánh giá sản phẩm này rồi.";
+                else
+                    TempData["Error"] = "Đơn hàng chưa hoàn thành, bạn không thể đánh giá.";
+
+                return RedirectToPage(new { id = OrderId });
+            }
+
+            var result = await _feedbackService.AddFeedbackAsync(customerId.Value, ProductId, Content, RatePoint);
+            TempData[result.Success ? "Success" : "Error"] = result.Message;
+            return RedirectToPage(new { id = OrderId });
         }
     }
 }

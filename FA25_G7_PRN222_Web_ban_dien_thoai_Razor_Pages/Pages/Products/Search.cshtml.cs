@@ -27,13 +27,12 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Products
                 Products = await _productService.SearchProductsAsync(q);
             }
             return Page();
-            //return RedirectToPage("/Products/Index");
         }
 
         // 2. Handler cho Popup AJAX (chỉ trả về JSON)
         public async Task<IActionResult> OnGetSuggestionsAsync()
         {
-            if (string.IsNullOrWhiteSpace(q) || q.Length < 2)
+            if (string.IsNullOrWhiteSpace(q) || q.Length < 3)
             {
                 return new JsonResult(new List<object>());
             }

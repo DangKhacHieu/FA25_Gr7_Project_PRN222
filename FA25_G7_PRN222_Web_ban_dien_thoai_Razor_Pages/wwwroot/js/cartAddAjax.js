@@ -19,7 +19,6 @@ async function handleAjaxAddToCart(form) {
 
         const result = await response.json();
 
-        // Chỉ xử lý lỗi "Chưa đăng nhập"
         if (!result.success && result.message.includes("Vui lòng đăng nhập")) {
             window.location.href = "/Login";
         }

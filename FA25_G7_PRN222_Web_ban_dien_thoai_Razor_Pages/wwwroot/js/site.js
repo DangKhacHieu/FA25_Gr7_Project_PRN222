@@ -18,9 +18,7 @@ connection.on("ReceiveCartUpdate", (data) => {
     const cartItemId = data.cartItemId;
     const inputEl = document.querySelector(`input[data-id="${cartItemId}"]`);
 
-    // Cập nhật UI (nếu tìm thấy item)
     if (inputEl && data.newQuantity > 0) {
-        // CẬP NHẬT SỐ LƯỢNG 
         const row = inputEl.closest(".row");
         const subtotalDisplay = row.querySelector(".subtotal");
         if (subtotalDisplay) {

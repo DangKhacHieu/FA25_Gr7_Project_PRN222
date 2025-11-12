@@ -72,31 +72,40 @@ else
                         <h5 class="text-danger fw-bold">@Model.Product.Price?.ToString("N0") đ</h5>
                         <div class="mb-3">
                             <b>Màu sắc:</b>
-                            <div class="d-flex gap-2 mt-2">
-                                @foreach (var color in Model.AvailableColors)
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                @foreach (var color in Model.AvailableColors.Select(c => c.Color).Distinct())
                                 {
-                                    <span class="badge bg-light text-dark border px-3 py-2"
+                                    // Kiểm tra nếu đây là màu đang được chọn
+                                    bool isActive = color == Model.Product.Color;
+                                    string activeClass = isActive ? "bg-warning text-dark border-dark fw-bold" : "bg-light text-dark border";
+
+                                    <span class="badge @activeClass px-3 py-2"
                                           style="cursor:pointer"
-                                          onclick="window.location='@Url.Page("/Products/Details", new { id = color.ProductID })'">
-                                        @color.Color
-                                    </span>
-                                }
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <b>Cấu hình (RAM/ROM):</b>
-                            <div class="d-flex gap-2 mt-2">
-                                @foreach (var variant in Model.Variants)
-                                {
-                                    <span class="badge bg-light text-dark border px-3 py-2"
-                                          style="cursor:pointer"
-                                          onclick="window.location='@Url.Page("/Products/Details", new { id = variant.ProductID })'">
-                                        @variant.Ram / @variant.Rom
+                                          onclick="location.href='@Url.Page("/Products/Details", new { id = Model.GetProductIdByColorRamRom(color, Model.Product.Ram, Model.Product.Rom) })'">
+                                        @color
                                     </span>
                                 }
                             </div>
                         </div>
 
+                        <div class="mb-3">
+                            <b>Cấu hình (RAM/ROM):</b>
+                            <div class="d-flex flex-wrap gap-2 mt-2">
+                                @foreach (var variant in Model.Variants
+                                                            .Select(v => new { v.Ram, v.Rom })
+                                                            .Distinct())
+                                {
+                                    bool isActive = variant.Ram == Model.Product.Ram && variant.Rom == Model.Product.Rom;
+                                    string activeClass = isActive ? "bg-warning text-dark border-dark fw-bold" : "bg-light text-dark border";
+
+                                    <span class="badge @activeClass px-3 py-2"
+                                          style="cursor:pointer"
+                                          onclick="location.href='@Url.Page("/Products/Details", new { id = Model.GetProductIdByColorRamRom(Model.Product.Color, variant.Ram, variant.Rom) })'">
+                                        @variant.Ram / @variant.Rom
+                                    </span>
+                                }
+                            </div>
+                        </div>
                         <form method="post" asp-page="/Carts/Add">
                             @Html.AntiForgeryToken()
                             <input type="hidden" name="ProductID" value="@Model.Product.ProductID" />
