@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Feelbacks\**" />
+    <Content Remove="Pages\Feelbacks\**" />
+    <EmbeddedResource Remove="Pages\Feelbacks\**" />
+    <None Remove="Pages\Feelbacks\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.10" />
@@ -29,10 +36,6 @@
   <ProjectReference Include="..\DAL\DAL.csproj" />
   <ProjectReference Include="..\BLL\BLL.csproj" />
 </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Feelbacks\" />
-  </ItemGroup>
 
 
 </Project>

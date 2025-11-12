@@ -22,7 +22,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages
         public void OnGet() { }
 
         // ✅ Xác minh OTP quên mật khẩu
-        public IActionResult OnPost()
+        public IActionResult OnPostVerify()
         {
             var savedOTP = HttpContext.Session.GetString("ResetOTP");
             var otpTime = HttpContext.Session.GetString("ResetOTPTime");
@@ -49,6 +49,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages
             // ✅ Nếu đúng OTP → chuyển sang trang Reset Password
             return RedirectToPage("/ForgotPassword/ResetPassword");
         }
+
 
         // ✅ Gửi lại OTP khi người dùng bấm “Resend OTP”
         public IActionResult OnPostResend()
