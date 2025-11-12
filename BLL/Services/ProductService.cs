@@ -86,5 +86,28 @@ namespace BLL.Services
                 PageSize = pageSize
             };
         }
+
+        public async Task DecreaseProductQuantityAsync(int productId, int quantityToDecrease)
+        {
+            // Bạn cần một hàm GetById trong IProductRepository (có thể bạn đã có)
+            var product = await _productRepo.GetByIdAsync(productId);
+
+            if (product == null)
+            {
+                throw new KeyNotFoundException($"Sản phẩm với ID {productId} không tồn tại.");
+            }
+
+            // Giả sử tên cột số lượng là QuantityProduct (dựa theo DB)
+            if (product.Quantity_Product < quantityToDecrease)
+            {
+                // Ném lỗi này sẽ ngăn chặn transaction thành công
+                throw new InvalidOperationException($"Không đủ hàng cho sản phẩm '{product.ProductName}'.");
+            }
+
+            product.Quantity_Product -= quantityToDecrease;
+
+            // Tái sử dụng hàm UpdateAsync
+            await _productRepo.UpdateAsync(product);
+        }
     }
 }

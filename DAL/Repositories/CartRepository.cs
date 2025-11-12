@@ -116,5 +116,22 @@ namespace DAL.Repositories
                 }
             }
         }
+
+        public async Task ClearCartAsync(int customerId)
+        {
+            // 1. Tìm giỏ hàng của khách hàng, và .Include() các CartItems
+            var cart = await _context.Carts
+                                     .Include(c => c.CartItems)
+                                     .FirstOrDefaultAsync(c => c.CustomerId == customerId);
+
+            if (cart != null && cart.CartItems != null && cart.CartItems.Any())
+            {
+                // 2. Xóa tất cả các CartItem thuộc về giỏ hàng này
+                _context.CartItems.RemoveRange(cart.CartItems);
+
+                // 3. Lưu thay đổi
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

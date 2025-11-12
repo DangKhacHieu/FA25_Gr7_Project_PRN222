@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,8 @@ namespace DAL.Models
 {
     public class Order_Details
     {
+        [Key] // <-- THÊM DÒNG NÀY (Báo đây là Khóa chính)
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderDetailID { get; set; }
         public int? Quantity { get; set; }
         public int ProductID { get; set; }

@@ -29,12 +29,28 @@ builder.Services.AddScoped<StaffService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian sống của Session
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+builder.Services.AddScoped<IRevenueRepository, RevenueRepository>();
+builder.Services.AddScoped<IRevenueService, RevenueService>();
+
+builder.Services.AddScoped<IProfileStaffRepository, ProfileStaffRepository>();
+builder.Services.AddScoped<IProfileStaffService, ProfileStaffService>();
+// Repository
+builder.Services.AddScoped<IImportProductRepository, ImportProductRepository>();
+// Service
+builder.Services.AddScoped<IImportProductService, ImportProductService>();
+builder.Services.AddSignalR();
+
+builder.Services.AddScoped<DAL.Interfaces.ICartRepository, DAL.Repositories.CartRepository>();
+
+
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây

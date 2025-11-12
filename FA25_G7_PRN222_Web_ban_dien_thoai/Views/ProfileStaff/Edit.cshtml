@@ -1,0 +1,48 @@
+﻿@model DAL.Models.Staff
+
+<div class="container mt-5">
+    <h2 class="text-danger fw-bold mb-4">Edit Profile</h2>
+
+    <form asp-action="Edit" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="StaffID" />
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="FullName" class="form-label"></label>
+                <input asp-for="FullName" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="PhoneNumber" class="form-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Address" class="form-label"></label>
+                <input asp-for="Address" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Province_City" class="form-label"></label>
+                <input asp-for="Province_City" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Sex" class="form-label"></label>
+                <select asp-for="Sex" class="form-select">
+                    <option value="">-- Select --</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="DOB" class="form-label"></label>
+                <input asp-for="DOB" type="date" class="form-control" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success mt-3">Save Changes</button>
+        <a asp-action="Index" asp-route-id="@Model.StaffID" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+</div>

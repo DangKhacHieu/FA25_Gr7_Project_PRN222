@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly IProductService _productService;
 

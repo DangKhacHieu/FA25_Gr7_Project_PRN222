@@ -322,6 +322,7 @@
                 </li>
             </ul>
 
+
             @if (isAdmin)
             {
                 <div class="menu-section-title">THỐNG KÊ & BÁO CÁO</div>
@@ -334,6 +335,17 @@
                     </li>
                 </ul>
             }
+
+            <div class="menu-section-title">THỐNG KÊ & BÁO CÁO</div>
+            <ul class="nav nav-pills flex-column mb-3">
+                <li>
+                    <a href="@Url.Action("Index", "Revenue")" class="nav-link">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <span>Phân tích doanh thu</span>
+                    </a>
+                </li>
+            </ul>
+
         </div>
 
         <div class="sidebar-footer">

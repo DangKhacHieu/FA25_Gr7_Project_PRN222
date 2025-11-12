@@ -1,0 +1,99 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order.HistoryModel
+@{
+    ViewData["Title"] = "Lịch sử đơn hàng";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Mã Đơn</th>
+                <th>Ngày Đặt</th>
+                <th>Trạng Thái</th>
+                <th class="text-end">Tổng Tiền</th>
+                <th class="text-center" style="width: 25%;">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Orders != null && Model.Orders.Any())
+            {
+                @foreach (var order in Model.Orders)
+                {
+                    <tr>
+                        <td><strong>#@order.OrderID</strong></td>
+
+                        <td>@(order.Date?.ToString("dd/MM/yyyy"))</td>
+
+                        <td>
+                            @{
+                                var statusClass = "bg-secondary"; // Mặc định
+                                if (order.Status == "Pending") statusClass = "bg-warning text-dark";
+                                else if (order.Status == "Shipping") statusClass = "bg-info text-dark";
+                                else if (order.Status == "Completed") statusClass = "bg-success";
+                                else if (order.Status == "Failed" || order.Status == "Cancelled") statusClass = "bg-danger";
+                            }
+                            <span class="badge @statusClass fs-6">@(order.Status ?? "N/A")</span>
+                        </td>
+
+                        <td class="text-end text-danger fw-bold">
+                            @((order.Total ?? 0).ToString("N0")) đ
+                        </td>
+
+                        <td class="text-center">
+
+                            <a asp-page="/Order/Details"
+                               asp-route-id="@order.OrderID"
+                               class="btn btn-primary btn-sm m-1">
+                                Chi Tiết
+                            </a>
+
+                            @if (order.Status == "Pending")
+                            {
+                                <form method="post" asp-page-handler="Cancel" asp-route-id="@order.OrderID" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm m-1"
+                                            onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này? Kho hàng sẽ được hoàn trả.');">
+                                        Hủy đơn
+                                    </button>
+                                </form>
+                            }
+
+                            @if (order.Status == "Shipping")
+                            {
+                                <form method="post" asp-page-handler="Receive" asp-route-id="@order.OrderID" style="display: inline;">
+                                    <button type="submit" class="btn btn-success btn-sm m-1">
+                                        Đã nhận hàng
+                                    </button>
+                                </form>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center p-4">
+                        Bạn chưa có đơn hàng nào.
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
