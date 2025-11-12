@@ -23,7 +23,7 @@
         {
             bool hasReply = replyStatus != null && replyStatus.ContainsKey(fb.FeedbackID) && replyStatus[fb.FeedbackID];
 
-            <tr>
+            <tr id="row-@fb.FeedbackID">
                 <td>@fb.FeedbackID</td>
                 <td>@fb.CustomerID</td>
                 <td>@fb.ProductID</td>
@@ -50,12 +50,10 @@
                     </a>
 
                     <!-- Nút Delete -->
-                    <form asp-action="Delete" asp-route-id="@fb.FeedbackID" method="post" class="d-inline"
-                          onsubmit="return confirm('Bạn có chắc muốn xóa feedback này không?');">
-                        <button type="submit" class="btn btn-sm btn-danger" title="Delete">
-                            <i class="bi bi-trash3-fill"></i>
-                        </button>
-                    </form>
+                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteFeedback(@fb.FeedbackID)">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
+
                 </td>
             </tr>
         }
@@ -63,29 +61,49 @@
 </table>
 
 
-<!-- Script SweetAlert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    function confirmDelete(feedbackId) {
-        Swal.fire({
-            title: 'Bạn có chắc muốn xóa?',
-            text: "Hành động này không thể hoàn tác!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Xóa',
-            cancelButtonText: 'Hủy'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Tạo form ẩn để gửi POST request
-                const form = document.createElement('form');
-                form.method = 'post';
-                form.action = `/Feedback/Delete/${feedbackId}`;
-                document.body.appendChild(form);
-                form.submit();
-            }
-        });
-    }
-</script>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function deleteFeedback(id) {
+            Swal.fire({
+                title: 'Bạn có chắc muốn xóa?',
+                text: "Hành động này không thể hoàn tác!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Xóa',
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '/Feedback/Delete/' + id,
+                        type: 'POST',
+                        success: function (response) {
+                            if (response.success) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Đã xóa!',
+                                    text: response.message,
+                                    timer: 1500,
+                                    showConfirmButton: false
+                                });
+                                // Xóa dòng trong bảng
+                                $('#row-' + id).fadeOut(400, function () { $(this).remove(); });
+                            } else {
+                                Swal.fire('Lỗi!', response.message, 'error');
+                            }
+                        },
+                        error: function () {
+                            Swal.fire('Lỗi!', 'Không thể kết nối server.', 'error');
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}
+
     

@@ -43,8 +43,10 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_MVC.Controllers
         public IActionResult Delete(int id)
         {
             _feedbackService.DeleteFeedback(id);
-            return RedirectToAction("Index");
+            return Json(new { success = true, message = "Feedback deleted successfully!" });
         }
+
+
 
         [HttpGet]
         public IActionResult Reply(int id)
@@ -88,16 +90,13 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_MVC.Controllers
                 return RedirectToAction("Reply", new { id });
             }
 
-            // ✅ Tạm thời set StaffID cứng để test (vd: staff có ID = 1)
-            int staffId = 1;
-
-            // int.TryParse(HttpContext.Session.GetString("StaffID"), out int staffId);
-            //if (staffId == 0)
-            //{
-            //    TempData["Error"] = "You must log in as staff to reply feedback.";
-            //    return RedirectToAction("Login", "Staff");
-            //}
-
+            // ✅ Lấy StaffID từ Session
+            int? staffId = HttpContext.Session.GetInt32("StaffId");
+            if (staffId == null)
+            {
+                TempData["Error"] = "Bạn cần đăng nhập để phản hồi feedback.";
+                return RedirectToAction("Login", "Staffs");
+            }
 
             var fb = _feedbackService.GetFeedbackById(id);
             if (fb == null)
@@ -107,14 +106,15 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_MVC.Controllers
             {
                 FeedbackID = fb.FeedbackID,
                 CustomerID = fb.CustomerID,
-                StaffID = staffId,
+                StaffID = staffId.Value, // ✅ staff thật từ session
                 Content_Reply = replyContent
             };
 
             _feedbackService.AddReplyFeedback(reply);
             TempData["Success"] = "Reply added successfully!";
-            return RedirectToAction("Index", new { id });
+            return RedirectToAction("Index");
         }
+
 
     }
 }

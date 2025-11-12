@@ -30,13 +30,23 @@ namespace DAL.Repositories
 
         public void DeleteFeedback(int id)
         {
-            var fb = GetFeedbackById(id);
-            if (fb != null)
+            // ✅ Xóa hết reply liên quan đến feedback trước
+            var replies = _context.Reply_Feedbacks.Where(r => r.FeedbackID == id).ToList();
+            if (replies.Any())
             {
-                _context.Feedbacks.Remove(fb);
-                Save();
+                _context.Reply_Feedbacks.RemoveRange(replies);
             }
+
+            // ✅ Sau đó xóa feedback
+            var feedback = _context.Feedbacks.FirstOrDefault(f => f.FeedbackID == id);
+            if (feedback != null)
+            {
+                _context.Feedbacks.Remove(feedback);
+            }
+
+            _context.SaveChanges();
         }
+
 
         // --- REPLY FEEDBACK ---
         public List<Reply_Feedback> GetRepliesByFeedbackId(int feedbackId)

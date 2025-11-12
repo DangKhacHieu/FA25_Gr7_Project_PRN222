@@ -18,5 +18,6 @@ namespace DAL.Models
         public Feedback? Feedback { get; set; }
         public Customer? Customer { get; set; }
         public Staff? Staff { get; set; }
+       
     }
 }
