@@ -3,21 +3,16 @@
 @{
     ViewData["Title"] = "Lịch sử đơn hàng";
 }
-
 <div class="container mt-4">
     <h1 class="mb-4">@ViewData["Title"]</h1>
 
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success" role="alert">
-            @TempData["SuccessMessage"]
-        </div>
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
     }
     @if (TempData["ErrorMessage"] != null)
     {
-        <div class="alert alert-danger" role="alert">
-            @TempData["ErrorMessage"]
-        </div>
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
     }
 
     <table class="table table-hover align-middle">
@@ -37,12 +32,10 @@
                 {
                     <tr>
                         <td><strong>#@order.OrderID</strong></td>
-
                         <td>@(order.Date?.ToString("dd/MM/yyyy"))</td>
-
                         <td>
                             @{
-                                var statusClass = "bg-secondary"; // Mặc định
+                                var statusClass = "bg-secondary";
                                 if (order.Status == "Pending") statusClass = "bg-warning text-dark";
                                 else if (order.Status == "Shipping") statusClass = "bg-info text-dark";
                                 else if (order.Status == "Completed") statusClass = "bg-success";
@@ -50,38 +43,31 @@
                             }
                             <span class="badge @statusClass fs-6">@(order.Status ?? "N/A")</span>
                         </td>
-
                         <td class="text-end text-danger fw-bold">
                             @((order.Total ?? 0).ToString("N0")) đ
                         </td>
-
                         <td class="text-center">
 
-                            <a asp-page="/Order/Details"
-                               asp-route-id="@order.OrderID"
-                               class="btn btn-primary btn-sm m-1">
+                            <a asp-page="/Order/Details" asp-route-id="@order.OrderID" class="btn btn-primary btn-sm m-1">
                                 Chi Tiết
                             </a>
 
                             @if (order.Status == "Pending")
                             {
-                                <form method="post" asp-page-handler="Cancel" asp-route-id="@order.OrderID" style="display: inline;">
-                                    <button type="submit" class="btn btn-danger btn-sm m-1"
-                                            onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này? Kho hàng sẽ được hoàn trả.');">
+                                <form method="post" asp-page-handler="Cancel" asp-route-id="@order.OrderID" asp-route-p="@Model.p" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm m-1" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này?');">
                                         Hủy đơn
                                     </button>
                                 </form>
                             }
-
                             @if (order.Status == "Shipping")
                             {
-                                <form method="post" asp-page-handler="Receive" asp-route-id="@order.OrderID" style="display: inline;">
+                                <form method="post" asp-page-handler="Receive" asp-route-id="@order.OrderID" asp-route-p="@Model.p" style="display: inline;">
                                     <button type="submit" class="btn btn-success btn-sm m-1">
                                         Đã nhận hàng
                                     </button>
                                 </form>
                             }
-
                         </td>
                     </tr>
                 }
@@ -96,4 +82,33 @@
             }
         </tbody>
     </table>
+
+    @if (Model.TotalPages > 1)
+    {
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+
+                @{
+                    var prevDisabled = Model.p <= 1 ? "disabled" : "";
+                }
+                <li class="page-item @prevDisabled">
+                    <a class="page-link" asp-page="./History" asp-route-p="@(Model.p - 1)">Trước</a>
+                </li>
+
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.p ? "active" : "")">
+                        <a class="page-link" asp-page="./History" asp-route-p="@i">@i</a>
+                    </li>
+                }
+
+                @{
+                    var nextDisabled = Model.p >= Model.TotalPages ? "disabled" : "";
+                }
+                <li class="page-item @nextDisabled">
+                    <a class="page-link" asp-page="./History" asp-route-p="@(Model.p + 1)">Sau</a>
+                </li>
+            </ul>
+        </nav>
+    }
 </div>

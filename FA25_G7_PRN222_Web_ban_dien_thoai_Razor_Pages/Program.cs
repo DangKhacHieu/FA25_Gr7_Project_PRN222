@@ -108,7 +108,6 @@ app.UseStaticFiles();
 
 
     app.MapStaticAssets();
-        
     app.MapRazorPages()
        .WithStaticAssets();
     app.MapGet("/", context =>

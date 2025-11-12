@@ -31,5 +31,12 @@ namespace DAL.Interfaces
         Task<IEnumerable<Order_List>> GetOrdersByCustomerIdAsync(int customerId);
 
         Task<Order_List> CreateOrderAsync(Order_List newOrder);
+
+        Task<int> CountOrdersForCustomerAsync(int customerId);
+
+        /// <summary>
+        /// (HÀM MỚI 2) Lấy một trang dữ liệu lịch sử đơn hàng của khách hàng.
+        /// </summary>
+        Task<IEnumerable<Order_List>> GetPagedOrdersForCustomerAsync(int customerId, int pageIndex, int pageSize);
     }
 }
