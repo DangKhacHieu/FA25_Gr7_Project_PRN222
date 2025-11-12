@@ -30,7 +30,7 @@ namespace BLL.Services
 
         // --- FEEDBACK ---
         public List<Feedback> GetAllFeedbacks() => _repo.GetAllFeedbacks();
-
+        public async Task<List<Feedback>> GetAllFeedbacksAsync() => _repo.GetAllFeedbacks();
         public Feedback GetFeedbackById(int id) => _repo.GetFeedbackById(id);
 
         public void DeleteFeedback(int id) => _repo.DeleteFeedback(id);
@@ -80,20 +80,19 @@ namespace BLL.Services
         public async Task<FeedbackEligibility> CheckFeedbackEligibilityAsync(int customerId, int orderId, int productId)
         {
             // Check 1: Xác minh đã mua hàng (Check xem user có sở hữu order đó VÀ product có trong order đó)
-            var order = await _orderRepo.GetOrderByIdAsync(orderId); // Giả định hàm này đã Include Order_Details
+            var order = await _orderRepo.GetOrderByIdAsync(orderId);
 
             if (order == null || order.CustomerID != customerId)
             {
-                return FeedbackEligibility.PurchaseNotVerified; // Không phải chủ đơn
+                return FeedbackEligibility.PurchaseNotVerified;
             }
 
             bool productInOrder = order.Order_Details != null && order.Order_Details.Any(od => od.ProductID == productId);
             if (!productInOrder)
             {
-                return FeedbackEligibility.PurchaseNotVerified; // Sản phẩm không có trong đơn
+                return FeedbackEligibility.PurchaseNotVerified;
             }
 
-            // Check 2: Kiểm tra xem đã review (bất kỳ lúc nào) chưa (Do giới hạn của model)
             if (await _repo.HasFeedbackSubmittedAsync(customerId, productId))
             {
                 return FeedbackEligibility.AlreadySubmitted; // Đã review rồi

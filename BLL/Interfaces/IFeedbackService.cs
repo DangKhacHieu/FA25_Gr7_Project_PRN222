@@ -9,6 +9,7 @@ namespace BLL.Interfaces
     {
         // Feedback
         List<Feedback> GetAllFeedbacks();
+        Task<List<Feedback>> GetAllFeedbacksAsync();
         Feedback GetFeedbackById(int id);
         void DeleteFeedback(int id);
 

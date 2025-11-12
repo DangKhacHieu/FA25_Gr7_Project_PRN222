@@ -46,6 +46,16 @@ namespace DAL.Repositories
 
             _context.SaveChanges();
         }
+        public async Task<IEnumerable<Feedback>> GetFeedbacksByProductIdAsync(int productId)
+        {
+            return await _context.Feedbacks
+                .Where(f => f.ProductID == productId)
+                .Include(f => f.Customer)
+                //.Include(f => f.Reply_Feedbacks)
+                //    .ThenInclude(r => r.Staff)
+                .AsNoTracking()
+                .ToListAsync();
+        }
 
 
         // --- REPLY FEEDBACK ---
@@ -69,15 +79,6 @@ namespace DAL.Repositories
         {
             await _context.Feedbacks.AddAsync(feedback);
             await _context.SaveChangesAsync();
-        }
-
-        public async Task<IEnumerable<Feedback>> GetFeedbacksByProductIdAsync(int productId)
-        {
-            return await _context.Feedbacks
-                .Where(f => f.ProductID == productId)
-                .Include(f => f.Customer)
-                .AsNoTracking()
-                .ToListAsync();
         }
 
         public async Task<bool> HasFeedbackSubmittedAsync(int customerId, int productId)

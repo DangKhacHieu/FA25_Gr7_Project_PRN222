@@ -32,6 +32,8 @@ namespace DAL.Interfaces
         /// (Chức năng 1) Kiểm tra xem khách hàng đã review sản phẩm này BAO GIỜ chưa.
         /// </summary>
         Task<bool> HasFeedbackSubmittedAsync(int customerId, int productId);
+
+
     }
 }
 
