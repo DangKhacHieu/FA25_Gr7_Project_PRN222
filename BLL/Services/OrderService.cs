@@ -208,7 +208,7 @@ namespace BLL.Services
                     await _productService.DecreaseProductQuantityAsync(item.ProductId, item.Quantity); // Bỏ ?? 0
                 }
 
-                newOrder.Status = (paymentMethod == "Momo") ? "Complete" : "Pending";
+                newOrder.Status = (paymentMethod == "Momo") ? "Completed" : "Pending";
 
                 var createdOrder = await _orderRepo.CreateOrderAsync(newOrder);
                 await _cartRepo.ClearCartAsync(customerId);
@@ -294,8 +294,28 @@ namespace BLL.Services
             }
         }
 
-        // --- TRIỂN KHAI HÀM NHẬN HÀNG (RECEIVE) ---
-        public async Task MarkOrderAsReceivedAsync(int orderId, int customerId)
+        // --- TRIỂN KHAI 2 HÀM MỚI CHO PHÂN TRANG ---
+
+        public async Task<int> CountOrdersForCustomerAsync(int customerId)
+        {
+            // Gọi hàm đếm của Repository
+            return await _orderRepo.CountOrdersForCustomerAsync(customerId);
+        }
+
+        public async Task<IEnumerable<Order_List>> GetPagedOrdersForCustomerAsync(int customerId, int pageIndex, int pageSize)
+        {
+            if (pageIndex < 1) pageIndex = 1;
+            if (pageSize < 1) pageSize = 10;
+
+            // Gọi hàm lấy dữ liệu trang của Repository
+            return await _orderRepo.GetPagedOrdersForCustomerAsync(customerId, pageIndex, pageSize);
+        }
+
+    
+
+
+// --- TRIỂN KHAI HÀM NHẬN HÀNG (RECEIVE) ---
+            public async Task MarkOrderAsReceivedAsync(int orderId, int customerId)
         {
             // 1. Lấy đơn hàng
             var order = await _orderRepo.GetOrderByIdAsync(orderId); // Hàm này không cần Include

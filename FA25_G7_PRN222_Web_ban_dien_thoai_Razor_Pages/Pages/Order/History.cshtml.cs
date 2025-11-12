@@ -9,12 +9,23 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order
     {
         private readonly IOrderService _orderService;
 
+        // 1. Dữ liệu (chỉ của trang hiện tại)
+        public IEnumerable<Order_List> Orders { get; set; } = new List<Order_List>();
+
+        // 2. Trang hiện tại (lấy từ URL ?p=...)
+        [BindProperty(SupportsGet = true)]
+        public int p { get; set; } = 1;
+
+        // 3. Tổng số trang (sẽ được tính toán)
+        public int TotalPages { get; set; }
+
+        // 4. Kích thước trang (cố định)
+        public int PageSize { get; } = 5; // 10 đơn hàng mỗi trang
+
         public HistoryModel(IOrderService orderService)
         {
             _orderService = orderService;
         }
-
-        public IEnumerable<Order_List> Orders { get; set; } = new List<Order_List>();
 
         private int? GetCurrentCustomerId()
         {
@@ -33,12 +44,31 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order
                 // (Bạn nên dùng [Authorize] như tôi đề xuất ở câu trước sẽ tốt hơn)
                 return RedirectToPage("/Login"); // Thay bằng trang đăng nhập của bạn
             }
+            // --- LOGIC PHÂN TRANG MỚI ---
 
-            // Gọi service để lấy lịch sử đơn hàng (hàm này giờ đã tồn tại)
-            Orders = await _orderService.GetOrderHistoryAsync(customerId.Value);
+            // GỌI BLL LẦN 1: Đếm tổng số đơn hàng
+            var totalCount = await _orderService.CountOrdersForCustomerAsync(customerId.Value);
+
+            // GỌI BLL LẦN 2: Lấy đơn hàng cho trang hiện tại (trang 'p')
+            var items = await _orderService.GetPagedOrdersForCustomerAsync(customerId.Value, p, PageSize);
+
+            // Gán giá trị cho View
+            Orders = items;
+            TotalPages = (int)Math.Ceiling(totalCount / (double)PageSize);
+
+            // Đảm bảo 'p' không vượt quá TotalPages
+            if (p > TotalPages && TotalPages > 0)
+            {
+                p = TotalPages;
+                // Tải lại nếu 'p' không hợp lệ (ví dụ: ?p=99)
+                return RedirectToPage(new { p = this.p });
+            }
 
             return Page();
         }
+
+
+        
         public async Task<IActionResult> OnPostCancelAsync(int id) // 'id' khớp với asp-route-id
         {
             var customerId = GetCurrentCustomerId();
@@ -58,7 +88,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order
                 TempData["ErrorMessage"] = ex.Message;
             }
 
-            return RedirectToPage(); // Tải lại trang History
+            return RedirectToPage(new { p = this.p }); // Tải lại trang History
         }
 
         // --- THÊM HANDLER CHO NÚT NHẬN HÀNG (RECEIVE) ---
@@ -67,7 +97,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order
             var customerId = GetCurrentCustomerId();
             if (customerId == null)
             {
-                return RedirectToPage("/Account/Login");
+                return RedirectToPage("/Login");
             }
 
             try
@@ -80,7 +110,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.Order
                 TempData["ErrorMessage"] = ex.Message;
             }
 
-            return RedirectToPage(); // Tải lại trang History
+            return RedirectToPage(new { p = this.p }); // Tải lại trang History
         }
     }
 }

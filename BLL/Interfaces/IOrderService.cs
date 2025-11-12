@@ -45,6 +45,16 @@ namespace BLL.Interfaces
         /// Khách hàng xác nhận đã nhận hàng (chỉ khi 'Shipping').
         /// </summary>
         Task MarkOrderAsReceivedAsync(int orderId, int customerId);
+
+        /// <summary>
+        /// (HÀM MỚI 1) Chỉ đếm tổng số đơn hàng của một khách hàng.
+        /// </summary>
+        Task<int> CountOrdersForCustomerAsync(int customerId);
+
+        /// <summary>
+        /// (HÀM MỚI 2) Lấy một trang dữ liệu lịch sử đơn hàng của khách hàng.
+        /// </summary>
+        Task<IEnumerable<Order_List>> GetPagedOrdersForCustomerAsync(int customerId, int pageIndex, int pageSize);
     }
 }
 

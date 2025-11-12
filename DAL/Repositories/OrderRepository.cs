@@ -133,7 +133,22 @@ namespace DAL.Repositories
             return newOrder;
         }
 
+        public async Task<int> CountOrdersForCustomerAsync(int customerId)
+        {
+            return await _context.Order_Lists
+                                 .Where(o => o.CustomerID == customerId)
+                                 .CountAsync();
+        }
 
+        public async Task<IEnumerable<Order_List>> GetPagedOrdersForCustomerAsync(int customerId, int pageIndex, int pageSize)
+        {
+            return await _context.Order_Lists
+                                 .Where(o => o.CustomerID == customerId)
+                                 .OrderByDescending(o => o.Date)
+                                 .Skip((pageIndex - 1) * pageSize)
+                                 .Take(pageSize)
+                                 .ToListAsync();
+        }
 
 
     }
