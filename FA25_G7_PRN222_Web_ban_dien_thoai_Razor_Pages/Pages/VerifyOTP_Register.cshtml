@@ -1,0 +1,30 @@
+﻿@page
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.VerifyOTP_RegisterModel
+@{
+    ViewData["Title"] = "Verify Email";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/VerifyOTP_Register.css" />
+}
+
+<div class="verify-container">
+    <h2 class="text-center mb-4">Verify Your Email</h2>
+
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        var css = Model.IsSuccess ? "alert-success" : "alert-danger";
+        <div class="alert @css text-center">@Model.Message</div>
+    }
+
+    <form method="post" class="text-center">
+        <div class="form-group mb-3">
+            <input asp-for="OTP" class="form-control text-center" placeholder="Enter 6-digit OTP" maxlength="6" />
+        </div>
+        <button type="submit" class="btn btn-primary">Verify</button>
+    </form>
+
+    <form method="post" asp-page-handler="Resend" class="text-center mt-3">
+        <button type="submit" class="btn btn-link">Resend OTP</button>
+    </form>
+</div>

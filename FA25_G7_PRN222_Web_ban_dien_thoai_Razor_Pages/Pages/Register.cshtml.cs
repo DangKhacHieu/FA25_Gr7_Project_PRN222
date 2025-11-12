@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Text;
 using BLL.IServices;
 using DAL.Models;
-using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages
 {
@@ -18,7 +21,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages
         [BindProperty]
         public RegisterInputModel Input { get; set; } = new RegisterInputModel();
 
-        public string Message { get; set; } = "";
+        public string? Message { get; set; }
 
         public void OnGet() { }
 
@@ -26,68 +29,52 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages
         {
             if (!ModelState.IsValid)
             {
-                Message = "Please correct the highlighted errors.";
+                Message = "Please correct the errors below.";
                 return Page();
             }
 
-            // Map sang Customer model
-            var customer = new Customer
+            if (_customerService.IsUsernameExist(Input.UserName!))
             {
-                UserName = Input.UserName,
-                FullName = Input.FullName,
-                Email = Input.Email,
-                Password = Input.Password,
-                PhoneNumber = Input.PhoneNumber,
-                Address = Input.Address,
-                Sex = Input.Sex,
-                DOB = Input.DOB,
-                ImgCustomer = null,
-                Status = 1
-            };
-
-            bool success = _customerService.Register(customer, out string msg);
-            Message = msg;
-
-            if (success)
-            {
-                return RedirectToPage("/Login");
+                Message = "Username already exists.";
+                return Page();
             }
 
-            return Page();
+            if (_customerService.IsEmailExist(Input.Email!))
+            {
+                Message = "Email already exists.";
+                return Page();
+            }
+
+            // ✅ Tạo OTP và lưu Session
+            var otp = new Random().Next(100000, 999999).ToString();
+            HttpContext.Session.SetString("RegisterOTP", otp);
+            HttpContext.Session.SetString("RegisterOTPTime", DateTime.Now.AddMinutes(3).ToString());
+            HttpContext.Session.SetString("RegisterTempData", System.Text.Json.JsonSerializer.Serialize(Input));
+
+            // ✅ Gửi email OTP
+            _customerService.SendOTPEmail(Input.Email!, otp);
+
+            return RedirectToPage("/VerifyOTP_Register");
         }
-    }
 
-    // ✅ Class input riêng để thêm validation
-    public class RegisterInputModel
-    {
-        [Required(ErrorMessage = "Username is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 50 characters.")]
-        public string UserName { get; set; }
+        public class RegisterInputModel
+        {
+            [Required(ErrorMessage = "Username is required")]
+            public string? UserName { get; set; }
 
-        [Required(ErrorMessage = "Full name is required")]
-        public string FullName { get; set; }
+            [Required(ErrorMessage = "Email is required")]
+            [EmailAddress(ErrorMessage = "Invalid email format")]
+            public string? Email { get; set; }
 
-        [Required(ErrorMessage = "Email is required")]
-        [EmailAddress(ErrorMessage = "Invalid email format")]
-        public string Email { get; set; }
+            [Required(ErrorMessage = "Password is required")]
+            public string? Password { get; set; }
 
-        [Required(ErrorMessage = "Password is required")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$",
-            ErrorMessage = "Password must be at least 8 chars, include upper/lowercase, number, and special character.")]
-        public string Password { get; set; }
-
-        [Required(ErrorMessage = "Phone number is required")]
-        [RegularExpression(@"^(0[3|5|7|8|9])[0-9]{8}$", ErrorMessage = "Invalid Vietnamese phone number format")]
-        public string PhoneNumber { get; set; }
-
-        [Required(ErrorMessage = "Address is required")]
-        public string Address { get; set; }
-
-        [Required(ErrorMessage = "Please select gender")]
-        public string Sex { get; set; }
-
-        [Required(ErrorMessage = "Date of birth is required")]
-        [DataType(DataType.Date)]
-        public DateTime DOB { get; set; }
+            public string? FullName { get; set; }
+            public string? PhoneNumber { get; set; }
+            public string? Address { get; set; }
+            public string? Sex { get; set; }
+            [DataType(DataType.Date)]
+            public DateTime? DOB { get; set; }
+        }
     }
 }

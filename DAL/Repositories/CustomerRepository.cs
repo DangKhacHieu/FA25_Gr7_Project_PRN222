@@ -45,7 +45,7 @@ namespace DAL.Repositories
 
         public Customer? GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return _context.Customers.FirstOrDefault(c => c.Email == email);
         }
 
         public void Add(Customer customer)
@@ -62,6 +62,61 @@ namespace DAL.Repositories
         {
             _context.Customers.Update(customer);
             await _context.SaveChangesAsync();
+        }
+       
+
+        public void Update(Customer customer)
+        {
+            _context.Customers.Update(customer);
+        }
+
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
+        public async Task<Customer?> GetCustomerByIdAsync(int id)
+        {
+            return await _context.Customers
+                                 .AsNoTracking()
+                                 .FirstOrDefaultAsync(c => c.CustomerId == id);
+        }
+
+        public async Task UpdateCustomerAsync(Customer customer)
+        {
+            _context.Customers.Update(customer);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Customer?> GetAndUpdateCustomerAsync(Customer customer)
+        {
+            var existing = await _context.Customers.FirstOrDefaultAsync(c => c.CustomerId == customer.CustomerId);
+            if (existing == null) return null;
+
+            existing.FullName = customer.FullName;
+            existing.Email = customer.Email;
+            existing.PhoneNumber = customer.PhoneNumber;
+            existing.Address = customer.Address;
+            existing.Sex = customer.Sex;
+            existing.DOB = customer.DOB;
+
+            await _context.SaveChangesAsync();
+            return existing;
+        }
+        public bool IsUsernameExist(string username)
+        {
+            return _context.Customers.Any(c => c.UserName == username);
+        }
+
+        public bool IsEmailExist(string email)
+        {
+            return _context.Customers.Any(c => c.Email == email);
+        }
+
+        // ✅ Đăng ký khách hàng mới
+        public void RegisterCustomer(Customer customer)
+        {
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
         }
     }
 }

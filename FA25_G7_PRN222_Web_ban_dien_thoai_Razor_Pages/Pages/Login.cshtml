@@ -1,45 +1,48 @@
 ﻿@page
-@model LoginModel
+@model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.LoginModel
 @{
-    ViewData["Title"] = "Customer Login";
+    ViewData["Title"] = "Login";
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/register.css" /> <!-- tái sử dụng CSS cũ -->
+    <link rel="stylesheet" href="~/css/Login.css" />
 }
 
-<div class="register-container">
-    <div class="register-card">
-        <h2 class="register-title">Customer Login</h2>
+<main class="login-container">
 
-        <form method="post">
-            <div class="form-group">
-                <label asp-for="Username">Username</label>
-                <input asp-for="Username" class="form-control" placeholder="Enter username" />
-            </div>
+    <h2 class="text-center mb-4">Login</h2>
 
-            <div class="form-group">
-                <label asp-for="Password">Password</label>
-                <input asp-for="Password" type="password" class="form-control" placeholder="Enter password" />
-            </div>
-
-            <button type="submit" class="btn-submit">Login</button>
-            @* <div class="text-center mt-3">
-                <a class="btn-google" href="/signin-google">
-                    <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" width="20" />
-                    Continue with Google
-                </a>
-            </div> *@
-
-        </form>
-
-        @if (!string.IsNullOrEmpty(Model.Message))
-        {
-            <div class="alert-message">@Model.Message</div>
-        }
-
-        <div class="text-center mt-3">
-            <p>Don't have an account? <a href="/Register">Register here</a></p>
+    <!-- ✅ Hiển thị thông báo động -->
+    @if (!string.IsNullOrEmpty(Model.Message))
+    {
+        var isError = Model.Message.Contains("Invalid")
+        || Model.Message.Contains("locked")
+        || Model.Message.Contains("Please")
+        || Model.Message.Contains("error", StringComparison.OrdinalIgnoreCase);
+        <div class="alert @(isError ? "alert-danger" : "alert-success") text-center" style="width: 100%; margin-bottom: 15px;">
+            @Model.Message
         </div>
-    </div>
-</div>
+    }
+
+    <form method="post">
+        <div class="form-group mb-3">
+            <label for="Username">Username</label>
+            <input asp-for="Username" class="form-control" placeholder="Enter your username" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="Password">Password</label>
+            <input asp-for="Password" class="form-control" type="password" placeholder="Enter your password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+
+        <!-- ✅ Link điều hướng -->
+        <div class="text-center">
+            <a asp-page="/ForgotPassword/ForgotPassword" class="text-decoration-none">Forgot Password?</a>
+            <span class="mx-2 text-muted">|</span>
+            <a asp-page="/Register" class="text-decoration-none">Create an Account</a>
+        </div>
+    </form>
+
+</main>

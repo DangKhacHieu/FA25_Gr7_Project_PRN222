@@ -9,12 +9,26 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
+
+
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 // 🔌 Kết nối database
 builder.Services.AddDbContext<PhoneContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhoneStoreContext")));
+
+
 
 // 🧠 Inject tầng BLL
 builder.Services.AddScoped<ICustomerRepository,CustomerRepository>(); // ✅ THÊM DÒNG NÀY
@@ -24,6 +38,9 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây
@@ -59,6 +76,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

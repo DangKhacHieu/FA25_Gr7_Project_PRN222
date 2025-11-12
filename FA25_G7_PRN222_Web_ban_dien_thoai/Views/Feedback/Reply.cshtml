@@ -1,0 +1,63 @@
+﻿@model DAL.Models.Feedback
+@{
+    var replies = ViewBag.Replies as IEnumerable<DAL.Models.Reply_Feedback>;
+    var staffNames = ViewBag.StaffNames as Dictionary<int, string>;
+}
+
+<h2 class="mb-4">Reply Feedback</h2>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-light">
+        <strong>Customer: @ViewBag.CustomerName</strong>
+    </div>
+    <div class="card-body">
+        <p>@Model.Content</p>
+        <p>
+            <strong>Rating:</strong>
+            @{
+                int rate = Model.RatePoint ?? 0;
+            }
+            @for (int i = 0; i < rate; i++)
+            {
+                <i class="bi bi-star-fill text-warning"></i>
+            }
+            @for (int i = rate; i < 5; i++)
+            {
+                <i class="bi bi-star text-muted"></i>
+            }
+        </p>
+    </div>
+</div>
+
+<h4>Replies</h4>
+@if (replies != null && replies.Any())
+{
+    <ul class="list-group mb-4">
+        @foreach (var reply in replies)
+        {
+            var staffId = reply.StaffID ?? 0; // nếu StaffID null thì gán 0
+            var staffName = staffNames != null && staffNames.ContainsKey(staffId)
+            ? staffNames[staffId]
+            : $"ID {staffId}";
+
+            <li class="list-group-item">
+                <b>Staff: @staffName</b> — @reply.Content_Reply
+            </li>
+        }
+
+    </ul>
+}
+else
+{
+    <p><em>No replies yet.</em></p>
+}
+
+<hr />
+
+<h4>Add New Reply</h4>
+<form asp-action="Reply" method="post">
+    <input type="hidden" name="id" value="@Model.FeedbackID" />
+    <textarea name="replyContent" class="form-control mb-3" placeholder="Enter reply..." required></textarea>
+    <button type="submit" class="btn btn-success">Send Reply</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>

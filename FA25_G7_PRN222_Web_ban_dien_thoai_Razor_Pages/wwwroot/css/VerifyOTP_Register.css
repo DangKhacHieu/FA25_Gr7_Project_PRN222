@@ -1,0 +1,68 @@
+﻿/* Giao diện tổng thể */
+.verify-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+    /* Tiêu đề */
+    .verify-container h2 {
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+/* Thông báo */
+.alert {
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Input OTP */
+.form-control {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-align: center;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    }
+
+/* Nút xác minh */
+.btn-primary {
+    width: 100%;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Nút resend */
+.btn-link {
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #007bff;
+}
+
+    .btn-link:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
+
+/* Dòng thông báo gửi lại */
+.text-muted {
+    font-size: 14px;
+    color: #666;
+}

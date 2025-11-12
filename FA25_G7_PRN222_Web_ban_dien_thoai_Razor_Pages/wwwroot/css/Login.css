@@ -1,0 +1,25 @@
+﻿.login-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.alert {
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    font-weight: bold;
+}
+
+.text-center a {
+    font-weight: 500;
+}
+
+    .text-center a:hover {
+        text-decoration: underline;
+    }

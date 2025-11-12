@@ -4,6 +4,10 @@ using DAL.IRepositories;
 using DAL.Models;
 using DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace BLL.Services
 {
@@ -91,12 +95,17 @@ namespace BLL.Services
 
         public async Task<Customer?> GetCustomerByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _repository.GetCustomerByIdAsync(id);
         }
 
         public async Task UpdateCustomerAsync(Customer customer)
         {
-            await _repository.UpdateAsync(customer);
+            await _repository.UpdateCustomerAsync(customer);
+        }
+
+        public async Task<Customer?> GetAndUpdateCustomerAsync(Customer customer)
+        {
+            return await _repository.GetAndUpdateCustomerAsync(customer);
         }
 
         // Các hàm phụ hỗ trợ
@@ -123,5 +132,68 @@ namespace BLL.Services
         }
 
         public void ReloadCache() { }
+        public Customer? GetCustomerByEmail(string email)
+        {
+            return _repository.GetByEmail(email);
+        }
+
+        public bool UpdatePassword(string email, string newPassword)
+        {
+            var customer = _repository.GetByEmail(email);
+            if (customer == null) return false;
+
+            customer.Password = HashPassword(newPassword);
+            _repository.Update(customer);
+            _repository.Save();
+            return true;
+        }
+
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2")); // convert byte -> hex
+                }
+                return builder.ToString();
+            }
+        }
+        // ✅ Đăng ký (sau khi xác thực OTP)
+        public void RegisterCustomer(Customer customer)
+        {
+            _repository.RegisterCustomer(customer);
+        }
+
+        // ✅ Kiểm tra tồn tại
+        public bool IsUsernameExist(string username) => _repository.IsUsernameExist(username);
+        public bool IsEmailExist(string email) => _repository.IsEmailExist(email);
+
+        // ✅ Gửi OTP qua Gmail
+        public void SendOTPEmail(string toEmail, string otp)
+        {
+            var fromEmail = "trannhuy095@gmail.com";      // 👉 thay email thật
+            var fromPassword = "fqojhikpixktpkvy";    // 👉 dùng app password Gmail
+
+            using (var client = new SmtpClient("smtp.gmail.com", 587))
+            {
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(fromEmail, fromPassword);
+
+                var mail = new MailMessage(fromEmail, toEmail);
+                mail.Subject = "OTP Verification - Phone Store";
+                mail.Body = $"Your OTP is: {otp}\nThis code will expire in 3 minutes.";
+
+                client.Send(mail);
+            }
+        }
+        public string ResendRegisterOTP(string toEmail)
+        {
+            var otp = new Random().Next(100000, 999999).ToString();
+            SendOTPEmail(toEmail, otp);
+            return otp;
+        }
     }
 }

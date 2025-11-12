@@ -1,74 +1,74 @@
 ﻿@page
 @model FA25_G7_PRN222_Web_ban_dien_thoai_Razor_Pages.Pages.ViewProfileModel
-@{
-    ViewData["Title"] = "Customer Profile";
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ViewProfile.css" />
 }
 
-<h2 class="text-center">Customer Profile</h2>
+<main>
+    <div class="profile-container">
 
-@if (Model.Message != null)
-{
-    <div class="alert alert-success text-center">@Model.Message</div>
-}
+        <h2 class="text-center">Customer Profile</h2>
 
-@if (TempData["SuccessMessage"] != null)
-{
-    <div id="successMessage" class="alert alert-success text-center">
-        @TempData["SuccessMessage"]
+        @* Hiển thị thông báo update thành công (chỉ 1 lần) *@
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div id="successMessage" class="alert alert-success full-width">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Customer.CustomerId" />
+
+            <div class="form-group">
+                <label>Username</label>
+                <input asp-for="Customer.UserName" readonly />
+            </div>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input asp-for="Customer.FullName" />
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Customer.Email" type="email" />
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input asp-for="Customer.PhoneNumber" type="tel" />
+            </div>
+
+            <div class="form-group full-width">
+                <label>Address</label>
+                <input asp-for="Customer.Address" />
+            </div>
+
+            <div class="form-group">
+                <label>Sex</label>
+                <select asp-for="Customer.Sex">
+                    <option value="">-- Select --</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input asp-for="Customer.DOB" type="date" />
+            </div>
+
+            <button type="submit" class="btn">Update Profile</button>
+        </form>
     </div>
-}
-
-<div class="profile-container">
-    <form method="post" enctype="multipart/form-data">
-        <input type="hidden" asp-for="Customer.CustomerId" />
-
-        <div class="form-group">
-            <label>Username:</label>
-            <input asp-for="Customer.UserName" class="form-control" readonly />
-        </div>
-
-        <div class="form-group">
-            <label>Full Name:</label>
-            <input asp-for="Customer.FullName" class="form-control" />
-        </div>
-
-        <div class="form-group">
-            <label>Email:</label>
-            <input asp-for="Customer.Email" class="form-control" />
-        </div>
-
-        <div class="form-group">
-            <label>Phone Number:</label>
-            <input asp-for="Customer.PhoneNumber" class="form-control" />
-        </div>
-
-        <div class="form-group">
-            <label>Address:</label>
-            <input asp-for="Customer.Address" class="form-control" />
-        </div>
-
-        <div class="form-group">
-            <label>Sex:</label>
-            <select asp-for="Customer.Sex" class="form-control">
-                <option value="">-- Select --</option>
-                <option>Male</option>
-                <option>Female</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label>Date of Birth:</label>
-            <input asp-for="Customer.DOB" type="date" class="form-control" />
-        </div>
-
-        <button type="submit" class="btn btn-primary mt-2">Update Profile</button>
-    </form>
-</div>
+</main>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
-        // Ẩn thông báo sau 3 giây
+        // Ẩn thông báo sau 3 giây (mờ dần rồi biến mất)
         setTimeout(() => {
             const msg = document.getElementById("successMessage");
             if (msg) {

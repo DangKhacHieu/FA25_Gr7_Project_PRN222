@@ -1,0 +1,91 @@
+﻿@model IEnumerable<DAL.Models.Feedback>
+@{
+    ViewData["Title"] = "All Feedbacks";
+    var replyStatus = ViewBag.ReplyStatus as Dictionary<int, bool>;
+}
+
+<h2 class="mb-4">All Feedbacks</h2>
+
+<table class="table table-bordered table-hover align-middle text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Content</th>
+            <th>Rate</th>
+            <th>Status</th> <!-- ✅ thêm cột mới -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var fb in Model)
+        {
+            bool hasReply = replyStatus != null && replyStatus.ContainsKey(fb.FeedbackID) && replyStatus[fb.FeedbackID];
+
+            <tr>
+                <td>@fb.FeedbackID</td>
+                <td>@fb.CustomerID</td>
+                <td>@fb.ProductID</td>
+                <td>@fb.Content</td>
+                <td>@fb.RatePoint</td>
+
+                <!-- ✅ Cột trạng thái -->
+                <td>
+                    @if (ViewBag.ReplyStatus.ContainsKey(fb.FeedbackID) && ViewBag.ReplyStatus[fb.FeedbackID])
+                    {
+                        <span class="badge bg-success"><i class="bi bi-check-circle"></i> Replied</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary"><i class="bi bi-hourglass-split"></i> Pending</span>
+                    }
+                </td>
+
+
+                <td>
+                    <!-- Nút Reply -->
+                    <a asp-action="Reply" asp-route-id="@fb.FeedbackID" class="btn btn-sm btn-primary" title="Reply">
+                        <i class="bi bi-reply-fill"></i>
+                    </a>
+
+                    <!-- Nút Delete -->
+                    <form asp-action="Delete" asp-route-id="@fb.FeedbackID" method="post" class="d-inline"
+                          onsubmit="return confirm('Bạn có chắc muốn xóa feedback này không?');">
+                        <button type="submit" class="btn btn-sm btn-danger" title="Delete">
+                            <i class="bi bi-trash3-fill"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!-- Script SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(feedbackId) {
+        Swal.fire({
+            title: 'Bạn có chắc muốn xóa?',
+            text: "Hành động này không thể hoàn tác!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Xóa',
+            cancelButtonText: 'Hủy'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Tạo form ẩn để gửi POST request
+                const form = document.createElement('form');
+                form.method = 'post';
+                form.action = `/Feedback/Delete/${feedbackId}`;
+                document.body.appendChild(form);
+                form.submit();
+            }
+        });
+    }
+</script>
+    
