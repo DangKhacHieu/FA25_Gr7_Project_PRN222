@@ -15,7 +15,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
         }
 
         // GET: Order
-        public async Task<IActionResult> Index(string? status, int page = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(string? status, int page = 1, int pageSize = 5)
         {
             // 1. Lấy dữ liệu đã phân trang (kiểu PagedResult<Order_List>)
             var pagedResultOrder = await _orderService.GetOrdersPaginatedAsync(page, pageSize, status);

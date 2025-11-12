@@ -22,11 +22,19 @@ builder.Services.AddScoped<ICustomerRepository,CustomerRepository>(); // ✅ TH�
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<BLL.Interfaces.IStaffService, BLL.Services.StaffService>();
 builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<StaffRepository>();
 builder.Services.AddScoped<StaffService>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian sống của Session
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 var app = builder.Build();
 
 // ✅ Test kết nối DB ở đây
@@ -62,9 +70,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthorization();
-
+app.UseSession();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Staffs}/{action=Login}/{id?}");
 
 app.Run();

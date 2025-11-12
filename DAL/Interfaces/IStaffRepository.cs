@@ -9,10 +9,11 @@ namespace DAL.Interfaces
 {
     public interface IStaffRepository
     {
-        IEnumerable<Staff> GetAll();
-        Staff GetById(int id);
-        void Add(Staff staff);
-        void Update(Staff staff);
-        void Delete(int id);
+        //IEnumerable<Staff> GetAll();
+        //Staff GetById(int id);
+        //void Add(Staff staff);
+        //void Update(Staff staff);
+        //void Delete(int id);
+        Task<Staff?> GetStaffByLoginAsync(string username, string password);
     }
 }

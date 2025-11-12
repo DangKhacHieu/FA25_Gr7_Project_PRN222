@@ -22,7 +22,7 @@ namespace FA25_G7_PRN222_Web_ban_dien_thoai.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 5)
         {
             var pagedResultProduct = await _productService.GetProductsPaginatedAsync(page, pageSize);
 
